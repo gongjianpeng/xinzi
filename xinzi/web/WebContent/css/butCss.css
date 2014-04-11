@@ -1,0 +1,36 @@
+
+/*黑色按钮风格*/
+.black-btn .x-btn-left,.black-btn .x-btn-right,.black-btn .x-btn-center{
+	background-image: url(../images/btn-black.gif);
+}
+
+.black-btn .x-btn-text {
+	color: white;
+}  
+
+/*绿色按钮风格*/
+.green-btn .x-btn-left,.green-btn .x-btn-right,.green-btn .x-btn-center{
+	background-image: url(../images/btn-green.gif);
+} 
+
+/*粉红色按钮风格*/
+.pink-btn .x-btn-left,.pink-btn .x-btn-right,.pink-btn .x-btn-center {
+	background-image: url(../images/btn-pink.gif);
+}  
+	
+/*青色按钮风格*/
+.syan-btn .x-btn-left,.syan-btn .x-btn-right,.syan-btn .x-btn-center {
+	background-image: url(../images/btn-syan.gif);
+}
+
+
+/*淡蓝色按钮风格*/
+.skyblue-btn .x-btn-left,.skyblue-btn .x-btn-right,.skyblue-btn .x-btn-center {
+	background-image: url(../images/btn-skyblue2.GIF);
+}
+
+.babyBlue-btn .x-btn-left,.babyBlue-btn .x-btn-right,.babyBlue-btn .x-btn-center {
+	background-image: url(../images/btn-skyblue.GIF);
+}
+
+

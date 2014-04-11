@@ -1,0 +1,14 @@
+#Fri Jul 23 10:07:57 CST 2010
+eclipse.preferences.version=1
+encoding//web/WebContent/index.xhtml=UTF-8
+encoding//web/WebContent/infom/topFrame.xhtml=UTF-8
+encoding//web/WebContent/main.xhtml=UTF-8
+encoding//web/WebContent/pages/agency/agencyManager.xhtml=UTF-8
+encoding//web/WebContent/pages/agency/editOffshootBank.xhtml=UTF-8
+encoding//web/WebContent/pages/agency/offshootBank.xhtml=UTF-8
+encoding//web/WebContent/pages/channel/channelBasic.xhtml=UTF-8
+encoding//web/WebContent/pages/channel/channelBasicGroup.xhtml=UTF-8
+encoding//web/WebContent/pages/loanOrderWrite/advice.xhtml=UTF-8
+encoding//web/WebContent/pages/loanOrderWrite/propertyInfo.xhtml=UTF-8
+encoding//web/WebContent/pages/loanOrderWrite/spouseInfo.xhtml=UTF-8
+encoding//web/WebContent/pages/person/authoize.xhtml=UTF-8

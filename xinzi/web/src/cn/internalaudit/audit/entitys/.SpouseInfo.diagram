@@ -1,0 +1,538 @@
+package com.sap.saap.audit.entitys;
+
+import java.io.Serializable;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated配偶信息
+ */
+@Table(name = "SpouseInfo")
+@SuppressWarnings("serial")
+@Entity
+public class SpouseInfo implements Serializable, IEntity {
+	/** 
+	 * @generated
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe  证件号码
+	 * @display  证件号码
+	 */
+	@Column(length = 255)
+	private java.lang.String IDNumber;
+	/** 
+	 * @generated
+	 * @describe  证件类型
+	 * @display  证件类型
+	 */
+	@Column(length = 255)
+	private java.lang.String IDType;
+	/** 
+	 * @generated
+	 * @describe  姓名
+	 * @display  姓名
+	 */
+	@Column(length = 255)
+	private java.lang.String name;
+	/** 
+	 * @generated
+	 * @describe  职位
+	 * @display  职位
+	 */
+	@Column(length = 255)
+	private java.lang.String post;
+	/** 
+	 * @generated
+	 * @describe  阻止推广信息
+	 * @display  阻止推广信息
+	 */
+	@Column(length = 255)
+	private java.lang.String checkBill;
+	/** 
+	 * @generated
+	 * @describe  基本月薪
+	 * @display  基本月薪
+	 */
+	@Column(length = 255)
+	private java.lang.String baseSalary;
+	/** 
+	 * @generated
+	 * @describe  月薪发放方式
+	 * @display  月薪发放方式
+	 */
+	@Column(length = 255)
+	private java.lang.String salaryStyle;
+	/** 
+	 * @generated
+	 * @describe  补贴
+	 * @display  补贴
+	 */
+	@Column(length = 255)
+	private java.lang.String subsidy;
+	/** 
+	 * @generated
+	 * @describe  补贴发放方式
+	 * @display  补贴发放方式
+	 */
+	@Column(length = 255)
+	private java.lang.String subsidyStyle;
+	/** 
+	 * @generated
+	 * @describe  单位名称
+	 * @display  单位名称
+	 */
+	@Column(length = 255)
+	private java.lang.String companyName;
+	/** 
+	 * @generated
+	 * @describe  服务年
+	 * @display  服务年
+	 */
+	@Column(length = 255)
+	private java.lang.String serviceMonth;
+	/** 
+	 * @generated
+	 * @describe  服务月
+	 * @display  服务月
+	 */
+	@Column(length = 255)
+	private java.lang.String serviceYear;
+	/** 
+	 * @generated
+	 * @describe  行业
+	 * @display  行业
+	 */
+	@Column(length = 255)
+	private java.lang.String industry;
+	/** 
+	 * @generated
+	 * @describe  相关行业
+	 * @display  相关行业
+	 */
+	@Column(length = 255)
+	private java.lang.String relatedIndustries;
+	/** 
+	 * @generated
+	 */
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "spouseInfo")
+	private java.util.List<com.sap.saap.audit.entitys.Addres> address = new java.util.ArrayList<com.sap.saap.audit.entitys.Addres>();
+	/** 
+	 * @generated
+	 * @describe 是否是临时保存
+	 * @display 是否是临时保存
+	 */
+	@Column
+	private java.lang.Boolean isFlag;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Boolean isDelete = false;
+	/** 
+	 * @generated
+	 * 
+	 * @describe 职位备注
+	 * @display 职位备注
+	 */
+	@Column
+	private java.lang.String postRemark;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getIDNumber() {
+		return this.IDNumber;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIDNumber(java.lang.String value) {
+		this.IDNumber = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getIDType() {
+		return this.IDType;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIDType(java.lang.String value) {
+		this.IDType = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getName() {
+		return this.name;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setName(java.lang.String value) {
+		this.name = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getPost() {
+		return this.post;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPost(java.lang.String value) {
+		this.post = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCheckBill() {
+		return this.checkBill;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCheckBill(java.lang.String value) {
+		this.checkBill = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getBaseSalary() {
+		return this.baseSalary;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setBaseSalary(java.lang.String value) {
+		this.baseSalary = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSalaryStyle() {
+		return this.salaryStyle;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSalaryStyle(java.lang.String value) {
+		this.salaryStyle = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSubsidy() {
+		return this.subsidy;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSubsidy(java.lang.String value) {
+		this.subsidy = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSubsidyStyle() {
+		return this.subsidyStyle;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSubsidyStyle(java.lang.String value) {
+		this.subsidyStyle = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCompanyName() {
+		return this.companyName;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCompanyName(java.lang.String value) {
+		this.companyName = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getServiceMonth() {
+		return this.serviceMonth;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setServiceMonth(java.lang.String value) {
+		this.serviceMonth = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getServiceYear() {
+		return this.serviceYear;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setServiceYear(java.lang.String value) {
+		this.serviceYear = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getIndustry() {
+		return this.industry;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIndustry(java.lang.String value) {
+		this.industry = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getRelatedIndustries() {
+		return this.relatedIndustries;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRelatedIndustries(java.lang.String value) {
+		this.relatedIndustries = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.Addres> getAddress() {
+		return this.address;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAddress(java.util.List<com.sap.saap.audit.entitys.Addres> value) {
+		this.address = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsFlag() {
+		return this.isFlag;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsFlag(java.lang.Boolean value) {
+		this.isFlag = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.String getPostRemark() {
+		return this.postRemark;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setPostRemark(java.lang.String value) {
+		this.postRemark = value;
+	}
+}

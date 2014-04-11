@@ -1,0 +1,379 @@
+package com.sap.saap.audit.entitys;
+
+import java.io.Serializable;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated
+ */
+@Table(name = "OffshootBank")
+@SuppressWarnings("serial")
+@Entity
+public class OffshootBank implements Serializable, IEntity {
+	/** 
+	 * @generated
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe      分行代码
+	 * @display  分行代码
+	 */
+	@Column(length = 255)
+	private java.lang.String code;
+	/** 
+	 * @generated
+	 * @describe  分行名称
+	 * @display  分行名称
+	 */
+	@Column(length = 255)
+	private java.lang.String name;
+	/** 
+	 * @generated
+	 */
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "offshootBank")
+	private java.util.List<com.sap.saap.audit.entitys.Department> departments = new java.util.ArrayList<com.sap.saap.audit.entitys.Department>();
+	/** 
+	 * @generated
+	 * @describe 备注
+	 * @display 备注
+	 */
+	@Column
+	private java.lang.String remark;
+	/** 
+	 * @generated
+	 */
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "offshootBank")
+	private java.util.List<com.sap.saap.audit.entitys.LoanOrder> loanOrders = new java.util.ArrayList<com.sap.saap.audit.entitys.LoanOrder>();
+	/** 
+	 * @generated
+	 * @describe 分行地址
+	 * @display 分行地址
+	 */
+	@Column
+	private java.lang.String address;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Boolean isDelete = false;
+	/** 
+	 * @generated
+	 * 
+	 * @describe 是否是总行
+	 * @display 是否是总行
+	 */
+	@Column
+	private java.lang.Boolean isHeadquarters;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@OneToMany(fetch = FetchType.EAGER, cascade = { CascadeType.ALL }, mappedBy = "auditingOffshootBank")
+	private java.util.List<com.sap.saap.audit.entitys.LoanOrder> auditingLoanOrders = new java.util.ArrayList<com.sap.saap.audit.entitys.LoanOrder>();
+	/** 
+	 * @generated
+	 * 
+	 * @describe 签约订单
+	 */
+	@OneToMany(fetch = FetchType.EAGER, cascade = { CascadeType.ALL }, mappedBy = "signatureOffshootBank")
+	private java.util.List<com.sap.saap.audit.entitys.LoanOrder> signatureLoanOrders = new java.util.ArrayList<com.sap.saap.audit.entitys.LoanOrder>();
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCode() {
+		return this.code;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCode(java.lang.String value) {
+		this.code = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getName() {
+		return this.name;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setName(java.lang.String value) {
+		this.name = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.Department> getDepartments() {
+		return this.departments;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setDepartments(
+			java.util.List<com.sap.saap.audit.entitys.Department> value) {
+		this.departments = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getRemark() {
+		return this.remark;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRemark(java.lang.String value) {
+		this.remark = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.LoanOrder> getLoanOrders() {
+		return this.loanOrders;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLoanOrders(
+			java.util.List<com.sap.saap.audit.entitys.LoanOrder> value) {
+		this.loanOrders = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getAddress() {
+		return this.address;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAddress(java.lang.String value) {
+		this.address = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsHeadquarters() {
+		return this.isHeadquarters;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsHeadquarters(java.lang.Boolean value) {
+		this.isHeadquarters = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.LoanOrder> getAuditingLoanOrders() {
+		return this.auditingLoanOrders;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setAuditingLoanOrders(
+			java.util.List<com.sap.saap.audit.entitys.LoanOrder> value) {
+		this.auditingLoanOrders = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.LoanOrder> getSignatureLoanOrders() {
+		return this.signatureLoanOrders;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setSignatureLoanOrders(
+			java.util.List<com.sap.saap.audit.entitys.LoanOrder> value) {
+		this.signatureLoanOrders = value;
+	}
+}

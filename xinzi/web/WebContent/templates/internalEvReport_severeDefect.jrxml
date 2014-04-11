@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="internalEvReport_severeDefect" language="groovy" pageWidth="397" pageHeight="802" columnWidth="238" leftMargin="0" rightMargin="159" topMargin="0" bottomMargin="0" uuid="c7c9d0ea-8c5d-4945-a906-eec18c49cd13">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="conclusion" class="java.lang.String"/>
+	<field name="business" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f1b74da6-f1c5-4f19-8151-62529da7f305" x="10" y="8" width="62" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[业务流程：]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="d989f0f5-e023-44ec-96db-631a08bc121e" x="72" y="8" width="117" height="20"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{business}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="22cd1588-a2d8-464c-b711-b369a7fa41d4" x="192" y="8" width="70" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[审计缺陷：]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="c6df9047-d179-419d-9929-9399ddf7ed6d" x="264" y="8" width="128" height="20"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{conclusion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

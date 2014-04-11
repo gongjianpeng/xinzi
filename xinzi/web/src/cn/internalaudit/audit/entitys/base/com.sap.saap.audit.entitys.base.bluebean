@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.apusic.bluebean.designer.model:EntityDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.apusic.bluebean.designer.model="http:///com/apusic/bluebean/designer/model.ecore">
+  <graphicalElements xsi:type="com.apusic.bluebean.designer.model:Entity" package="com.sap.saap.audit.entitys.base" name="BusinessMode" table="BusinessMode"/>
+  <graphicalElements xsi:type="com.apusic.bluebean.designer.model:Entity" package="com.sap.saap.audit.entitys.base" name="TargetAim" table="TargetAim"/>
+  <graphicalElements xsi:type="com.apusic.bluebean.designer.model:Entity" package="com.sap.saap.audit.entitys.base" name="TargetType" table="TargetType"/>
+</com.apusic.bluebean.designer.model:EntityDiagram>

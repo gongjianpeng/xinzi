@@ -1,0 +1,337 @@
+<!DOCTYPE html >
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+		<title>典尚DIY定制模块 beta v2.24</title>
+		<link href="css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="css/jquery.rollbar.css" />
+		<link rel="stylesheet" href="base/jquery.ui.all.css">
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+		<script type="text/javascript" src="js/jquery.rollbar.min.js"></script>
+		<script type="text/javascript" src="js/jquery.select.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.core.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.accordion.js"></script>
+		<script type="text/javascript" src="js/jquery.adslider.js"></script>
+		<!--DIY Moduler -->
+		<script type="text/javascript" src="js/lib/easeljs-0.7.0.min.js"></script>
+		<script type="text/javascript" src="js/diy/main.js"></script>
+		<script type="text/javascript" src="js/diy/cpanel.js"></script>
+		<script type="text/javascript" src="js/diy/data.js"></script>
+		<script type="text/javascript" src="js/diy/material.js"></script>
+		<script type="text/javascript" src="js/diy/ui.js"></script>
+		<script type="text/javascript" src="js/diy/core.js"></script>
+		<script type="text/javascript" src="js/diy/canvas.js"></script>
+		<script type="text/javascript">
+	function addFavorite(){
+	      var title = document.title;
+	      var URL = document.URL;
+	      try {
+	           window.external.addFavorite(URL, title);          //ie
+	      } catch(e) {
+	           try {
+	               window.sidebar.addPanel(title, URL, "");     //firefox
+	           } catch(e) {
+	                 alert("加入收藏，请使用Ctrl+D进行添加");     //chrome opera safari
+	           }
+	      }
+	}
+</script>
+<script type="text/javascript">
+		$(function(){
+			var loginperson=$('#loginperson').val();
+			
+			if(loginperson==null||loginperson==""){
+			
+			window.location='j_spring_security_logout';
+			return false;
+			
+			}else{
+			
+			return true;
+			}
+		})
+	</script>
+	</head>
+	<body class="diybg">
+	
+	  <input id="loginperson" value="${loginInfo.loginPerson.name}" type="hidden" />
+		<div class="details clearfix">
+			<div class="d_header">
+				<div class="d_logo fl">
+					<a href="#"><img src="images/DIY2_logo.png" /></a>
+				</div>
+				<div class="d_r fr">
+					<!-- <em><img src="images/DIY2_05.png" class="fl" /><a href="#">购物车</a></em>  -->
+					<em class="m_l_30"><img src="images/DIY2_08.png" class="fl" />	<a onclick="addFavorite();" style="cursor: pointer;">收藏夹</a></em>
+				</div>
+			</div>
+			<div class="d_Main  clearfix">
+				<div class="M_top clearfix">
+					<div class="Door_detail fl">
+						<h3>门业DIY</h3>
+					</div>
+					<div class="Door_chose fr">
+						<div class="deliv fr">
+							<input type="hidden" name="deliv" />
+							<div class="shtitle fl">
+								<em>非标门</em>
+								<div class="selectauto">
+									<a class="cur" href="javascript:void(0)" Svalue="01">不锈钢门</a>
+									<a href="javascript:void(0)" Svalue="02">花式门</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="door_c">
+					<div class="detail_body">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="60">品牌</td>
+								<td width="140">
+								<input id="brand" name="" type="text"  class="gray_no" value="" onmouseover="this.select()"  />
+								</td>
+								<td width="60">产品编号</td>
+								<td width="140">
+								<input id="id" name="" type="text"  class="gray_no" value="" onmouseover="this.select()"  />
+								</td>
+								<td width="60">门型</td>
+								<td width="140">
+								<input id="model" name="" type="text"  class="gray_no" value="" onmouseover="this.select()"  />
+								</td>
+								<td width="40">尺寸</td>
+								<td width="200">
+									宽：<input id="size_w" name="" type="text" class="gray_yes" value="1000" onmouseover="this.select()" style="width:55px;"/><i>mm</i> &nbsp;&nbsp;高：
+										<input id="size_h" name="" type="text" class="gray_yes" value="2350" onmouseover="this.select()" style="width:55px;" /><i>mm</i>
+										
+								</td>
+							</tr>
+							<tr>
+								<td>樘数</td>
+								<td width="140">
+								<input id="quantity" name="" type="text" class="gray_yes" value="" onmouseover="this.select()"  />
+								</td>
+								<td>门体高</td>
+								<td width="140">
+								<input id="height" name="" type="text" class="gray_yes" value="" onmouseover="this.select()" style="width:135px;" /><i>mm</i>
+								</td>
+								<td>墙体厚度</td>
+								<td width="140">
+								<input id="thickness" name="" type="text" class="gray_yes" value="" onmouseover="this.select()" style="width:135px;" /><i>mm</i>
+								</td>
+								<td>&nbsp;</td>
+								<td>
+								<input id="submitInfo" name="" type="button" value="确 定" class="qd_btn popClick fr"/>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="pack_up">
+						<em>收起</em>
+					</div>
+				</div>
+				<div class="door_content">
+					<div id="cpanel" class="c_right clearfix fr">
+						<div id="accordion">
+							<!--<h3><em class="fl"><i>1</i><b>款式</b></em><em class="fr p_r_30"><a href="javascript:void(0)">456</a></em></h3>
+							<div class="d_s_body">
+							<ul class="styles_body">
+							<li class="clearfix">
+							<i class="fl p_r_5">门面款式</i>
+							<div class="deliv m_r_14 fl">
+							<input type="hidden" name="deliv" />
+							<div class="shtitle styles_c fl">
+							<em>压花</em>
+							<div class="selectauto">
+							<a class="cur" href="javascript:void(0)" Svalue="01">镂花</a>
+							<a href="javascript:void(0)" Svalue="02">镶嵌式花纹</a>
+							<a href="javascript:void(0)" Svalue="03">镶嵌式花纹</a>
+							<a href="javascript:void(0)" Svalue="04">镶嵌式花纹</a>
+							<a href="javascript:void(0)" Svalue="05">镶嵌式花纹</a>
+							<a href="javascript:void(0)" Svalue="06">镶嵌式花纹</a>
+							<a href="javascript:void(0)" Svalue="07">镶嵌式花纹</a>
+							</div>
+							</div>
+							</div>
+							<input name="" type="text" class="gray_yes w_120 fl"value="月满西楼" onmouseover="this.select()" />
+							<input name="" type="button" value="确定" class="qd_btn02 fr"/>
+							</li>
+							<li class="clearfix">
+							<i class="fl p_r_5">玻璃</i>
+							<div class="deliv m_r_14 fl">
+							<input type="hidden" name="deliv" />
+							<div class="shtitle styles_c fl">
+							<em>艺术</em>
+							<div class="selectauto">
+							<a class="cur" href="javascript:void(0)" Svalue="01">艺术2</a>
+							<a href="javascript:void(0)" Svalue="02">艺术3</a>
+							</div>
+							</div>
+							</div>
+							</li>
+							<li class="clearfix">
+							<i class="fl p_r_5">子门款式</i>
+							<div class="deliv m_r_14 fl">
+							<input type="hidden" name="deliv" />
+							<div class="shtitle styles_c fl">
+							<em>压花</em>
+							<div class="selectauto">
+							<a class="cur" href="javascript:void(0)" Svalue="01">嵌花</a>
+							<a href="javascript:void(0)" Svalue="02">镂空花纹</a>
+							</div>
+							</div>
+							</div>
+							<input name="" type="text" class="gray_yes w_120 fl"value="闭月羞花" onmouseover="this.select()" />
+							<input name="" type="button" value="确定" class="qd_btn02 fr"/>
+							</li>
+							</ul>
+							</div>-->
+
+							<!--<h3><em class="fl"><i>2</i><b>气窗款式</b></em></h3>
+							<div class="d_s_body">
+							<ul class="styles_body hide">
+							<li class="clearfix">
+							气窗款式
+							</li>
+							</ul>
+							</div>
+
+							<h3><em class="fl"><i>3</i><b>边框样式</b></em></h3>
+							<div class="d_s_body">
+							<ul class="styles_body hide">
+							<li class="clearfix">
+							边框样式
+							</li>
+							</ul>
+							</div>
+
+							<h3><em class="fl"><i>4</i><b>色板</b></em></h3>
+							<div class="d_s_body">
+							<ul class="styles_body hide">
+							<li class="clearfix">
+							色板
+							</li>
+							</ul>
+							</div>-->
+
+						</div>
+						<div class="price_box m_t_10">
+							<span>
+								<input id="calcBtn" name="" type="button" value="计算价格" class="price_btn"/>
+							</span>
+							<div id="calculator" class="js_price" style="display: none;">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0" class="price">
+									<tr>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>数量</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td><em id="price1"></em></td>
+										<td>×</td>
+										<td>
+										<i id="pnum"></i>
+										</td>
+										<td>=</td>
+										<td><em class="f_24" id="price2"></em></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<span class="Bc_btns"><i class="bc_btn"><a id="orderBtn" href="http://localhost:8080/xinzi/pages/company/getdiyProductOrder.do">立即下单</a></i><i class="bc_btn" style="margin-right:-8px;"><a id="addcartBtn" href="http://localhost:8080/xinzi/pages/company/getdiyProductaddCat.do?operation=add">加入购物车</a></i></span>
+					</div>
+					<div class="c_left fl">
+						<div id="category" class="c_left_body">
+							<div class="door">
+								<em><a id="fullscreenBtn" class="door_btn" href="javascript:void(0)">全屏显示</a> &nbsp;<a id="bgBtn" class="door_btn" href="javascript:void(0)">切换背景</a> </em>
+                                <div class="door_bg">
+									<div class="door_imgs">
+										<canvas id="demoCanvas" width="550" height="500" >
+											demo
+										</canvas>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+							<div id="material">
+								<div class="jqzosub clearfix">
+									<div id="View_list">
+										<ul class="manuList" id="imgFrame">
+											<!--<li class="li_cur">1类花枝</li>
+											<li>2类花枝</li>
+											<li>3类花枝</li>
+											<li>4类花枝</li>
+											<li>5类花枝</li>
+											<li>6类花枝</li>
+											<li>7类花枝</li>
+											<li>8类花枝</li>
+											<li>9类花枝</li>
+											<li>12类花枝</li>
+											<li>12类花枝</li>
+											<li>10类花枝</li>
+											<li>11类花枝</li>
+											<li>12类花枝</li>-->
+										</ul>
+									</div>
+									<span id="prev_btn"><a href="javascript:void(0)"></a></span>
+									<span id="next_btn"><a href="javascript:void(0)"></a></span>
+								</div>
+								<div class="view">
+									<h3>请选择一款样式</h3>
+									<div id="example">
+										<div class="imga">
+											<ul>
+												<!--<li class="d_img_cur"><img src="images/d_img1.gif" />
+                                                 <br />
+                                                <em>拉花镂空双开门</em>
+												</li>
+												<li><img src="images/d_img2.gif" />
+												</li>
+												<li><img src="images/d_img4.gif" />
+												</li>
+												<li><img src="images/d_img3.gif" />
+												</li>
+												<li><img src="images/d_img5.gif" />
+												</li>
+												<li><img src="images/d_img2.gif" />
+												</li>
+												<li><img src="images/d_img4.gif" />
+												</li>
+												<li><img src="images/d_img3.gif" />
+												</li>
+												<li><img src="images/d_img5.gif" />
+												</li>-->
+
+											</ul>
+										</div>
+										
+									</div>
+								</div>
+                                <div style="position:absolute; top:200px; height:20px;overflow:hidden; color:#fff;">none</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+                
+			</div>
+
+		</div>
+		<!--弹出框
+
+		<div class="dialogs"></div>
+		<div class="dialog-box">
+			<em>加载中...<em>
+		</div>
+		-->
+
+	</body>
+</html>

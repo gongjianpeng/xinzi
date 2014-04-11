@@ -1,0 +1,443 @@
+package com.sap.saap.audit.entitys;
+
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated合同实体
+ */
+@Table(name = "Contract")
+@SuppressWarnings("serial")
+@Entity
+public class Contract implements Serializable, IEntity {
+	/** 
+	 * @generated
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe 合同编号
+	 * @display 合同编号
+	 */
+	@Column
+	private java.lang.String contractNumber;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Boolean isDelete = false;
+	/** 
+	 * @generated
+	 * @describe 贷款金额
+	 * @display 贷款金额
+	 */
+	@Column
+	private java.lang.Double loanMoney;
+	/** 
+	 * @generated
+	 * @describe 贷款期限
+	 * @display 贷款期限
+	 */
+	@Column
+	private java.lang.Integer timeLimit;
+	/** 
+	 * @generated
+	 * @describe 贷款月利率
+	 * @display 贷款月利率
+	 */
+	@Column
+	private java.lang.Double lendingRate;
+	/** 
+	 * @generated
+	 * @describe 贷款手续费率
+	 * @display 贷款手续费率
+	 */
+	@Column
+	private java.lang.Double poundageRate;
+	/** 
+	 * @generated
+	 * @describe 贷款手续费
+	 * @display 贷款手续费
+	 */
+	@Column
+	private java.lang.Double poundage;
+	/** 
+	 * @generated
+	 * @describe 延迟还款费率
+	 * @display 延迟还款费率
+	 */
+	@Column
+	private java.lang.Double deferRate;
+	/** 
+	 * @generated
+	 * @describe 服务管理费率
+	 * @display 服务管理费率
+	 */
+	@Column
+	private java.lang.Double managerFeeRate;
+	/** 
+	 * @generated
+	 * @describe 月管理费金额
+	 * @display 月管理费金额
+	 */
+	@Column
+	private java.lang.Double managerFeeMonth;
+	/** 
+	 * @generated
+	 * @describe 每期还款额
+	 * @display 每期还款额
+	 */
+	@Column
+	private java.lang.Double everyGiveBackMoney;
+	/** 
+	 * @generated
+	 * @describe 合同起始日
+	 * @display 合同起始日
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date startDate;
+	/** 
+	 * @generated
+	 * @describe 合同签署日期
+	 * @display 合同签署日期
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date affixToDate;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "loanorder")
+	private com.sap.saap.audit.entitys.LoanOrder loanOrder;
+
+	public java.lang.Long getId() {
+		return id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getContractNumber() {
+		return this.contractNumber;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setContractNumber(java.lang.String value) {
+		this.contractNumber = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getLoanMoney() {
+		return this.loanMoney;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLoanMoney(java.lang.Double value) {
+		this.loanMoney = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getTimeLimit() {
+		return this.timeLimit;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setTimeLimit(java.lang.Integer value) {
+		this.timeLimit = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getLendingRate() {
+		return this.lendingRate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLendingRate(java.lang.Double value) {
+		this.lendingRate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getPoundageRate() {
+		return this.poundageRate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPoundageRate(java.lang.Double value) {
+		this.poundageRate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getPoundage() {
+		return this.poundage;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPoundage(java.lang.Double value) {
+		this.poundage = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getDeferRate() {
+		return this.deferRate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setDeferRate(java.lang.Double value) {
+		this.deferRate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getManagerFeeRate() {
+		return this.managerFeeRate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setManagerFeeRate(java.lang.Double value) {
+		this.managerFeeRate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getManagerFeeMonth() {
+		return this.managerFeeMonth;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setManagerFeeMonth(java.lang.Double value) {
+		this.managerFeeMonth = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getEveryGiveBackMoney() {
+		return this.everyGiveBackMoney;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setEveryGiveBackMoney(java.lang.Double value) {
+		this.everyGiveBackMoney = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getStartDate() {
+		return this.startDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setStartDate(java.util.Date value) {
+		this.startDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getAffixToDate() {
+		return this.affixToDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAffixToDate(java.util.Date value) {
+		this.affixToDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.LoanOrder getLoanOrder() {
+		return this.loanOrder;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLoanOrder(com.sap.saap.audit.entitys.LoanOrder value) {
+		this.loanOrder = value;
+	}
+}

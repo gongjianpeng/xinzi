@@ -1,0 +1,826 @@
+package com.sap.saap.audit.entitys;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated 
+ * 职业信息
+ */
+@Table(name = "JobInfo")
+@SuppressWarnings("serial")
+@Entity
+public class JobInfo implements java.io.Serializable, IEntity {
+	/** 
+	 * @generated
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe  基本月薪
+	 * @display  基本月薪
+	 */
+	@Column(length = 255)
+	private java.lang.Double basicSalary;
+	/** 
+	 * @generated
+	 * @describe  基本月薪发放方式
+	 * @display  基本月薪发放方式
+	 */
+	@Column(length = 255)
+	private java.lang.String salaryStyle;
+	/** 
+	 * @generated
+	 * @describe  补贴
+	 * @display  补贴
+	 */
+	@Column(length = 255)
+	private java.lang.Double subsidy;
+	/** 
+	 * @generated
+	 * @describe  补贴发放方式
+	 * @display  补贴发放方式
+	 */
+	@Column(length = 255)
+	private java.lang.String subsidyStyle;
+	/** 
+	 * @generated
+	 * @describe  加班费
+	 * @display  加班费
+	 */
+	@Column(length = 255)
+	private java.lang.Double overTime;
+	/** 
+	 * @generated
+	 * @describe  加班费发放方式
+	 * @display  加班费发放方式
+	 */
+	@Column(length = 255)
+	private java.lang.String overTimeStyle;
+	/** 
+	 * @generated
+	 * @describe  收入
+	 * @display  收入
+	 */
+	@Column(length = 255)
+	private java.lang.Double income;
+	/** 
+	 * @generated
+	 * @describe  收入发放方式
+	 * @display  收入发放方式
+	 */
+	@Column(length = 255)
+	private java.lang.String incomeStyle;
+	/** 
+	 * @generated
+	 * @describe  总收入
+	 * @display  总收入
+	 */
+	@Column(length = 255)
+	private java.lang.Double totalIncome;
+	/** 
+	 * @generated
+	 * @describe  每月社保支出
+	 * @display  每月社保支出
+	 */
+	@Column(length = 255)
+	private java.lang.Double socialSecurityExpenditure;
+	/** 
+	 * @generated
+	 * @describe  每月税金支出
+	 * @display  每月税金支出
+	 */
+	@Column(length = 255)
+	private java.lang.Double taxExpenditures;
+	/** 
+	 * @generated
+	 * @describe  社保编号
+	 * @display  社保编号
+	 */
+	@Column(length = 255)
+	private java.lang.String socialSecurityNumber;
+	/** 
+	 * @generated
+	 * @describe  工商登记号
+	 * @display  工商登记号
+	 */
+	@Column(length = 255)
+	private java.lang.String businessRegNumber;
+	/** 
+	 * @generated
+	 * @describe  国税登记号
+	 * @display  国税登记号
+	 */
+	@Column(length = 255)
+	private java.lang.String taxRegNumber;
+	/** 
+	 * @generated
+	 * @describe  单位名称
+	 * @display  单位名称
+	 */
+	@Column(length = 255)
+	private java.lang.String companyName;
+	/** 
+	 * @generated
+	 * @describe  员工人数
+	 * @display  员工人数
+	 */
+	@Column(length = 255)
+	private java.lang.Integer employeesCount;
+	/** 
+	 * @generated
+	 * @describe  单位性质
+	 * @display  单位性质
+	 */
+	@Column(length = 255)
+	private java.lang.String companyNature;
+	/** 
+	 * @generated
+	 * @describe  行业
+	 * @display  行业
+	 */
+	@Column(length = 255)
+	private java.lang.String industry;
+	/** 
+	 * @generated
+	 * @describe  相关行业
+	 * @display  相关行业
+	 */
+	@Column(length = 255)
+	private java.lang.String relatedIndustries;
+	/** 
+	 * @generated
+	 * @describe  职位类别
+	 * @display  职位类别
+	 */
+	@Column(length = 255)
+	private java.lang.String postType;
+	/** 
+	 * @generated
+	 * @describe  职位
+	 * @display  职位
+	 */
+	@Column(length = 255)
+	private java.lang.String post;
+	/** 
+	 * @generated
+	 * @describe  职位备注
+	 * @display  职位备注
+	 */
+	@Column(length = 255)
+	private java.lang.String postRemark;
+	/** 
+	 * @generated
+	 * @describe  服务年
+	 * @display  服务年
+	 */
+	@Column(length = 255)
+	private java.lang.String serviceYear;
+	/** 
+	 * @generated
+	 * @describe  服务月
+	 * @display  服务月
+	 */
+	@Column(length = 255)
+	private java.lang.String serviceMonth;
+	/** 
+	 * @generated
+	 * @describe  专业年 
+	 * @display  专业年
+	 */
+	@Column(length = 255)
+	private java.lang.String specialtyYear;
+	/** 
+	 * @generated
+	 * @describe  专业月
+	 * @display  专业月
+	 */
+	@Column(length = 255)
+	private java.lang.String specialtyMonth;
+	/** 
+	 * @generated
+	 * @describe  社/劳保
+	 * @display  社/劳保
+	 */
+	@Column(length = 255)
+	private java.lang.String laborProtection;
+	/** 
+	 * @generated
+	 * @describe  商业成立日期
+	 * @display  商业成立日期
+	 */
+	@Column(length = 255)
+	private java.lang.String dateOfEstablishment;
+	/** 
+	 * @generated
+	 */
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "jobInfo")
+	private java.util.List<com.sap.saap.audit.entitys.Addres> address = new java.util.ArrayList<com.sap.saap.audit.entitys.Addres>();
+	/** 
+	 * @generated
+	 * @describe 是否是临时保存
+	 * @display 是否是临时保存
+	 */
+	@Column
+	private java.lang.Boolean isFlag;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Boolean isDelete = false;
+	/** 
+	 * @generated
+	 * 
+	 * @describe 部门
+	 * @display 部门
+	 */
+	@Column
+	private java.lang.String department;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getBasicSalary() {
+		return this.basicSalary;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setBasicSalary(java.lang.Double value) {
+		this.basicSalary = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSalaryStyle() {
+		return this.salaryStyle;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSalaryStyle(java.lang.String value) {
+		this.salaryStyle = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getSubsidy() {
+		return this.subsidy;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSubsidy(java.lang.Double value) {
+		this.subsidy = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSubsidyStyle() {
+		return this.subsidyStyle;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSubsidyStyle(java.lang.String value) {
+		this.subsidyStyle = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getOverTime() {
+		return this.overTime;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOverTime(java.lang.Double value) {
+		this.overTime = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getOverTimeStyle() {
+		return this.overTimeStyle;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOverTimeStyle(java.lang.String value) {
+		this.overTimeStyle = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getIncome() {
+		return this.income;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIncome(java.lang.Double value) {
+		this.income = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getIncomeStyle() {
+		return this.incomeStyle;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIncomeStyle(java.lang.String value) {
+		this.incomeStyle = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getTotalIncome() {
+		return this.totalIncome;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setTotalIncome(java.lang.Double value) {
+		this.totalIncome = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getSocialSecurityExpenditure() {
+		return this.socialSecurityExpenditure;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSocialSecurityExpenditure(java.lang.Double value) {
+		this.socialSecurityExpenditure = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getTaxExpenditures() {
+		return this.taxExpenditures;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setTaxExpenditures(java.lang.Double value) {
+		this.taxExpenditures = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSocialSecurityNumber() {
+		return this.socialSecurityNumber;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSocialSecurityNumber(java.lang.String value) {
+		this.socialSecurityNumber = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getBusinessRegNumber() {
+		return this.businessRegNumber;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setBusinessRegNumber(java.lang.String value) {
+		this.businessRegNumber = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getTaxRegNumber() {
+		return this.taxRegNumber;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setTaxRegNumber(java.lang.String value) {
+		this.taxRegNumber = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCompanyName() {
+		return this.companyName;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCompanyName(java.lang.String value) {
+		this.companyName = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getEmployeesCount() {
+		return this.employeesCount;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setEmployeesCount(java.lang.Integer value) {
+		this.employeesCount = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCompanyNature() {
+		return this.companyNature;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCompanyNature(java.lang.String value) {
+		this.companyNature = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getIndustry() {
+		return this.industry;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIndustry(java.lang.String value) {
+		this.industry = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getRelatedIndustries() {
+		return this.relatedIndustries;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRelatedIndustries(java.lang.String value) {
+		this.relatedIndustries = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getPostType() {
+		return this.postType;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPostType(java.lang.String value) {
+		this.postType = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getPost() {
+		return this.post;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPost(java.lang.String value) {
+		this.post = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getPostRemark() {
+		return this.postRemark;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPostRemark(java.lang.String value) {
+		this.postRemark = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getServiceYear() {
+		return this.serviceYear;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setServiceYear(java.lang.String value) {
+		this.serviceYear = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getServiceMonth() {
+		return this.serviceMonth;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setServiceMonth(java.lang.String value) {
+		this.serviceMonth = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSpecialtyYear() {
+		return this.specialtyYear;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSpecialtyYear(java.lang.String value) {
+		this.specialtyYear = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSpecialtyMonth() {
+		return this.specialtyMonth;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSpecialtyMonth(java.lang.String value) {
+		this.specialtyMonth = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLaborProtection() {
+		return this.laborProtection;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLaborProtection(java.lang.String value) {
+		this.laborProtection = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getDateOfEstablishment() {
+		return this.dateOfEstablishment;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setDateOfEstablishment(java.lang.String value) {
+		this.dateOfEstablishment = value;
+	}
+
+	public java.lang.Long getId() {
+		return id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.Addres> getAddress() {
+		return this.address;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAddress(java.util.List<com.sap.saap.audit.entitys.Addres> value) {
+		this.address = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsFlag() {
+		return this.isFlag;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsFlag(java.lang.Boolean value) {
+		this.isFlag = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.String getDepartment() {
+		return this.department;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setDepartment(java.lang.String value) {
+		this.department = value;
+	}
+}

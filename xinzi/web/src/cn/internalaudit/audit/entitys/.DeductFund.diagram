@@ -1,0 +1,367 @@
+package com.sap.saap.audit.entitys;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated 
+ * 扣款信息
+ */
+@Table(name = "DeductFund")
+@SuppressWarnings("serial")
+@Entity
+public class DeductFund implements java.io.Serializable, IEntity {
+	/** 
+	 * @generated
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe  首次扣款日期
+	 * @display  首次扣款日期
+	 */
+	@Column(length = 255)
+	@Temporal(TemporalType.TIMESTAMP)
+	private java.util.Date firstDeducDate;
+	/** 
+	 * @generated
+	 * @describe  扣款日
+	 * @display  扣款日
+	 */
+	@Column(length = 255)
+	private java.lang.Integer deducFundtDay;
+	/** 
+	 * @generated
+	 * @describe  合同起始日
+	 * @display  合同起始日
+	 */
+	@Column(length = 255)
+	@Temporal(TemporalType.TIMESTAMP)
+	private java.util.Date contractEffectiveDate;
+	/** 
+	 * @generated
+	 * @describe  发薪日
+	 * @display  发薪日
+	 */
+	@Column(length = 255)
+	private java.lang.Integer payoffDay;
+	/** 
+	 * @generated
+	 * @describe  还款方式
+	 * @display  还款方式
+	 */
+	@Column(length = 255)
+	private java.lang.String giveBackStyle;
+	/** 
+	 * @generated
+	 * @describe  扣款帐号
+	 * @display  扣款帐号
+	 */
+	@Column(length = 255)
+	private java.lang.String chargeAccount;
+	/** 
+	 * @generated
+	 * @describe  扣款帐号银行
+	 * @display  扣款帐号银行
+	 */
+	@Column(length = 255)
+	private java.lang.String chargeBank;
+	/** 
+	 * @generated
+	 * @describe  扣款帐号户名
+	 * @display  扣款帐号户名
+	 */
+	@Column(length = 255)
+	private java.lang.String chargeName;
+	/** 
+	 * @generated
+	 * @describe  扣款帐户类型
+	 * @display  扣款帐户类型
+	 */
+	@Column(length = 255)
+	private java.lang.String chargeAccountType;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.Boolean isDelete;
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getFirstDeducDate() {
+		return this.firstDeducDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setFirstDeducDate(java.util.Date value) {
+		this.firstDeducDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getDeducFundtDay() {
+		return this.deducFundtDay;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setDeducFundtDay(java.lang.Integer value) {
+		this.deducFundtDay = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getContractEffectiveDate() {
+		return this.contractEffectiveDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setContractEffectiveDate(java.util.Date value) {
+		this.contractEffectiveDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getPayoffDay() {
+		return this.payoffDay;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPayoffDay(java.lang.Integer value) {
+		this.payoffDay = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getGiveBackStyle() {
+		return this.giveBackStyle;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setGiveBackStyle(java.lang.String value) {
+		this.giveBackStyle = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getChargeAccount() {
+		return this.chargeAccount;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setChargeAccount(java.lang.String value) {
+		this.chargeAccount = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getChargeBank() {
+		return this.chargeBank;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setChargeBank(java.lang.String value) {
+		this.chargeBank = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getChargeName() {
+		return this.chargeName;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setChargeName(java.lang.String value) {
+		this.chargeName = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getChargeAccountType() {
+		return this.chargeAccountType;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setChargeAccountType(java.lang.String value) {
+		this.chargeAccountType = value;
+	}
+
+	public java.lang.Long getId() {
+		return id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+}

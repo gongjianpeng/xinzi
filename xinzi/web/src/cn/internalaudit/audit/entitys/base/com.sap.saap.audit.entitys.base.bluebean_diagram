@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.apusic.bluebean.designer.model="http:///com/apusic/bluebean/designer/model.ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_aD4LkDg-EeGaip2Sz0Unbw" type="BlueBean" name="com.sap.saap.audit.entitys.base.bluebean_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_cNVycDg-EeGaip2Sz0Unbw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_cNVydjg-EeGaip2Sz0Unbw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_cNVydzg-EeGaip2Sz0Unbw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_cNVyeDg-EeGaip2Sz0Unbw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_cNVyeTg-EeGaip2Sz0Unbw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_cNVyejg-EeGaip2Sz0Unbw"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_cNVycTg-EeGaip2Sz0Unbw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_cNVycjg-EeGaip2Sz0Unbw"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_cNVyczg-EeGaip2Sz0Unbw"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_cNVydDg-EeGaip2Sz0Unbw"/>
+    <element xmi:type="com.apusic.bluebean.designer.model:Entity" href="com.sap.saap.audit.entitys.base.bluebean#//@graphicalElements.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cNVydTg-EeGaip2Sz0Unbw" x="95" y="133"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_5Ik9QDg_EeGaip2Sz0Unbw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_5Ik9Rjg_EeGaip2Sz0Unbw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_5Ik9Rzg_EeGaip2Sz0Unbw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_5Ik9SDg_EeGaip2Sz0Unbw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5Ik9STg_EeGaip2Sz0Unbw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5Ik9Sjg_EeGaip2Sz0Unbw"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5Ik9QTg_EeGaip2Sz0Unbw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_5Ik9Qjg_EeGaip2Sz0Unbw"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_5Ik9Qzg_EeGaip2Sz0Unbw"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_5Ik9RDg_EeGaip2Sz0Unbw"/>
+    <element xmi:type="com.apusic.bluebean.designer.model:Entity" href="com.sap.saap.audit.entitys.base.bluebean#//@graphicalElements.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Ik9RTg_EeGaip2Sz0Unbw" x="228" y="133"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_K8YrMDhCEeG6M5mIsa0RtA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_K8YrNjhCEeG6M5mIsa0RtA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_K8h1IDhCEeG6M5mIsa0RtA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_K8h1IThCEeG6M5mIsa0RtA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_K8h1IjhCEeG6M5mIsa0RtA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_K8h1IzhCEeG6M5mIsa0RtA"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_K8YrMThCEeG6M5mIsa0RtA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_K8YrMjhCEeG6M5mIsa0RtA"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_K8YrMzhCEeG6M5mIsa0RtA"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_K8YrNDhCEeG6M5mIsa0RtA"/>
+    <element xmi:type="com.apusic.bluebean.designer.model:Entity" href="com.sap.saap.audit.entitys.base.bluebean#//@graphicalElements.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K8YrNThCEeG6M5mIsa0RtA" x="380" y="152"/>
+  </children>
+  <styles xmi:type="notation:PageStyle" xmi:id="_aD4LkTg-EeGaip2Sz0Unbw"/>
+  <styles xmi:type="notation:GuideStyle" xmi:id="_aD4Lkjg-EeGaip2Sz0Unbw"/>
+  <styles xmi:type="notation:DescriptionStyle" xmi:id="_aD4Lkzg-EeGaip2Sz0Unbw"/>
+  <element xmi:type="com.apusic.bluebean.designer.model:EntityDiagram" href="com.sap.saap.audit.entitys.base.bluebean#/"/>
+</notation:Diagram>

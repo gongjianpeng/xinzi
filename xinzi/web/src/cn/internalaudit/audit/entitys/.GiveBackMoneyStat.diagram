@@ -1,0 +1,334 @@
+package com.sap.saap.audit.entitys;
+
+import javax.persistence.*;
+
+/** 
+ * @generated 
+ * 还款统计
+ */
+@Table(name = "GiveBackMoneyStat")
+@SuppressWarnings("serial")
+@Entity
+public class GiveBackMoneyStat implements java.io.Serializable {
+	/** 
+	 * @generated  
+	 */
+	@Column
+	@Id
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe 平均逾期日数
+	 * @display 平均逾期日数
+	 */
+	@Column
+	private java.lang.Integer avgOverdueDay;
+	/** 
+	 * @generated
+	 * @describe 最长逾期日数
+	 * @display 最长逾期日数
+	 */
+	@Column
+	private java.lang.Integer maxOverdueDay;
+	/** 
+	 * @generated
+	 * @describe 最近4期逾期日数
+	 * @display 最近4期逾期日数
+	 */
+	@Column
+	private java.lang.Integer lately4TimeLimitDay;
+	/** 
+	 * @generated
+	 * @describe  以往贷款数目
+	 * @display  以往贷款数目
+	 */
+	@Column
+	private java.lang.Double historyLoanMoney;
+	/** 
+	 * @generated
+	 * @describe 最近2期最大逾期日数
+	 * @display 最近2期最大逾期日数
+	 */
+	@Column
+	private java.lang.Integer lateluy2TimeLimitDay;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "clientdata")
+	private com.sap.saap.audit.entitys.ClientData clientData;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Temporal(TemporalType.DATE)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Temporal(TemporalType.DATE)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	@Column
+	private java.lang.Boolean isDelete;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getAvgOverdueDay() {
+		return this.avgOverdueDay;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAvgOverdueDay(java.lang.Integer value) {
+		this.avgOverdueDay = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getMaxOverdueDay() {
+		return this.maxOverdueDay;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setMaxOverdueDay(java.lang.Integer value) {
+		this.maxOverdueDay = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getLately4TimeLimitDay() {
+		return this.lately4TimeLimitDay;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLately4TimeLimitDay(java.lang.Integer value) {
+		this.lately4TimeLimitDay = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getHistoryLoanMoney() {
+		return this.historyLoanMoney;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setHistoryLoanMoney(java.lang.Double value) {
+		this.historyLoanMoney = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getLateluy2TimeLimitDay() {
+		return this.lateluy2TimeLimitDay;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLateluy2TimeLimitDay(java.lang.Integer value) {
+		this.lateluy2TimeLimitDay = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public com.sap.saap.audit.entitys.ClientData getClientData() {
+		return this.clientData;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setClientData(com.sap.saap.audit.entitys.ClientData value) {
+		this.clientData = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+}

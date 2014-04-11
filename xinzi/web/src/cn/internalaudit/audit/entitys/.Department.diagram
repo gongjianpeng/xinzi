@@ -1,0 +1,302 @@
+package com.sap.saap.audit.entitys;
+
+import java.io.Serializable;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated
+ */
+@Table(name = "Department")
+@SuppressWarnings("serial")
+@Entity
+public class Department implements Serializable, IEntity {
+	/** 
+	 * @generated
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe     部门代码
+	 * @display  部门代码
+	 */
+	@Column(length = 255)
+	private java.lang.String code;
+	/** 
+	 * @generated
+	 * @describe     部门名称
+	 * @display  部门名称
+	 */
+	@Column(length = 255)
+	private java.lang.String name;
+	/** 
+	 * @generated
+	 * @describe     部门简称
+	 * @display  部门简称
+	 */
+	@Column(length = 255)
+	private java.lang.String shortName;
+	/** 
+	 * @generated
+	 * @describe     备注 
+	 * @display  备注
+	 */
+	@Column(length = 255)
+	private java.lang.String remark;
+	/** 
+	 * @generated
+	 */
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "department")
+	private java.util.List<com.sap.saap.audit.entitys.Person> persons = new java.util.ArrayList<com.sap.saap.audit.entitys.Person>();
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "offshootbank")
+	private com.sap.saap.audit.entitys.OffshootBank offshootBank;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.Boolean isDelete;
+
+	public java.lang.String getName() {
+		return name;
+	}
+
+	public void setName(java.lang.String name) {
+		this.name = name;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCode() {
+		return this.code;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCode(java.lang.String value) {
+		this.code = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getShortName() {
+		return this.shortName;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setShortName(java.lang.String value) {
+		this.shortName = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getRemark() {
+		return this.remark;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRemark(java.lang.String value) {
+		this.remark = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.Person> getPersons() {
+		return this.persons;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPersons(java.util.List<com.sap.saap.audit.entitys.Person> value) {
+		this.persons = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.OffshootBank getOffshootBank() {
+		return this.offshootBank;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOffshootBank(com.sap.saap.audit.entitys.OffshootBank value) {
+		this.offshootBank = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+}

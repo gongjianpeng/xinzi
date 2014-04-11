@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.apusic.bluebean.designer.model="http:///com/apusic/bluebean/designer/model.ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_tZuLkMkdEeG2UsgxrAudVg" type="BlueBean" name="com.sap.saap.audit.entitys.workflow.bluebean_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_F8CrENJDEeGkkK44VvMw8A" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_F8CrFtJDEeGkkK44VvMw8A" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_F8CrF9JDEeGkkK44VvMw8A" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_JYhZANJDEeGkkK44VvMw8A" type="2001">
+        <element xmi:type="com.apusic.bluebean.designer.model:OwnProperty" href="com.sap.saap.audit.entitys.workflow.bluebean#//@graphicalElements.0/@ownProperties.0"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_JYhZAdJDEeGkkK44VvMw8A"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_qz3HYNJDEeGkkK44VvMw8A" type="2001">
+        <element xmi:type="com.apusic.bluebean.designer.model:OwnProperty" href="com.sap.saap.audit.entitys.workflow.bluebean#//@graphicalElements.0/@ownProperties.1"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_qz3HYdJDEeGkkK44VvMw8A"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_6Ais8NJDEeGkkK44VvMw8A" type="2001">
+        <element xmi:type="com.apusic.bluebean.designer.model:OwnProperty" href="com.sap.saap.audit.entitys.workflow.bluebean#//@graphicalElements.0/@ownProperties.2"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_6Ais8dJDEeGkkK44VvMw8A"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_6Ais8tJDEeGkkK44VvMw8A" type="2001">
+        <element xmi:type="com.apusic.bluebean.designer.model:OwnProperty" href="com.sap.saap.audit.entitys.workflow.bluebean#//@graphicalElements.0/@ownProperties.3"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_6Ais89JDEeGkkK44VvMw8A"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="__ldHANJDEeGkkK44VvMw8A" type="2001">
+        <element xmi:type="com.apusic.bluebean.designer.model:OwnProperty" href="com.sap.saap.audit.entitys.workflow.bluebean#//@graphicalElements.0/@ownProperties.4"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__ldHAdJDEeGkkK44VvMw8A"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_F8CrGNJDEeGkkK44VvMw8A"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_F8CrGdJDEeGkkK44VvMw8A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_F8CrGtJDEeGkkK44VvMw8A"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_F8CrEdJDEeGkkK44VvMw8A" fontName="微软雅黑"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_F8CrEtJDEeGkkK44VvMw8A"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_F8CrE9JDEeGkkK44VvMw8A"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_F8CrFNJDEeGkkK44VvMw8A"/>
+    <element xmi:type="com.apusic.bluebean.designer.model:Entity" href="com.sap.saap.audit.entitys.workflow.bluebean#//@graphicalElements.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F8CrFdJDEeGkkK44VvMw8A" x="228" y="171" width="172"/>
+  </children>
+  <styles xmi:type="notation:PageStyle" xmi:id="_tZuLkckdEeG2UsgxrAudVg"/>
+  <styles xmi:type="notation:GuideStyle" xmi:id="_tZuLkskdEeG2UsgxrAudVg"/>
+  <styles xmi:type="notation:DescriptionStyle" xmi:id="_tZuLk8kdEeG2UsgxrAudVg"/>
+  <element xmi:type="com.apusic.bluebean.designer.model:EntityDiagram" href="com.sap.saap.audit.entitys.workflow.bluebean#/"/>
+</notation:Diagram>

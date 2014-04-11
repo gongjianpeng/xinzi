@@ -1,0 +1,25 @@
+@charset "utf-8";
+.login_bd{background:#040517 url(../images/login/bg.jpg) center top no-repeat;}
+.lg_wrap{width:1220px;margin:0 auto;}
+.logo{padding:130px 0 62px 0;text-align:center;background:url(../images/login/hw_bg.png) center bottom no-repeat;}
+.lg_wrap table{width:360px;margin:34px auto 0;}
+.lg_wrap table td{height:36px;padding-bottom:10px;font:16px/36px Microsoft yahei;color:#cdbd80;vertical-align:middle;}
+.lg_wrap table td input{vertical-align:middle;}
+.lg_wrap table td .wbk{width:212px;height:27px;padding-left:10px;font:14px/36px Microsoft yahei;color:#fff;border:none;background:#576084;margin:4px 0 4px 9px;}
+.lg_wrap table td input.inputFocus{width:220px;height:35px;background:url(../images/login/input_cur.png) no-repeat;margin:0 0 0 5px;}
+.lg_wrap table td input.org_bt{width:58px;height:58px;border:none;background:url(../images/login/login_bt.png) no-repeat;}
+.lg_wrap table td.mmz{font:12px/36px Microsoft yahei;}
+td.mmz a{color:#cdbd80;text-decoration:none;margin-left:28px;display:inline-block}
+.Nodis{float:left;margin-left:-999px;}
+.iCheck label{width:15px;height:15px;margin:12px 3px 0 0;background:url(../images/login/blue.gif) no-repeat 0 0;cursor:pointer;float:left;}
+.proceTab tr th .iCheck label{padding-left:20px;line-height:16px;width:40px;}
+.iCheck label.hover{background-position:0 -30px;}
+.iCheck label.checked{background-position:0 -60px;}
+
+
+
+
+
+
+
+

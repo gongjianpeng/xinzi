@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="projectPlan_business" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="73840673-2e56-49ad-92ce-1f1664e67ad5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="companyName" class="java.lang.String"/>
+	<field name="businessStr" class="java.lang.String"/>
+	<field name="remark" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8ad1f287-d656-4dc4-88ae-22ed2f16ebeb" x="6" y="22" width="114" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[被评价单位]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c0f56fe4-d1fa-4652-befd-8e9d4e0991ed" x="377" y="22" width="75" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[备注]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2bc51527-9307-4520-9f39-2805c215cb4a" x="138" y="22" width="210" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[评价业务范围]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="323454ac-2200-4637-a5e3-0f5495041202" x="0" y="1" width="470" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="3b7a0758-8a4f-4575-a48e-77fece94e583" x="0" y="2" width="1" height="45"/>
+			</line>
+			<line>
+				<reportElement uuid="3b7a0758-8a4f-4575-a48e-77fece94e583" x="470" y="2" width="1" height="45"/>
+			</line>
+			<line>
+				<reportElement uuid="3b7a0758-8a4f-4575-a48e-77fece94e583" x="368" y="2" width="1" height="45"/>
+			</line>
+			<line>
+				<reportElement uuid="3b7a0758-8a4f-4575-a48e-77fece94e583" x="130" y="2" width="1" height="45"/>
+			</line>
+			<line>
+				<reportElement uuid="ca33f1b0-b371-4482-bdf2-65da91a04d3b" x="0" y="48" width="470" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="82" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="dabaf295-1950-4faf-a28b-a5fa5e9ae86a" x="2" y="8" width="125" height="67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="c7c12c20-c5e4-41ae-a771-b73202b4ed91" mode="Transparent" x="134" y="9" width="232" height="60"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{businessStr}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="ca33f1b0-b371-4482-bdf2-65da91a04d3b" x="0" y="81" width="470" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="3b7a0758-8a4f-4575-a48e-77fece94e583" x="0" y="0" width="1" height="80"/>
+			</line>
+			<line>
+				<reportElement uuid="1a71f032-cf68-4ba0-88c7-7ba548ed4eb7" x="470" y="0" width="1" height="80"/>
+			</line>
+			<line>
+				<reportElement uuid="1a71f032-cf68-4ba0-88c7-7ba548ed4eb7" x="368" y="0" width="1" height="80"/>
+			</line>
+			<line>
+				<reportElement uuid="1a71f032-cf68-4ba0-88c7-7ba548ed4eb7" x="130" y="0" width="1" height="80"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="eb9e5c08-6339-4162-a20e-c4168d393060" x="372" y="9" width="86" height="60"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{remark}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

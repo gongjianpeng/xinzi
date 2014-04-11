@@ -1,0 +1,117 @@
+package com.sap.saap.audit.entitys.workflow;
+
+import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.sap.saap.audit.entitys.Person;
+
+/**
+ *@generated
+ */
+@Table(name = "ProjectMember")
+@SuppressWarnings("serial")
+@Entity
+public class ProjectMember implements java.io.Serializable {
+
+	/**
+	 *@generated
+	 */
+	@Column
+	@Id
+	private java.lang.String id;
+
+	/**
+	 *@generated
+	 */
+	@Column
+	private java.lang.Long menberId;
+	/**
+	 *@generated
+	 */
+	@Column
+	private java.lang.String menberName;
+	/**
+	 *@generated
+	 */
+	@Column
+	private Person merber;
+
+	/**
+	 *@generated
+	 */
+	@Column
+	private java.lang.String merberCode;
+
+	/**
+	 *@generated
+	 */
+	public java.lang.String getId() {
+		return this.id;
+	}
+
+	/**
+	 *@generated
+	 */
+	public void setId(java.lang.String value) {
+		this.id = value;
+	}
+
+	/**
+	 *@generated
+	 */
+	public java.lang.Long getMenberId() {
+		return this.menberId;
+	}
+
+	/**
+	 *@generated
+	 */
+	public void setMenberId(java.lang.Long value) {
+		this.menberId = value;
+	}
+
+	/**
+	 *@generated
+	 */
+	public java.lang.String getMenberName() {
+		return this.menberName;
+	}
+
+	/**
+	 *@generated
+	 */
+	public void setMenberName(java.lang.String value) {
+		this.menberName = value;
+	}
+
+	/**
+	 *@generated
+	 */
+	public Person getMerber() {
+		return this.merber;
+	}
+
+	/**
+	 *@generated
+	 */
+	public void setMerber(Person value) {
+		this.merber = value;
+	}
+
+	/**
+	 *@generated
+	 */
+	public java.lang.String getMerberCode() {
+		return this.merberCode;
+	}
+
+	/**
+	 *@generated
+	 */
+	public void setMerberCode(java.lang.String value) {
+		this.merberCode = value;
+	}
+}

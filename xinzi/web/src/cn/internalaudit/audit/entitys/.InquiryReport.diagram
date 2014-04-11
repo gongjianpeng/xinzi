@@ -1,0 +1,714 @@
+package com.sap.saap.audit.entitys;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated 
+ * 调查报告
+ */
+@Table(name = "InquiryReport")
+@SuppressWarnings("serial")
+@Entity
+public class InquiryReport implements java.io.Serializable, IEntity {
+	/** 
+	 * @generated  
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe 考察日期
+	 * @display 考察日期
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date inquiryDate;
+	/** 
+	 * @generated
+	 * @describe 考察地点
+	 * @display 考察地点
+	 * @describe 到达时间
+	 * @display 到达时间
+	 */
+	@Temporal(TemporalType.DATE)
+	@Column
+	private java.util.Date inquiryTime;
+	/** 
+	 * @generated
+	 * @describe 主贷人姓名
+	 * @display 主贷人姓名
+	 */
+	@Column
+	private java.lang.String clientName;
+	/** 
+	 * @generated
+	 * @describe 身份证号码
+	 * @display 身份证号码
+	 */
+	@Column
+	private java.lang.String cardID;
+	/** 
+	 * @generated
+	 * @describe 公司名称
+	 * @display 公司名称
+	 */
+	@Column
+	private java.lang.String companyName;
+	/** 
+	 * @generated
+	 * @describe 考察地点
+	 * @display 考察地点
+	 */
+	@Column
+	private java.lang.String inquiryAddress;
+	/** 
+	 * @generated
+	 * @describe 考察人
+	 * @display 考察人
+	 */
+	@Column
+	private java.lang.String inquiryPerson;
+	/** 
+	 * @generated
+	 * @display 公司牌匾上标识受考察公司之名称
+	 * @describe 公司牌匾上标识受考察公司之名称
+	 */
+	@Column
+	private java.lang.Boolean isIdentifierCompany;
+	/** 
+	 * @generated
+	 * @display 公司名称在办公室中有显示
+	 * @describe 公司名称在办公室中有显示
+	 */
+	@Column
+	private java.lang.Boolean isOfficeDisplayCompany;
+	/** 
+	 * @generated
+	 * @describe 其它信息
+	 * @display 其它信息
+	 */
+	@Column
+	private java.lang.String other;
+	/** 
+	 * @generated
+	 * @describe 主管
+	 * @display 主管
+	 */
+	@Column
+	private java.lang.String manager;
+	/** 
+	 * @generated
+	 * @describe 员工人数
+	 * @display 员工人数
+	 */
+	@Column
+	private java.lang.String employeeCount;
+	/** 
+	 * @generated
+	 * @describe 公司性质
+	 * @display 公司性质
+	 */
+	@Column
+	private java.lang.String companyNature;
+	/** 
+	 * @generated
+	 * @describe 营业用地面积
+	 * @display 营业用地面积
+	 */
+	@Column
+	private java.lang.String businessArea;
+	/** 
+	 * @generated
+	 * @describe 联系人
+	 * @display 联系人
+	 */
+	@Column
+	private java.lang.String relationPerson;
+	/** 
+	 * @generated
+	 * @describe 联系人职位
+	 * @display 联系人职位
+	 */
+	@Column
+	private java.lang.String relationPost;
+	/** 
+	 * @generated
+	 * @describe 公司业务内容
+	 * @display 公司业务内容
+	 */
+	@Column
+	private java.lang.String companyBusinessContext;
+	/** 
+	 * @generated
+	 * @describe 公司规模
+	 * @display 公司规模
+	 */
+	@Column
+	private java.lang.String companySize;
+	/** 
+	 * @generated
+	 * @describe 生财器具
+	 * @display 生财器具
+	 */
+	@Column
+	private java.lang.String moneyFrom;
+	/** 
+	 * @generated
+	 * @describe 存货
+	 * @display 存货
+	 */
+	@Column
+	private java.lang.String stockInTrade;
+	/** 
+	 * @generated
+	 * @describe 访谈内容
+	 * @display 访谈内容
+	 */
+	@Column
+	private java.lang.String visitContext;
+	/** 
+	 * @generated
+	 * @describe 调查报告类型
+	 * @display 调查报告类型
+	 */
+	@Column
+	private java.lang.String type;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "loanorder")
+	private com.sap.saap.audit.entitys.LoanOrder loanOrder;
+	/** 
+	 * @generated
+	 */
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "inquiryReport")
+	private java.util.List<com.sap.saap.audit.entitys.Picture> pictures = new java.util.ArrayList<com.sap.saap.audit.entitys.Picture>();
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Boolean isDelete = false;
+	/** 
+	 * @generated
+	 * 
+	 * @describe 记录人
+	 * @display 记录人
+	 */
+	@Column
+	private java.lang.String recordPerson;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getInquiryDate() {
+		return this.inquiryDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setInquiryDate(java.util.Date value) {
+		this.inquiryDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getInquiryTime() {
+		return this.inquiryTime;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setInquiryTime(java.util.Date value) {
+		this.inquiryTime = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getClientName() {
+		return this.clientName;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setClientName(java.lang.String value) {
+		this.clientName = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCardID() {
+		return this.cardID;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCardID(java.lang.String value) {
+		this.cardID = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCompanyName() {
+		return this.companyName;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCompanyName(java.lang.String value) {
+		this.companyName = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getInquiryAddress() {
+		return this.inquiryAddress;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setInquiryAddress(java.lang.String value) {
+		this.inquiryAddress = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getInquiryPerson() {
+		return this.inquiryPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setInquiryPerson(java.lang.String value) {
+		this.inquiryPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsIdentifierCompany() {
+		return this.isIdentifierCompany;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsIdentifierCompany(java.lang.Boolean value) {
+		this.isIdentifierCompany = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsOfficeDisplayCompany() {
+		return this.isOfficeDisplayCompany;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsOfficeDisplayCompany(java.lang.Boolean value) {
+		this.isOfficeDisplayCompany = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getOther() {
+		return this.other;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOther(java.lang.String value) {
+		this.other = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getManager() {
+		return this.manager;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setManager(java.lang.String value) {
+		this.manager = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getEmployeeCount() {
+		return this.employeeCount;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setEmployeeCount(java.lang.String value) {
+		this.employeeCount = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCompanyNature() {
+		return this.companyNature;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCompanyNature(java.lang.String value) {
+		this.companyNature = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getBusinessArea() {
+		return this.businessArea;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setBusinessArea(java.lang.String value) {
+		this.businessArea = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getRelationPerson() {
+		return this.relationPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRelationPerson(java.lang.String value) {
+		this.relationPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getRelationPost() {
+		return this.relationPost;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRelationPost(java.lang.String value) {
+		this.relationPost = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCompanyBusinessContext() {
+		return this.companyBusinessContext;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCompanyBusinessContext(java.lang.String value) {
+		this.companyBusinessContext = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCompanySize() {
+		return this.companySize;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCompanySize(java.lang.String value) {
+		this.companySize = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getMoneyFrom() {
+		return this.moneyFrom;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setMoneyFrom(java.lang.String value) {
+		this.moneyFrom = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getStockInTrade() {
+		return this.stockInTrade;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setStockInTrade(java.lang.String value) {
+		this.stockInTrade = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getVisitContext() {
+		return this.visitContext;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setVisitContext(java.lang.String value) {
+		this.visitContext = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getType() {
+		return this.type;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setType(java.lang.String value) {
+		this.type = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.LoanOrder getLoanOrder() {
+		return this.loanOrder;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLoanOrder(com.sap.saap.audit.entitys.LoanOrder value) {
+		this.loanOrder = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.Picture> getPictures() {
+		return this.pictures;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPictures(
+			java.util.List<com.sap.saap.audit.entitys.Picture> value) {
+		this.pictures = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.String getRecordPerson() {
+		return this.recordPerson;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setRecordPerson(java.lang.String value) {
+		this.recordPerson = value;
+	}
+}

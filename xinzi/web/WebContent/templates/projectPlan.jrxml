@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="projectPlan" language="groovy" pageWidth="595" pageHeight="842" columnWidth="435" leftMargin="80" rightMargin="80" topMargin="40" bottomMargin="71" uuid="027c7d99-6233-4181-b335-64712273f196">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="48"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\project\\JASPERREPORT模板\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="projectName" class="java.lang.String"/>
+	<field name="companyName" class="java.lang.String"/>
+	<field name="evaluationBeginDate" class="java.lang.String"/>
+	<field name="evaluationEndDate" class="java.lang.String"/>
+	<field name="workBeginDate" class="java.lang.String"/>
+	<field name="workEndDate" class="java.lang.String"/>
+	<field name="projectManager" class="java.lang.String"/>
+	<field name="editPerson" class="java.lang.String"/>
+	<field name="businessList" class="java.util.ArrayList"/>
+	<field name="memberStr" class="java.lang.String"/>
+	<field name="pid" class="java.lang.String"/>
+	<field name="fileType" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="66" splitType="Stretch">
+			<textField>
+				<reportElement uuid="92894e30-2b97-4df7-b7ff-ee4342b5c28e" x="0" y="26" width="436" height="38"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{projectName}]]></textFieldExpression>
+			</textField>
+			<textField hyperlinkType="Reference">
+				<reportElement uuid="16ff060d-ff5e-4fa1-92d8-0a4039b87181" isPrintRepeatedValues="false" mode="Opaque" x="267" y="0" width="48" height="16" forecolor="#0033FF" backcolor="#CCCCCC">
+					<printWhenExpression><![CDATA[$F{fileType}.equals("html")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["pdf查看"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["rpint1"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["exportProject.do?pid="+$F{pid}+"&fileType=pdf"]]></hyperlinkReferenceExpression>
+				<hyperlinkTooltipExpression><![CDATA["以PDF方式查看"]]></hyperlinkTooltipExpression>
+			</textField>
+			<textField hyperlinkType="Reference">
+				<reportElement uuid="16ff060d-ff5e-4fa1-92d8-0a4039b87181" isPrintRepeatedValues="false" mode="Opaque" x="319" y="0" width="61" height="16" forecolor="#0033FF" backcolor="#CCCCCC">
+					<printWhenExpression><![CDATA[$F{fileType}.equals("html")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["导出word"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["rpint1"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["exportProject.do?pid="+$F{pid}+"&fileType=word"]]></hyperlinkReferenceExpression>
+				<hyperlinkTooltipExpression><![CDATA["导出为WORD文件"]]></hyperlinkTooltipExpression>
+			</textField>
+			<textField hyperlinkType="Reference">
+				<reportElement uuid="16ff060d-ff5e-4fa1-92d8-0a4039b87181" isPrintRepeatedValues="false" mode="Opaque" x="385" y="0" width="48" height="16" forecolor="#0033FF" backcolor="#CCCCCC">
+					<printWhenExpression><![CDATA[$F{fileType}.equals("html")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["打 印"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["rpint1"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["exportProject.do?pid="+$F{pid}+"&fileType=print"]]></hyperlinkReferenceExpression>
+				<hyperlinkTooltipExpression><![CDATA["打印文件"]]></hyperlinkTooltipExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="184" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c22279ee-ccc6-4c67-9dbf-9f9ee4884410" x="1" y="2" width="432" height="44"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[    为有效开展公司内部控制评价工作，反映公司内部控制工作的实际状况，特制订本次内部控制评价工作方案。
+
+一、评价范围]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="808bf6e8-ef6d-4628-b166-cc74915e2586" positionType="Float" x="2" y="140" width="434" height="43" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{businessList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "projectPlan_business.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="1a778cd6-4d86-4301-bae2-e28d0ee9accd" x="2" y="51" width="408" height="20"/>
+				<textElement>
+					<font size="12" isBold="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[一、评价范围]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="78050ee8-4de1-4575-b8bc-910d65133a3a" x="2" y="73" width="431" height="67"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1、本次评价期间的范围为"+$F{evaluationBeginDate}+"至"+$F{evaluationEndDate}
++"，并可根据实际情况适当追溯或顺延。\r\n 2、被评价单位及业务范围"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="701">
+			<staticText>
+				<reportElement uuid="f68e2ef2-a77e-4b11-9603-ab52f08798f9" positionType="Float" x="0" y="3" width="435" height="698" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[二、评价依据
+    本次内部控制自我评价的依据包括但不限于：
+    五部委《企业内部控制基本规范》
+    五部委《企业内部控制评价指引》
+三、评价策略及方法
+    根据公司《内部控制评价管理办法》，通过现场测试，综合运用个别访谈、调查问卷、专题讨论、穿行测试、实地查验、抽样检查等方法，充分收集被评价单位
+内部控制设计和运行是否有效的证据，按照评价的具体内容，如实填写评价工作底稿，研究分析内部控制缺陷。
+具体包括如下方面：
+（一）评价培训
+    在实施评价前，由公司内部审计部负责组织培训内控评价工作小组人员，培训内容包括各业务流程需重点关注的问题、评价工作流程、评价方法、工作底稿填写要求、缺陷认定标准、评价人员的权利与义务等内容，确保评价工作小组每一个成员都能有效完成内控评价任务。
+（二）评价动员
+    评价工作小组对内部控制评价的目的、意义等向被评价单位宣讲和动员，对评价工作进行安排和部署。被评价单位向评价工作小组提供办公场所及必要的办公设备，安排相关人员配合现场测试工作，根据评价工作小组要求提供各项证据资料。
+（三）风险评估
+    公司各部门应配合公司内部控制评价工作小组对本次评价范围内各类风险进行评估，并作为识别和选择控制活动进行测试时的依据。
+（四）内控环境了解
+    评价工作小组在开展具体内部控制评价与测试前应开展管理人员访谈，并采取调研问卷等多种形式了解被评价单位的基本情况，了解被评价单位的整体内控环境，并从总体层面评估被评价单位的公司层面控制。
+（五）设计有效性测试
+    评价工作小组应当组织有充分经验和一定能力的人员开展对设计有效性的评价；在测试控制设计的有效性时，应当综合运用询问适当人员、观察经营活动和检查相关文件等程序。]]></text>
+			</staticText>
+		</band>
+		<band height="375">
+			<staticText>
+				<reportElement uuid="91f6131a-5d60-4900-8316-b56b3c7de653" positionType="Float" x="1" y="2" width="435" height="370" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[（六）运行有效性测试
+    评价工作小组根据人员分工，按照《评价手册》规定，认真执行运行有效性测试程序，收集相关运行有效性的证据，填写评价工作底稿，对发现的内部控制缺陷进行初步认定，做出评价结论。
+（七）汇总评价结果
+    评价工作小组对评价中发现的各类问题进行研究和确定，汇总评价结果，形成现场评价初步结果。评价工作小组就现场评价初步结果与被评价单位交换意见，向被评价单位通报，由被评价单位负责人反馈意见后，提交公司内部审计部审阅。
+（八）编制内控评价报告
+    公司审计部汇总评价工作小组对各单位的评价结果，结合后续跟踪整改情况，编制内部控制评价报告，报送审计委员会审核并提交审核委员会审议，由董事会最终审定后对外披露。
+（九）跟踪整改
+    对评价中发现的问题，被评价单位要及时制定整改方案，并认真落实整改，整改情况及结果须在评价结束后1个月内向公司内部审计部反馈。公司内部审计部对各单位的整改情况进行跟踪和监督，并编制后续整改报告。]]></text>
+			</staticText>
+		</band>
+		<band height="286">
+			<staticText>
+				<reportElement uuid="88578f9f-965f-410e-bd3a-a50238ce30aa" positionType="Float" x="0" y="0" width="435" height="42"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[四、工作组织
+    内控评价工作小组具体负责公司本次内部控制评价工作，其组成人员包括：
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b9497088-0e1a-4423-8e5d-153fb3ad0fe6" x="0" y="44" width="102" height="20"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[    项目经理：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b9497088-0e1a-4423-8e5d-153fb3ad0fe6" x="0" y="70" width="102" height="20"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[    小组成员：]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="3acc62ad-53a2-4eaa-ab6f-292cef6cfb16" x="102" y="44" width="100" height="20"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{projectManager}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="27f44d84-b8b4-423e-a92b-8dee572d72b2" isPrintRepeatedValues="false" x="102" y="70" width="252" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{memberStr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="044e9909-f4db-4868-a35f-21ae832e38a0" positionType="Float" x="2" y="103" width="155" height="18"/>
+				<textElement>
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[五、工作周期
+
+
+]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="3a461660-d056-4f15-88c2-be99784ea4b3" positionType="Float" x="2" y="123" width="431" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["    本次评价的工作周期为："+$F{workBeginDate}+"至"+$F{workEndDate}+"。"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="11d8e9a8-ca6c-4578-b13e-d9891df136f8" positionType="Float" x="111" y="173" width="308" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{projectName}+"工作小组"]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy年MM月dd日">
+				<reportElement uuid="f9e28ab6-41b3-4deb-b378-537a31a8bc80" positionType="Float" x="311" y="201" width="107" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="67b31ccc-0332-4e85-98c2-cad966c7c649" positionType="Float" x="241" y="202" width="69" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[申报日期：]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

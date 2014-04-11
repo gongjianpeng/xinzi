@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.apusic.bluebean.designer.model="http:///com/apusic/bluebean/designer/model.ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_qmjZQTEjEeGnnPNsZo2kcg" type="BlueBean" name="com.sap.saap.audit.entitys.bluebean_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_xOOUATEnEeGYmZGphcqIGg" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_xOOUBzEnEeGYmZGphcqIGg" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_xOOUCDEnEeGYmZGphcqIGg" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_xOOUCTEnEeGYmZGphcqIGg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_xOOUCjEnEeGYmZGphcqIGg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_xOOUCzEnEeGYmZGphcqIGg"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_xOOUAjEnEeGYmZGphcqIGg" fontName="Segoe UI"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_xOOUAzEnEeGYmZGphcqIGg"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_xOOUBDEnEeGYmZGphcqIGg"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_xOOUBTEnEeGYmZGphcqIGg"/>
+    <element xmi:type="com.apusic.bluebean.designer.model:Entity" href="com.sap.saap.audit.entitys.bluebean#//@graphicalElements.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xOOUBjEnEeGYmZGphcqIGg" x="248" y="173"/>
+  </children>
+  <styles xmi:type="notation:PageStyle" xmi:id="_qmjZQjEjEeGnnPNsZo2kcg"/>
+  <styles xmi:type="notation:GuideStyle" xmi:id="_qmjZQzEjEeGnnPNsZo2kcg"/>
+  <styles xmi:type="notation:DescriptionStyle" xmi:id="_qmjZRDEjEeGnnPNsZo2kcg"/>
+  <element xmi:type="com.apusic.bluebean.designer.model:EntityDiagram" href="com.sap.saap.audit.entitys.bluebean#/"/>
+</notation:Diagram>

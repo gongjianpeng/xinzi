@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+	 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<!--
+		Scans the classpath of this application for @Components to deploy as
+		beans
+	-->
+	<context:component-scan base-package="cn.internalaudit.audit">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Repository" />
+	</context:component-scan>
+	<!--  Configures the @Controller programming model 
+  -->
+	<mvc:annotation-driven />
+	<!--  Forwards requests to the "/" resource to the "welcome" view 
+  -->
+  
+  
+  <!-- -->
+	<mvc:view-controller path="/login.do" view-name="/login" />
+	<mvc:view-controller path="/main.do" view-name="/main" />
+	<mvc:view-controller path="/index.do" view-name="/home/index" />
+	<mvc:view-controller path="/home/index.do" view-name="/home/index" />
+	<mvc:view-controller path="/pages/system/language.do" view-name="/pages/system/language" />
+	<mvc:view-controller path="/pages/system/logoupload.do" view-name="/pages/system/logoupload" />
+	<mvc:view-controller path="/pages/system/organization.do" view-name="/pages/system/organization" />
+	<mvc:view-controller path="/pages/system/organization2.do" view-name="/pages/system/organization2" />
+	<mvc:view-controller path="/pages/system/dataDictionary.do"	view-name="/pages/system/dataDictionary" />
+	<mvc:view-controller path="/pages/system/gradeperson.do" view-name="/pages/system/gradeperson" />
+	<mvc:view-controller path="/pages/system/lhomeupload.do" view-name="/pages/system/lhomeupload" />
+	<mvc:view-controller path="/pages/system/person.do" view-name="/pages/system/person" />
+	<mvc:view-controller path="/pages/system/rolesManager.do" view-name="/pages/system/rolesManager" />
+	<mvc:view-controller path="/pages/system/authoize.do" view-name="/pages/system/authoize" />
+	<mvc:view-controller path="/pages/system/authorisieskey.do" view-name="/pages/system/authorisieskey" />
+	<mvc:view-controller path="/register.do" view-name="/register" />
+	<mvc:view-controller path="/activate.do" view-name="/registersuccess" />
+	<mvc:view-controller path="/pages/system/jxsorganization.do" view-name="/pages/system/jxsorganization" />
+	<mvc:view-controller path="/pages/system/updatePassword.do" view-name="/pages/system/updatePassword" />
+	
+	
+	
+ <!--客户管理 -->
+   <mvc:view-controller path="/pages/company/jxsManager.do" view-name="/pages/company/jxsManager" />
+  
+  
+     <mvc:view-controller path="/pages/cus/companyorgz.do" view-name="/pages/cus/companyorgz" />
+		  <mvc:view-controller path="/pages/company/dingdanjxs.do" view-name="/pages/company/dingdanjxs" />
+	   <mvc:view-controller path="/pages/company/baojiajxs.do" view-name="/pages/company/baojiajxs" />
+	    <mvc:view-controller path="/pages/company/jibenjxs.do" view-name="/pages/company/jibenjxs" />
+	    
+	      <mvc:view-controller path="/pages/company/panel.do" view-name="/pages/company/panel" />
+<!--企业管理 -->
+  
+        <mvc:view-controller path="/pages/company/baojiaqiye.do" view-name="/pages/company/baojiaqiye" />
+		<mvc:view-controller path="/pages/company/jibenqiye.do" view-name="/pages/company/jibenqiye" />
+	    <mvc:view-controller path="/pages/company/pinpaiqiye.do" view-name="/pages/company/pinpaiqiye" />
+	   <mvc:view-controller path="/pages/company/pinpaijxs.do" view-name="/pages/company/pinpaijxs" />
+	    <mvc:view-controller path="pages/company/qiyeManager.do" view-name="pages/company/qiyeManager" />
+        <mvc:view-controller path="/pages/company/dingdanqiye.do" view-name="/pages/company/dingdanqiye" />
+        <mvc:view-controller path="pages/company/qiyemanjxs.do" view-name="pages/company/qiyemanjxs" />
+
+		<mvc:view-controller path="pages/company/storepinpai.do" view-name="pages/company/storepinpai" />
+		<mvc:view-controller path="pages/company/storeorder.do" view-name="pages/company/storeorder" />
+	     <mvc:view-controller path="/pages/company/diy.do" view-name="/pages/company/diy" />
+	     
+	       <mvc:view-controller path="/pages/company/diyupload.do" view-name="/pages/company/diyupload" />
+	         <mvc:view-controller path="/pages/company/Plicalbum.do" view-name="/pages/company/Plicalbum" />
+	 
+	 
+<!--前端 -->
+		<mvc:view-controller path="/fore/doorlist.do" view-name="/fore/doorlist" />
+	 	 <mvc:view-controller path="/fore/doortype.do" view-name="/fore/doortype" />
+	 	 <mvc:view-controller path="/fore/doordetail.do" view-name="/fore/doordetail" />
+	 	 <mvc:view-controller path="/fore/orderlist.do" view-name="/fore/orderlist" />
+<!--diy前端 测试-->	 	 
+        <mvc:view-controller path="/pages/company/Commodity.do" view-name="/pages/company/Commodity" />
+	 	  <mvc:view-controller path="/pages/company/doorstyle.do" view-name="/pages/company/doorstyle" />
+	 	  <mvc:view-controller path="/pages/company/elses.do" view-name="/pages/company/elses" />
+	 	    <mvc:view-controller path="/pages/company/frame.do" view-name="/pages/company/Frame" />
+	 	      <mvc:view-controller path="pages/company/palette.do" view-name="/pages/company/palette" />
+	 	  <mvc:view-controller path="/pages/company/accessories.do" view-name="/pages/company/accessories" />
+	 	    <mvc:view-controller path="/pages/company/scuttle.do" view-name="/pages/company/scuttle" />
+	 	  
+	 	    
+                     
+	 
+	 	 
+<!--角色权限管理 -->
+	 <mvc:view-controller path="/pages/role/roles.do" view-name="/pages/role/roles" />
+	 <mvc:view-controller path="/pages/role/privilege.do" view-name="/pages/role/privilege" />	 
+	
+   
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean id="openSessionInViewInterceptor"
+				class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
+				<property name="sessionFactory" ref="sessionFactory" />
+			<!-- 	<property name="flushModeName">
+					<value>FLUSH_AUTO</value>
+				</property>
+		 -->
+			</bean>
+		</mvc:interceptor>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+	</mvc:interceptors>
+	
+<!--
+	
+		Handles HTTP GET requests for /resources/** by efficiently serving up
+		static resources in the ${webappRoot}/resources/ directory
+	-->
+	<mvc:resources mapping="/jquery/**" location="/jquery/" />
+	<mvc:resources mapping="/images/**" location="/images/" />
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/js/**" location="/js/" />
+	<mvc:resources mapping="/ui/**" location="/ui/" />
+	<mvc:resources mapping="/themes/**" location="/themes/" />
+	<!--  Saves a locale change using a session 
+  -->
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="zh_CN" />
+	</bean>
+	<!--  Application Message Bundle -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>WEB-INF/classes/messages/messages_targetAim</value>
+				<value>WEB-INF/classes/messages/messages_businessModeControll
+				</value>
+				<value>WEB-INF/classes/messages/messages_evaluationMatrix</value>
+				<value>WEB-INF/classes/messages/messages_riskControl</value>
+				<value>WEB-INF/classes/messages/messages_organization</value>
+				<value>WEB-INF/classes/messages/messages_infom</value>
+				<value>WEB-INF/classes/messages/messages_dataDictionary</value>
+				<value>WEB-INF/classes/messages/messages_controlActivity</value>
+				<value>WEB-INF/classes/messages/messages_evaluationPlan</value>
+				<value>WEB-INF/classes/messages/messages_testsEvaluation</value>
+			</list>
+		</property>
+		<property name="cacheSeconds" value="0" />
+	</bean>
+
+      <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+         <!-- 设置上传文件大小的参数 -->
+        <property name="maxUploadSize" value="1000000"/>
+       </bean>
+	<!--
+		Resolves view names to protected .jsp resources within the
+		/WEB-INF/views directory
+	-->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+</beans>

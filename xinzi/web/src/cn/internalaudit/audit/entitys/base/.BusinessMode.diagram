@@ -1,0 +1,17 @@
+package com.sap.saap.audit.entitys.base;
+
+import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.sap.saap.audit.entitys.BaseEntity;
+
+/**
+ *@generated
+ */
+@Table(name = "BusinessMode")
+@SuppressWarnings("serial")
+@Entity
+public class BusinessMode implements java.io.Serializable {
+}

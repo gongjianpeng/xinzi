@@ -1,0 +1,352 @@
+package com.sap.saap.audit.entitys;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated 
+ * 考察列表
+ */
+@Table(name = "AutopticalList")
+@SuppressWarnings("serial")
+@Entity
+public class AutopticalList implements java.io.Serializable, IEntity {
+	/** 
+	 * @generated  
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe 预约考察时间
+	 * @display 预约考察时间
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date bespokenTime;
+	/** 
+	 * @generated
+	 * @describe 考察人
+	 * @display 考察人
+	 */
+	@Column
+	private java.lang.String person;
+	/** 
+	 * @generated
+	 * @describe 联系人
+	 * @display 联系人
+	 */
+	@Column
+	private java.lang.String liaisonPerson;
+	/** 
+	 * @generated
+	 * @describe 联系电话
+	 * @display 联系电话
+	 */
+	@Column
+	private java.lang.String telphone;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "companyexpert")
+	private com.sap.saap.audit.entitys.CompanyExpert companyExpert;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Boolean isDelete = false;
+	/** 
+	 * @generated
+	 * @describe 是否已考察
+	 * @display 是否已考察
+	 */
+	@Column
+	private java.lang.Boolean isAutoPticaled;
+	/** 
+	 * @generated
+	 */
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "autopticalList")
+	private java.util.List<com.sap.saap.audit.entitys.AutopticalPerson> autopticalPersons = new java.util.ArrayList<com.sap.saap.audit.entitys.AutopticalPerson>();
+	/** 
+	 * @generated
+	 * 
+	 */
+	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "addres")
+	private com.sap.saap.audit.entitys.Addres addres;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getBespokenTime() {
+		return this.bespokenTime;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setBespokenTime(java.util.Date value) {
+		this.bespokenTime = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getPerson() {
+		return this.person;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPerson(java.lang.String value) {
+		this.person = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLiaisonPerson() {
+		return this.liaisonPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLiaisonPerson(java.lang.String value) {
+		this.liaisonPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getTelphone() {
+		return this.telphone;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setTelphone(java.lang.String value) {
+		this.telphone = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.CompanyExpert getCompanyExpert() {
+		return this.companyExpert;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCompanyExpert(com.sap.saap.audit.entitys.CompanyExpert value) {
+		this.companyExpert = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsAutoPticaled() {
+		return this.isAutoPticaled;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsAutoPticaled(java.lang.Boolean value) {
+		this.isAutoPticaled = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.AutopticalPerson> getAutopticalPersons() {
+		return this.autopticalPersons;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAutopticalPersons(
+			java.util.List<com.sap.saap.audit.entitys.AutopticalPerson> value) {
+		this.autopticalPersons = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public com.sap.saap.audit.entitys.Addres getAddres() {
+		return this.addres;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setAddres(com.sap.saap.audit.entitys.Addres value) {
+		this.addres = value;
+	}
+}

@@ -1,0 +1,34 @@
+package com.sap.saap.audit.entitys.workflow;
+
+import javax.persistence.*;
+
+/**
+ *@generated
+ */
+
+@Table(name = "Entity1")
+@SuppressWarnings("serial")
+@Entity
+public class Entity1 implements java.io.Serializable {
+
+	/**
+	 *@generated
+	 */
+	@Column
+	@Id
+	private java.lang.String id;
+
+	/**
+	 *@generated
+	 */
+	public java.lang.String getId() {
+		return this.id;
+	}
+
+	/**
+	 *@generated
+	 */
+	public void setId(java.lang.String value) {
+		this.id = value;
+	}
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operamasks-config xmlns="http://www.operamasks.org/IoVC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.operamasks.org/IoVC http://www.operamasks.org/schema/operamasks-3.0.xsd ">
+  <!-- 自定义viewMapper实现,此处应设置ViewMapper实现的类全名，若不设置，则viewMapper列表中只有DefaultViewMapper实现 
+		<view-mapper>...</view-mapper> 
+	-->
+  <!-- 配置IoVC中页面和LiteBean的映射规则 
+		<view-mapping> 
+		****页面与LiteBean单独配置**** 
+		<url-pattern>/greeting.xhtml</url-pattern> 
+		<model-bean>HelloBean</model-bean> 
+		
+		****多个页面与多个LiteBean绑定**** 
+		<url-pattern>/sample1.xhtml</url-pattern> 
+		<url-pattern>/sample2.xhtml</url-pattern> 
+		<url-pattern>/sample3.xhtml</url-pattern> 
+		<model-bean>testBean1</model-bean> 
+		<model-bean>testBean2</model-bean> 
+		<model-bean>testBean2</model-bean> 
+		
+		****绝对路径映射规则，如页面相对于WebContent根目录路径为/sample.xhtml,sampleBean满足以下映射规则,如页面相对于WebContent根目录路径为/test/sample.xhtml,test.sampleBean满足以下映射规则**** 
+		<url-pattern>*</url-pattern> 
+		<model-bean>#{~view}Bean</model-bean> 
+		
+		****通配符映射规则，如页面相对于WebContent根目录路径为/sample.xhtml,sampleBean,test.sampleBean都满足以下映射规则 
+		<url-pattern>*</url-pattern> 
+		<model-bean>#{@view}Bean</model-bean> 
+		
+		****单纯用名字映射规则，如页面相对于WebContent根目录路径为/sample.xhtml,sampleBean都满足以下映射规则, 如页面相对于WebContent根目录路径为/test/sample2.xhtml,sample2Bean满足以下映射规则**** 
+		<url-pattern>*</url-pattern> 
+		<model-bean>#{view}Bean</model-bean> 
+		
+		</view-mapping> 
+	-->
+  <!-- 配置调试选项 
+		<debug-mode> 
+			 <uncompressed-js>true</uncompressed-js>
+		</debug-mode> 
+	-->
+  <!-- 配置客户端异常处理方式 
+		<client-exception> 
+		不捕捉所有客户端异常 
+		<catch-all>false</catch-all> 
+		不在客户端显示异常 
+		<show-exception>false</show-exception> 
+		</client-exception> 
+	-->  
+	
+  <view-mapping>
+    <url-pattern>*</url-pattern>
+    <model-bean>#{~view}Bean</model-bean>
+  </view-mapping>
+  <view-mapping>
+    <url-pattern>//*</url-pattern>
+    <model-bean>.#{@view}Bean</model-bean>
+  </view-mapping>
+  
+  <template-engine>
+ 	  <!--设置使用的模板引擎类型，可选值有jsp,smarty4j,freemarker,默认值为jsp -->
+	  <name>jsp</name>
+	  <!-- 设置模板引擎的工作目录 -->
+	  <working-dir>/WEB-INF/working</working-dir>
+  </template-engine>
+
+<!-- 配置动态页面的生成策略 -->
+<dynamic-view-mapping>
+  <!-- 请求的uri模式 -->
+  <url-pattern>*</url-pattern>
+  <!--
+  模板上下文处理器的LiteBean名称，在模板引擎处理之前会获取此LiteBean，
+  如发现其实现org.operamasks.faces.template.api.TemplateContextHandler接口，
+  则调用其apply(TemplateContext context, FacesContext
+  fcontext)，可按照自由地修改模板上下文
+  -->
+  <template-context-handler>#{~view}Bean</template-context-handler>
+  <!--
+  生成Faces页面的策略，可以有四种选择， request, conversation,
+  session,application, 默认为request
+  当设置为request时，则生成的Faces页面不缓存，每次访问时都会生成faces页面
+  当设置为conversation时，则生成的Faces页面会缓存在ConversationMap中，同一个Conversation中之后的请求将不会重新生成Faces页面
+  当设置为session时，则生成的Faces页面会缓存在SessionMap中，同一个Session中之后的请求将不会重新生成Faces页面
+  当设置为application时，则生成的Faces页面会缓存在ApplicationMap中，同一个应用中之后的请求将不会重新生成Faces页面
+  -->
+  <strategy>request</strategy>
+  <!--
+  是否保存生成的Faces页面，方便于查找问题，生成的Faces页面将位于模板引擎工作目录下，默认为false
+  -->
+  <keep-generated>false</keep-generated>
+</dynamic-view-mapping>
+  
+</operamasks-config>
+

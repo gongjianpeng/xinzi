@@ -1,0 +1,349 @@
+package com.sap.saap.audit.entitys;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated 
+ * 汽车信息
+ */
+@Table(name = "CarInfo")
+@SuppressWarnings("serial")
+@Entity
+public class CarInfo implements java.io.Serializable, IEntity {
+	/** 
+	 * @generated
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "clientdata")
+	private com.sap.saap.audit.entitys.ClientData clientData;
+	/** 
+	 * @generated
+	 * @describe isFlag
+	 * @display 是否是临时保存
+	 */
+	@Column
+	private java.lang.Boolean isFlag;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.Boolean isDelete;
+
+	public java.lang.Long getId() {
+		return id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	/** 
+	 * @generated
+	 * @describe  购卖方式
+	 * @display  购卖方式
+	 */
+	@Column(length = 255)
+	private java.lang.String buyStyle;
+	/** 
+	 * @generated
+	 * @describe  购买日期
+	 * @display  购买日期
+	 */
+	@Column(length = 255)
+	@Temporal(TemporalType.TIMESTAMP)
+	private java.util.Date buyDate;
+	/** 
+	 * @generated
+	 * @describe  汽车品牌
+	 * @display  汽车品牌
+	 */
+	@Column(length = 255)
+	private java.lang.String brand;
+	/** 
+	 * @generated
+	 * @describe  购卖价格
+	 * @display  购卖价格
+	 */
+	@Column(length = 255)
+	private java.lang.Double price;
+	/** 
+	 * @generated
+	 * @describe  贷款总额
+	 * @display  贷款总额
+	 */
+	@Column(length = 255)
+	private java.lang.Double totalLoans;
+	/** 
+	 * @generated
+	 * @describe  欠款余额
+	 * @display  欠款余额
+	 */
+	@Column(length = 255)
+	private java.lang.Double debt;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getBuyStyle() {
+		return this.buyStyle;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setBuyStyle(java.lang.String value) {
+		this.buyStyle = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getBuyDate() {
+		return this.buyDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setBuyDate(java.util.Date value) {
+		this.buyDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getBrand() {
+		return this.brand;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setBrand(java.lang.String value) {
+		this.brand = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getPrice() {
+		return this.price;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPrice(java.lang.Double value) {
+		this.price = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getTotalLoans() {
+		return this.totalLoans;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setTotalLoans(java.lang.Double value) {
+		this.totalLoans = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getDebt() {
+		return this.debt;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setDebt(java.lang.Double value) {
+		this.debt = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.ClientData getClientData() {
+		return this.clientData;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setClientData(com.sap.saap.audit.entitys.ClientData value) {
+		this.clientData = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsFlag() {
+		return this.isFlag;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsFlag(java.lang.Boolean value) {
+		this.isFlag = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+}

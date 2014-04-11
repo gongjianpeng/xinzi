@@ -1,0 +1,813 @@
+package com.sap.saap.audit.entitys;
+
+import java.io.Serializable;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated地址
+ */
+@Table(name = "Addres")
+@Entity
+public class Addres implements Serializable, IEntity {
+	/** 
+	 * @generated
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @display  省
+	 */
+	@Column(length = 255)
+	private java.lang.String province;
+	/** 
+	 * @generated
+	 * @display  市
+	 */
+	@Column(length = 255)
+	private java.lang.String city;
+	/** 
+	 * @generated
+	 * @display  县
+	 */
+	@Column(length = 255)
+	private java.lang.String county;
+	/** 
+	 * @generated
+	 * @display  行政区
+	 */
+	@Column(length = 255)
+	private java.lang.String sanjak;
+	/** 
+	 * @generated
+	 * @display  镇
+	 */
+	@Column(length = 255)
+	private java.lang.String town;
+	/** 
+	 * @generated
+	 * @display  乡/村
+	 */
+	@Column(length = 255)
+	private java.lang.String village;
+	/** 
+	 * @generated
+	 * @display  街/名
+	 */
+	@Column(length = 255)
+	private java.lang.String streetName;
+	/** 
+	 * @generated
+	 * @display  街号 
+	 */
+	@Column(length = 255)
+	private java.lang.String streetNumber;
+	/** 
+	 * @generated
+	 * @display  房子名称
+	 */
+	@Column(length = 255)
+	private java.lang.String houseName;
+	/** 
+	 * @generated
+	 * @display  花园小区
+	 */
+	@Column(length = 255)
+	private java.lang.String garden;
+	/** 
+	 * @generated
+	 * @display  栋号 
+	 */
+	@Column(length = 255)
+	private java.lang.String ridgepoleNumber;
+	/** 
+	 * @generated
+	 * @display  座号 
+	 */
+	@Column(length = 255)
+	private java.lang.String seatNumber;
+	/** 
+	 * @generated
+	 * @display  单元
+	 */
+	@Column(length = 255)
+	private java.lang.String cell;
+	/** 
+	 * @generated
+	 * @display   楼层
+	 * @display  楼层
+	 */
+	@Column(length = 255)
+	private java.lang.String floor;
+	/** 
+	 * @generated
+	 * @display  房间号/信箱号
+	 */
+	@Column(length = 255)
+	private java.lang.String roomNumber;
+	/** 
+	 * @generated
+	 * @display  邮编编码
+	 * @display   邮编编码 
+	 */
+	@Column(length = 255, name = "")
+	private java.lang.String postCode;
+	/** 
+	 * @generated
+	 * @display  地址类型
+	 * @display    地址类型 
+	 */
+	@Column(length = 255)
+	private java.lang.Integer type;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "clientdata")
+	private com.sap.saap.audit.entitys.ClientData clientData;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "spouseinfo")
+	private com.sap.saap.audit.entitys.SpouseInfo spouseInfo;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "jobinfo")
+	private com.sap.saap.audit.entitys.JobInfo jobInfo;
+	/** 
+	 * @generated
+	 */
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "addres")
+	private java.util.List<com.sap.saap.audit.entitys.LiaisonData> liaisonDatas = new java.util.ArrayList<com.sap.saap.audit.entitys.LiaisonData>();
+	/** 
+	 * @generated
+	 * @describe 详细地址
+	 * @display 详细地址
+	 */
+	@Column
+	private java.lang.String detailed;
+	/** 
+	 * @generated
+	 * @describe 联系电话
+	 * @display 联系电话
+	 */
+	@Column
+	private java.lang.String telphone;
+	/** 
+	 * @generated
+	 * @describe 是否是通讯地址
+	 * @display 是否是通讯地址
+	 */
+	@Column
+	private java.lang.Boolean isMessageAddress;
+	/** 
+	 * @generated
+	 * @describe 地址顺序
+	 * @display 地址顺序
+	 */
+	@Column
+	private java.lang.String indexNo;
+	/** 
+	 * @generated
+	 * @describe 是否是临时保存
+	 * @display 是否是临时保存
+	 */
+	@Column
+	private java.lang.Boolean isFlag;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Boolean isDelete = false;
+	/** 
+	 * @generated
+	 * @describe 与谁居住
+	 * @display 与谁居住
+	 */
+	@Column
+	private java.lang.String cohabitant;
+	/** 
+	 * @generated
+	 * @describe 居住人数
+	 * @display 居住人数
+	 */
+	@Column
+	private java.lang.Integer personCount;
+	/** 
+	 * @generated
+	 * @describe  居住 时长
+	 * @display  居住 时长
+	 */
+	@Column
+	private java.lang.String timeForLive;
+	/** 
+	 * @generated
+	 * @describe 住宅类别
+	 * @display 住宅类别
+	 */
+	@Column
+	private java.lang.String homeType;
+	/** 
+	 * @generated
+	 * @describe 住宅性质
+	 * @display 住宅性质
+	 */
+	@Column
+	private java.lang.String homeProperty;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getProvince() {
+		return this.province;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setProvince(java.lang.String value) {
+		this.province = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCity() {
+		return this.city;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCity(java.lang.String value) {
+		this.city = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCounty() {
+		return this.county;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCounty(java.lang.String value) {
+		this.county = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSanjak() {
+		return this.sanjak;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSanjak(java.lang.String value) {
+		this.sanjak = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getTown() {
+		return this.town;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setTown(java.lang.String value) {
+		this.town = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getVillage() {
+		return this.village;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setVillage(java.lang.String value) {
+		this.village = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getStreetName() {
+		return this.streetName;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setStreetName(java.lang.String value) {
+		this.streetName = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getStreetNumber() {
+		return this.streetNumber;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setStreetNumber(java.lang.String value) {
+		this.streetNumber = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getHouseName() {
+		return this.houseName;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setHouseName(java.lang.String value) {
+		this.houseName = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getGarden() {
+		return this.garden;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setGarden(java.lang.String value) {
+		this.garden = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getRidgepoleNumber() {
+		return this.ridgepoleNumber;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRidgepoleNumber(java.lang.String value) {
+		this.ridgepoleNumber = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSeatNumber() {
+		return this.seatNumber;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSeatNumber(java.lang.String value) {
+		this.seatNumber = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCell() {
+		return this.cell;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCell(java.lang.String value) {
+		this.cell = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getFloor() {
+		return this.floor;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setFloor(java.lang.String value) {
+		this.floor = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getRoomNumber() {
+		return this.roomNumber;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRoomNumber(java.lang.String value) {
+		this.roomNumber = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getPostCode() {
+		return this.postCode;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPostCode(java.lang.String value) {
+		this.postCode = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getType() {
+		return this.type;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setType(java.lang.Integer value) {
+		this.type = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.ClientData getClientData() {
+		return this.clientData;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setClientData(com.sap.saap.audit.entitys.ClientData value) {
+		this.clientData = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.SpouseInfo getSpouseInfo() {
+		return this.spouseInfo;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSpouseInfo(com.sap.saap.audit.entitys.SpouseInfo value) {
+		this.spouseInfo = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.JobInfo getJobInfo() {
+		return this.jobInfo;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setJobInfo(com.sap.saap.audit.entitys.JobInfo value) {
+		this.jobInfo = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.LiaisonData> getLiaisonDatas() {
+		return this.liaisonDatas;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLiaisonDatas(
+			java.util.List<com.sap.saap.audit.entitys.LiaisonData> value) {
+		this.liaisonDatas = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getDetailed() {
+		return this.detailed;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setDetailed(java.lang.String value) {
+		this.detailed = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getTelphone() {
+		return this.telphone;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setTelphone(java.lang.String value) {
+		this.telphone = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsMessageAddress() {
+		return this.isMessageAddress;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsMessageAddress(java.lang.Boolean value) {
+		this.isMessageAddress = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getIndexNo() {
+		return this.indexNo;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIndexNo(java.lang.String value) {
+		this.indexNo = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsFlag() {
+		return this.isFlag;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsFlag(java.lang.Boolean value) {
+		this.isFlag = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCohabitant() {
+		return this.cohabitant;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCohabitant(java.lang.String value) {
+		this.cohabitant = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getPersonCount() {
+		return this.personCount;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPersonCount(java.lang.Integer value) {
+		this.personCount = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getTimeForLive() {
+		return this.timeForLive;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setTimeForLive(java.lang.String value) {
+		this.timeForLive = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getHomeType() {
+		return this.homeType;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setHomeType(java.lang.String value) {
+		this.homeType = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getHomeProperty() {
+		return this.homeProperty;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setHomeProperty(java.lang.String value) {
+		this.homeProperty = value;
+	}
+}

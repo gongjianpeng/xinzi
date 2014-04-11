@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:w="http://www.apusic.com/jsf/widget" xmlns:layout="http://www.apusic.com/jsf/layout"
+	renderKitId="AJAX" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://www.springframework.org/security/facelets/tags"
+	xmlns:ajax="http://www.apusic.com/jsf/ajax" xmlns:om="http://www.apusic.com/jsf/misc">
+	<w:head cache="false">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script>
+		 //<![CDATA[  
+	    function areYouSureRemoveFolder(){
+		 	if(confirm('删除文件夹会同时删除文件夹下所有的子文件夹及文件，真的要删除此文件夹吗？')==false)return false;
+				return true;
+			
+		}
+		
+		 function checkSelect(grid){
+			if(!grid.selModel.hasSelection()) {
+				alert('请选择数据行再进行操作！');
+				return false;
+			}
+			if(confirm('真的要删除所选文件吗？')==false)return false;
+				return true;
+			} 
+			function checkDownload(grid){
+				if(!grid.selModel.hasSelection()) {
+					alert('请选择数据行再进行操作！');
+					return false;
+				}
+			}
+			function formaterBackGround(v,m,r){
+                   var filename = r.get('filename');
+                   var type = r.get('type');
+                   var ext=  filename.substring(filename.lastIndexOf(".")+1).toLowerCase();
+                  if(type =="Folder"){
+                 	 return '<img src="../../images/icons/folderopen.gif"></img>';	 
+                  }else{
+					  if(!(ext == null || ext=="" || ext.length <= 0)){				    
+					    return '<img src="../../images/icons/filetype/'+ext+'.gif"></img>';		    
+					  }
+				  }
+				}	
+			//]]>		
+	 </script>
+	</w:head>
+	<w:page>
+		<om:emulateIE7 />
+		<layout:borderLayout fitToBody="true" fit="true">
+			<layout:panel region="west" width="400" title="文件目录" split="true" collapsible="true" fit="true">
+				<w:form prependId="false" groupId="treeform">
+					<w:toolBar>
+						<s:ifAllGranted roles="ROLE_CREATEFOLDER">
+							<w:button value="创建" id="showFolderDialog" image="../../images/icons/add.gif"></w:button>
+							<w:separator></w:separator>
+						</s:ifAllGranted>
+						<s:ifAllGranted roles="ROLE_DELETEFOLDERANDFILE">
+							<w:button value="删除" id="removerFolder" onclick="javascript:return areYouSureRemoveFolder();"
+								image="../../images/icons/delete.gif"></w:button>
+							<w:separator></w:separator>
+							<w:button value="重命名" id="showRenameFolder" image="../../images/icons/edit.png"></w:button>
+							<w:separator></w:separator>
+						</s:ifAllGranted>
+						<w:button value="刷新" id="refreshFolder" image="../../images/icons/refresh.png"></w:button>
+					</w:toolBar>
+					<w:tree id="folderTree" autoScroll="true" border="false" expandAll="true"
+						style="width:100%;height:100%;">
+					</w:tree>
+				</w:form>
+			</layout:panel>
+			<layout:panel region="center" border="false" fit="true">
+				<w:form prependId="false" groupId="treeform">
+					<w:toolBar>
+						<w:button value="上一级" id="goUp" image="../../images/icons/goupfolder.png"></w:button>
+						<w:separator></w:separator>
+						<s:ifAllGranted roles="ROLE_UPLOADFILE">
+							<w:button value="添加文件" id="showAddFileDialog" image="../../images/icons/add.gif"></w:button>
+							<w:separator></w:separator>
+						</s:ifAllGranted>
+						<w:button value="下载" id="downloadButton" image="../../images/icons/sort_down.gif" />
+						<w:separator></w:separator>
+						<w:button value="刷新" id="refreshFile" image="../../images/icons/refresh.png"></w:button>
+					</w:toolBar>
+					<s:ifAllGranted roles="ROLE_DOWNLOADFILE">
+						<om:fileDownload id="download" savedName="#{pages.fileManager.fileManagerBean.saveName}" />
+					</s:ifAllGranted>
+					<w:dataGrid id="fileGrid" paged="true" toolBarPosition="bottom" rows="100" jsvar="js_fileGrid"
+						style="width: 100%;height: 500px;">
+						<w:outputColumn header="类型" id="type" clientFormatter="formaterBackGround" sortable="true">
+						</w:outputColumn>
+						<w:outputColumn header="文件名" id="filename" width="300" sortable="true"></w:outputColumn>
+						<w:outputColumn header="文件大小" id="fileSize" width="80" sortable="true"></w:outputColumn>
+						<w:outputColumn header="上传时间" id="createDate" width="150" sortable="true">
+							<f:convertDateTime pattern="yyyy-MM-dd HH:mm" timeZone="GMT+8" />
+						</w:outputColumn>
+					</w:dataGrid>
+				</w:form>
+				<w:form groupId="treeform">
+					<w:fileUploadDialog id="fileUploadDialog" lazyLoad="true"
+						processUpload="#{pages.fileManager.fileManagerBean.processFileUpload}"></w:fileUploadDialog>
+				</w:form>
+			</layout:panel>
+		</layout:borderLayout>
+		<layout:window title="文件夹名称" id="folderDialog" width="200" modal="true" lazyLoad="true">
+			<w:form groupId="treeform">
+				<layout:panelGrid columns="1">
+					<layout:cell>
+						<w:textField id="foldername" width="180" emptyText="输入文件夹名"></w:textField>
+					</layout:cell>
+					<layout:cell align="center">
+						<w:button id="createFolder" value="确定" image="../../images/icons/ok.gif"></w:button>
+					</layout:cell>
+				</layout:panelGrid>
+			</w:form>
+		</layout:window>
+		<layout:window title="文件夹、文件重命名" id="folderRenameDialog" width="200" modal="true" lazyLoad="true">
+			<w:form groupId="treeform">
+				<layout:panelGrid columns="1">
+					<layout:cell>
+						<w:textField id="folderername" width="180" emptyText="输入新文件名"></w:textField>
+					</layout:cell>
+					<layout:cell align="center">
+						<w:button id="renameFolder" value="确定" image="../../images/icons/ok.gif"></w:button>
+					</layout:cell>
+				</layout:panelGrid>
+			</w:form>
+		</layout:window>
+	</w:page>
+</f:view>

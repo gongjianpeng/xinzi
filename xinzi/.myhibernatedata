@@ -1,0 +1,24 @@
+#MyEclipse Hibernate Properties
+#Mon Dec 30 21:57:06 CST 2013
+sessionFactoryName=
+genBasicCompId=true
+profile=
+daoSFId=
+version=3.2
+jndiPath=
+detectM2M=true
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+libInstallFolder=web/WebContent/WEB-INF/lib
+addLibs2Project=true
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=true
+reSettingsFile=
+configFile=/xinzi/test/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=true

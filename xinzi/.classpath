@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry excluding="resources/" kind="src" output="web/WebContent/WEB-INF/classes" path="web/src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="com.apusic.studio.dev.WebClasspathContainerInitializer/audit/web"/>
+	<classpathentry kind="con" path="com.apusic.studio.dev.ApusicClasspathContainerInitializer/apusicserver/mydomain"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

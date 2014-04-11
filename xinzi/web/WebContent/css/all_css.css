@@ -1,0 +1,78 @@
+body {
+	font-family: Verdana;
+	font-size: 14px;
+	margin-top: 40px;
+	margin-left: 30px;
+	margin-right: 40px;
+}
+body button{
+	font-size: 18px;
+	height: 38px;
+	width: 53px;
+}
+body table{
+	font-size: 13px;
+	
+}
+
+<!--查询Div start-->
+body input{
+	width: 150px;
+	height: 20px;
+	border: 1 soild;
+	margin-top: 5px;
+}
+
+body input #query{
+	width: 140px;
+	height: 20px;
+	margin: 0px;
+}
+
+body textarea{
+	width: 230px;
+	height: 60px;
+	border:1 soild;
+	margin-top: 5px;
+}
+body textarea.textarea1{
+	width: 560px;
+	height: 90px;
+	border:1 soild;
+	margin-top: 5px;
+}
+
+body table.table1{
+	border: 0;
+	cellspacing: 0;
+	cellpadding: 0;
+	font-size: 13px;
+	float: left;
+}
+
+body table.tr1{
+	height: 30px;
+	align: left;
+}
+
+body table.td1{
+	text-align:center;
+	align: right;
+}
+<!--查询Div end-->
+<!--显示Div start-->
+
+body div.div1{
+	width: auto;
+}
+body table.table2{
+	font-size: 13px;
+	
+}
+
+<!--显示Div  colspan="1" rowspan="1" align="center" end-->
+<!--新增\修改弹出框Div start-->
+
+
+
+

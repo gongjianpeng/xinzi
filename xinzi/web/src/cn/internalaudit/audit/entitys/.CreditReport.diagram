@@ -1,0 +1,1307 @@
+package com.sap.saap.audit.entitys;
+
+import java.io.Serializable;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated信用报告
+ */
+@Table(name = "CreditReport")
+@SuppressWarnings("serial")
+@Entity
+public class CreditReport implements Serializable, IEntity {
+	/** 
+	 * @generated
+	 */
+	@Column
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe 状态
+	 * @display 状态
+	 */
+	@Column
+	private java.lang.String state;
+	/** 
+	 * @generated
+	 * @describe 分类
+	 * @display 分类
+	 * @describe 分类、信用卡、底押贷款、无底押贷款
+	 * @display 分类、信用卡、底押贷款、无底押贷款
+	 */
+	@Column
+	private java.lang.String type;
+	/** 
+	 * @generated
+	 * @describe 金融机构
+	 * @display 金融机构
+	 */
+	@Column
+	private java.lang.String financeOrganization;
+	/** 
+	 * @generated
+	 * @describe 信用限额
+	 * @display 信用限额
+	 */
+	@Column
+	private java.lang.Double creditLimit;
+	/** 
+	 * @generated
+	 * @describe 净余金额
+	 * @display 净余金额
+	 */
+	@Column
+	private java.lang.Double surplusMoney;
+	/** 
+	 * @generated
+	 * @describe 每月供款
+	 * @display 每月供款
+	 */
+	@Column
+	private java.lang.Double everyMonthPay;
+	/** 
+	 * @generated
+	 * @describe 剩余期限
+	 * @display 剩余期限
+	 */
+	@Column
+	private java.lang.Integer surplusLimit;
+	/** 
+	 * @generated
+	 * @describe 备注
+	 * @display 备注
+	 */
+	@Column
+	private java.lang.String remark;
+	/** 
+	 * @generated
+	 * @describe 类别、结清、除外、关闭、调动
+	 * @display 类别、结清、除外、关闭、调动
+	 */
+	@Column(name = "")
+	private java.lang.String sort;
+	/** 
+	 * @generated
+	 * @describe 调整信用限额
+	 * @display 调整信用限额
+	 */
+	@Column
+	private java.lang.Double adjustCreditLimit;
+	/** 
+	 * @generated
+	 * @describe 调整净余金额
+	 * @display 调整净余金额
+	 */
+	@Column
+	private java.lang.Double adjustSurplusMoney;
+	/** 
+	 * @generated
+	 * @describe 调整每月供款
+	 * @display 调整每月供款
+	 */
+	@Column
+	private java.lang.Double adjustEveryMonthPay;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "clientdata")
+	private com.sap.saap.audit.entitys.ClientData clientData;
+	/** 
+	 * @generated
+	 * @describe 提保方式
+	 * @display 提保方式
+	 */
+	@Column
+	private java.lang.String assureStyle;
+	/** 
+	 * @generated
+	 * @describe 币种
+	 * @display 币种
+	 */
+	@Column
+	private java.lang.String moneyType;
+	/** 
+	 * @generated
+	 * @describe 开户日期
+	 * @display 开户日期
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date openAccountDate;
+	/** 
+	 * @generated
+	 * @describe 共亨受信额度
+	 * @display 共亨受信额度
+	 */
+	@Column
+	private java.lang.Double shareCreditLimit;
+	/** 
+	 * @generated
+	 * @describe 最大负债额
+	 * @display 最大负债额
+	 */
+	@Column
+	private java.lang.Double maxDebtLimit;
+	/** 
+	 * @generated
+	 * @describe 透支余额、已使用额度
+	 * @display 透支余额、已使用额度
+	 */
+	@Column
+	private java.lang.Double overdraftSurplusMoney;
+	/** 
+	 * @generated
+	 * @describe  本月应还款金额 
+	 * @display 本月应还款金额 
+	 */
+	@Column
+	private java.lang.Double oughtMonthGiveBack;
+	/** 
+	 * @generated
+	 * @describe 本月实际还款金额 
+	 * @display 本月实际还款金额
+	 */
+	@Column
+	private java.lang.Double factOughtMonthGiveBack;
+	/** 
+	 * @generated
+	 * @describe 最近一次还款日
+	 * @display 最近一次还款日
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastGiveBackDate;
+	/** 
+	 * @generated
+	 * @describe 当前逾期期数
+	 * @display 当前逾期期数
+	 */
+	@Column
+	private java.lang.Integer currentlyOverdue;
+	/** 
+	 * @generated
+	 * @describe 当前逾期金额
+	 * @display 当前逾期金额
+	 */
+	@Column
+	private java.lang.Double currentlyOverdueMoney;
+	/** 
+	 * @generated
+	 * @describe 准贷记卡透支180天以上未付
+	 * @display 准贷记卡透支180天以上未付
+	 */
+	@Column
+	private java.lang.Double upDay180;
+	/** 
+	 * @generated
+	 * @describe 贷记卡12个月内未还最低还款额
+	 * @display 贷记卡12个月内未还最低还款额
+	 */
+	@Column
+	private java.lang.Double month12Within;
+	/** 
+	 * @generated
+	 * @describe 信息获取时间
+	 * @display 信息获取时间
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(nullable = false)
+	private java.util.Date obtainDate;
+	/** 
+	 * @generated
+	 * @describe 贷款种类
+	 * @display 贷款种类
+	 */
+	@Column
+	private java.lang.String category;
+	/** 
+	 * @generated
+	 * @describe 还款频率
+	 * @display 还款频率
+	 */
+	@Column
+	private java.lang.String giveBackFrequency;
+	/** 
+	 * @generated
+	 * @describe 还款月数
+	 * @display 还款月数
+	 */
+	@Column
+	private java.lang.Integer giveBackMonthCount;
+	/** 
+	 * @generated
+	 * @describe 贷款发放日期
+	 * @display 贷款发放日期
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date loanHxDate;
+	/** 
+	 * @generated
+	 * @describe 贷款到期日期
+	 * @display 贷款到期日期
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date loanOverDate;
+	/** 
+	 * @generated
+	 * @describe 贷款合同金额
+	 * @display 贷款合同金额
+	 */
+	@Column
+	private java.lang.Double loanContractMoney;
+	/** 
+	 * @generated
+	 * @describe 贷款余额
+	 * @display 贷款余额
+	 */
+	@Column
+	private java.lang.Double loanSurplusMoney;
+	/** 
+	 * @generated
+	 * @describe 累计逾期次数
+	 * @display 累计逾期次数
+	 */
+	@Column
+	private java.lang.Integer totalOverdueCount;
+	/** 
+	 * @generated
+	 * @describe 最高逾期期数
+	 * @display 最高逾期期数
+	 */
+	@Column
+	private java.lang.Integer maxOverdueCount;
+	/** 
+	 * @generated
+	 * @describe 逾期31-60天未归还贷款本金
+	 * @display 逾期31-60天未归还贷款本金
+	 */
+	@Column
+	private java.lang.String overdue31To61Day;
+	/** 
+	 * @generated
+	 * @describe 逾期61-90天未归还贷款本金
+	 * @display 逾期61-90天未归还贷款本金
+	 */
+	@Column
+	private java.lang.String overdue61To90Day;
+	/** 
+	 * @generated
+	 * @describe 逾期91-180天未归还贷款本金
+	 * @display 逾期91-180天未归还贷款本金
+	 */
+	@Column
+	private java.lang.String overdue91To180Day;
+	/** 
+	 * @generated
+	 * @describe 逾期180天以上未归还贷款本金
+	 * @display 逾期180天以上未归还贷款本金
+	 */
+	@Column
+	private java.lang.String overdueUp180Day;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Boolean isDelete = false;
+	/** 
+	 * @generated
+	 * @describe 一月还款记录
+	 * @display 一月还款记录
+	 */
+	@Column
+	private java.lang.String jan;
+	/** 
+	 * @generated
+	 * @describe 二月还款记录
+	 * @display 二月还款记录
+	 */
+	@Column
+	private java.lang.String feb;
+	/** 
+	 * @generated
+	 * @describe 三月还款记录
+	 * @display 三月还款记录
+	 */
+	@Column
+	private java.lang.String mar;
+	/** 
+	 * @generated
+	 * @describe 四月还款记录
+	 * @display 四月还款记录
+	 */
+	@Column
+	private java.lang.String apr;
+	/** 
+	 * @generated
+	 * @describe 五月还款记录
+	 * @display 五月还款记录
+	 */
+	@Column
+	private java.lang.String may;
+	/** 
+	 * @generated
+	 * @describe 六月还款记录
+	 * @display 六月还款记录
+	 */
+	@Column
+	private java.lang.String jun;
+	/** 
+	 * @generated
+	 * @describe 七月还款记录
+	 * @display 七月还款记录
+	 */
+	@Column
+	private java.lang.String jul;
+	/** 
+	 * @generated
+	 * @describe 八月还款记录
+	 * @display 八月还款记录
+	 */
+	@Column
+	private java.lang.String aug;
+	/** 
+	 * @generated
+	 * @describe 九月还款记录
+	 * @display 九月还款记录
+	 */
+	@Column
+	private java.lang.String sep;
+	/** 
+	 * @generated
+	 * @describe 十月还款记录
+	 * @display 十月还款记录
+	 */
+	@Column
+	private java.lang.String oct;
+	/** 
+	 * @generated
+	 * @describe 十一月还款记录
+	 * @display 十一月还款记录
+	 */
+	@Column
+	private java.lang.String nov;
+	/** 
+	 * @generated
+	 * @describe 十二月还款记录
+	 * @display 十二月还款记录
+	 */
+	@Column
+	private java.lang.String dec;
+	/** 
+	 * @generated
+	 * @describe 结算日期
+	 * @display 结算日期
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date balanceDate;
+
+	public java.lang.Long getId() {
+		return id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	public java.lang.String getName() {
+		return name;
+	}
+
+	public void setName(java.lang.String name) {
+		this.name = name;
+	}
+
+	@Column(length = 255, name = "")
+	private java.lang.String name;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getState() {
+		return this.state;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setState(java.lang.String value) {
+		this.state = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getType() {
+		return this.type;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setType(java.lang.String value) {
+		this.type = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getFinanceOrganization() {
+		return this.financeOrganization;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setFinanceOrganization(java.lang.String value) {
+		this.financeOrganization = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getCreditLimit() {
+		return this.creditLimit;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreditLimit(java.lang.Double value) {
+		this.creditLimit = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getSurplusMoney() {
+		return this.surplusMoney;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSurplusMoney(java.lang.Double value) {
+		this.surplusMoney = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getEveryMonthPay() {
+		return this.everyMonthPay;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setEveryMonthPay(java.lang.Double value) {
+		this.everyMonthPay = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getSurplusLimit() {
+		return this.surplusLimit;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSurplusLimit(java.lang.Integer value) {
+		this.surplusLimit = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getRemark() {
+		return this.remark;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRemark(java.lang.String value) {
+		this.remark = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSort() {
+		return this.sort;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSort(java.lang.String value) {
+		this.sort = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getAdjustCreditLimit() {
+		return this.adjustCreditLimit;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAdjustCreditLimit(java.lang.Double value) {
+		this.adjustCreditLimit = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getAdjustSurplusMoney() {
+		return this.adjustSurplusMoney;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAdjustSurplusMoney(java.lang.Double value) {
+		this.adjustSurplusMoney = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getAdjustEveryMonthPay() {
+		return this.adjustEveryMonthPay;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAdjustEveryMonthPay(java.lang.Double value) {
+		this.adjustEveryMonthPay = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.ClientData getClientData() {
+		return this.clientData;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setClientData(com.sap.saap.audit.entitys.ClientData value) {
+		this.clientData = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getAssureStyle() {
+		return this.assureStyle;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAssureStyle(java.lang.String value) {
+		this.assureStyle = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getMoneyType() {
+		return this.moneyType;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setMoneyType(java.lang.String value) {
+		this.moneyType = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getOpenAccountDate() {
+		return this.openAccountDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOpenAccountDate(java.util.Date value) {
+		this.openAccountDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getShareCreditLimit() {
+		return this.shareCreditLimit;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setShareCreditLimit(java.lang.Double value) {
+		this.shareCreditLimit = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getMaxDebtLimit() {
+		return this.maxDebtLimit;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setMaxDebtLimit(java.lang.Double value) {
+		this.maxDebtLimit = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getOverdraftSurplusMoney() {
+		return this.overdraftSurplusMoney;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOverdraftSurplusMoney(java.lang.Double value) {
+		this.overdraftSurplusMoney = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getOughtMonthGiveBack() {
+		return this.oughtMonthGiveBack;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOughtMonthGiveBack(java.lang.Double value) {
+		this.oughtMonthGiveBack = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getFactOughtMonthGiveBack() {
+		return this.factOughtMonthGiveBack;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setFactOughtMonthGiveBack(java.lang.Double value) {
+		this.factOughtMonthGiveBack = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastGiveBackDate() {
+		return this.lastGiveBackDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastGiveBackDate(java.util.Date value) {
+		this.lastGiveBackDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getCurrentlyOverdue() {
+		return this.currentlyOverdue;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCurrentlyOverdue(java.lang.Integer value) {
+		this.currentlyOverdue = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getCurrentlyOverdueMoney() {
+		return this.currentlyOverdueMoney;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCurrentlyOverdueMoney(java.lang.Double value) {
+		this.currentlyOverdueMoney = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getUpDay180() {
+		return this.upDay180;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setUpDay180(java.lang.Double value) {
+		this.upDay180 = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getMonth12Within() {
+		return this.month12Within;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setMonth12Within(java.lang.Double value) {
+		this.month12Within = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getObtainDate() {
+		return this.obtainDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setObtainDate(java.util.Date value) {
+		this.obtainDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCategory() {
+		return this.category;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCategory(java.lang.String value) {
+		this.category = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getGiveBackFrequency() {
+		return this.giveBackFrequency;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setGiveBackFrequency(java.lang.String value) {
+		this.giveBackFrequency = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getGiveBackMonthCount() {
+		return this.giveBackMonthCount;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setGiveBackMonthCount(java.lang.Integer value) {
+		this.giveBackMonthCount = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLoanHxDate() {
+		return this.loanHxDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLoanHxDate(java.util.Date value) {
+		this.loanHxDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLoanOverDate() {
+		return this.loanOverDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLoanOverDate(java.util.Date value) {
+		this.loanOverDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getLoanContractMoney() {
+		return this.loanContractMoney;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLoanContractMoney(java.lang.Double value) {
+		this.loanContractMoney = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getLoanSurplusMoney() {
+		return this.loanSurplusMoney;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLoanSurplusMoney(java.lang.Double value) {
+		this.loanSurplusMoney = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getTotalOverdueCount() {
+		return this.totalOverdueCount;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setTotalOverdueCount(java.lang.Integer value) {
+		this.totalOverdueCount = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getMaxOverdueCount() {
+		return this.maxOverdueCount;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setMaxOverdueCount(java.lang.Integer value) {
+		this.maxOverdueCount = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getOverdue31To61Day() {
+		return this.overdue31To61Day;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOverdue31To61Day(java.lang.String value) {
+		this.overdue31To61Day = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getOverdue61To90Day() {
+		return this.overdue61To90Day;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOverdue61To90Day(java.lang.String value) {
+		this.overdue61To90Day = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getOverdue91To180Day() {
+		return this.overdue91To180Day;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOverdue91To180Day(java.lang.String value) {
+		this.overdue91To180Day = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getOverdueUp180Day() {
+		return this.overdueUp180Day;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOverdueUp180Day(java.lang.String value) {
+		this.overdueUp180Day = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getJan() {
+		return this.jan;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setJan(java.lang.String value) {
+		this.jan = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getFeb() {
+		return this.feb;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setFeb(java.lang.String value) {
+		this.feb = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getMar() {
+		return this.mar;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setMar(java.lang.String value) {
+		this.mar = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getApr() {
+		return this.apr;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setApr(java.lang.String value) {
+		this.apr = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getMay() {
+		return this.may;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setMay(java.lang.String value) {
+		this.may = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getJun() {
+		return this.jun;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setJun(java.lang.String value) {
+		this.jun = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getJul() {
+		return this.jul;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setJul(java.lang.String value) {
+		this.jul = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getAug() {
+		return this.aug;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAug(java.lang.String value) {
+		this.aug = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSep() {
+		return this.sep;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSep(java.lang.String value) {
+		this.sep = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getOct() {
+		return this.oct;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOct(java.lang.String value) {
+		this.oct = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getNov() {
+		return this.nov;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setNov(java.lang.String value) {
+		this.nov = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getDec() {
+		return this.dec;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setDec(java.lang.String value) {
+		this.dec = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getBalanceDate() {
+		return this.balanceDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setBalanceDate(java.util.Date value) {
+		this.balanceDate = value;
+	}
+}

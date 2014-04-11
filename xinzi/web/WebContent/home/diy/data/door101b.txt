@@ -1,0 +1,178 @@
+{
+	"data":[
+			{"name":"","img":"images/diy/images/四开子母/四开子母带窗门洞.png","type":1},
+			{"name":"","img":"images/diy/images/门花型/6子门.png","type":1,"x":116, "y":190},
+			{"name":"","img":"images/diy/images/门花型/6.png","type":1,"x":190, "y":190},
+			{"name":"","img":"images/diy/images/门花型/6.png","type":1,"x":290, "y":190},
+			{"name":"","img":"images/diy/images/门花型/6子门.png","type":1,"x":362, "y":190},	
+			{"name":"","img":"images/diy/images/四开门/四开亮窗1.png","type":0,"x":118, "y":133},		
+			{"name":"","img":"images/diy/images/四开门/四开亮窗1.png","type":0,"x":274, "y":133},						
+			{"name":"","img":"images/diy/images/四开门/四开下档.png","type":0},	
+			{"name":"","img":"images/diy/images/四开子母/四开子母带窗中档.png","type":1},	
+			{"name":"","img":"images/diy/images/四开门/四开亮窗中档.png","type":1},	
+			{"name":"","img":"images/diy/images/四开子母/四开子母带窗门框.png","type":1},				
+			{"name":"","img":"images/diy/images/拉手2-1.png","type":0, "scale":0.7, "x":278, "y":280},
+			{"name":"","img":"images/diy/images/拉手2-2.png","type":0, "scale":0.7, "x":244, "y":280}
+			
+			],
+	"category": [
+		{
+			"id": "1",
+			"name": "款式",
+			"list": {
+				"name": "门面款式",
+				"data": [
+					{
+						"name": "压花",
+						"id": "101",
+						"list": ""
+					}, {
+						"name": "花枝",
+						"id": "102",
+						"list": {
+							"name": "玻璃",
+							"data": [
+								{
+									"name": "艺术",
+									"id": "1011"
+								}, {
+									"name": "普通",
+									"id": "1012"
+								}
+							]
+						}
+					}
+				]
+			},
+			"def": {
+				"name": "value1",
+				"id": "001"
+			}
+		}, {
+			"id": "2",
+			"name": "子门款式",
+			"list": {
+				"name": "子门款式",
+				"data": [
+					{
+						"name": "压花",
+						"id": "101",
+						"list": {
+							"name": "类别",
+							"data": [
+								{
+									"name": "配套",
+									"id": "1011"
+								}, {
+									"name": "可选",
+									"id": "1012"
+								}
+							]
+						}
+					}, {
+						"name": "花枝",
+						"id": "102",
+						"list": {
+							"name": "类别",
+							"data": [
+								{
+									"name": "配套",
+									"id": "1011"
+								}, {
+									"name": "可选",
+									"id": "1012"
+								}
+							]
+						}
+					}
+				]
+			},
+			"def": {
+				"name": "value2",
+				"id": "001"
+			}
+		}, {
+			"id": "3",
+			"name": "气窗款式",
+			"list": "",
+			"def": {
+				"name": "value3",
+				"id": "001"
+			}
+		}, {
+			"id": "4",
+			"name": "边框样式",
+			"list": {
+				"name": "边框款式",
+				"data": [
+					{
+						"name": "门头款式",
+						"id": "201",
+						"list": ""
+					}, {
+						"name": "门框款式",
+						"id": "202",
+						"list": ""
+					}
+				]
+			},
+			"def": {
+				"name": "value4",
+				"id": "001"
+			}
+		}, {
+			"id": "5",
+			"name": "色板",
+			"list": "",
+			"def": {
+				"name": "value5",
+				"id": "001"
+			}
+		}, {
+			"id": "6",
+			"name": "开向",
+			"list": "",
+			"def": {
+				"name": "value6",
+				"id": "001"
+			}
+		}, {
+			"id": "7",
+			"name": "板材",
+			"list": {
+							"name": "门面厚度",
+							"data": [
+								{
+									"name": "0.8",
+									"id": "1011",
+									"data":""
+								}, {
+									"name": "0.9",
+									"id": "1012",
+									"data":""
+								}
+							]
+						},
+			"def": {
+				"name": "value7",
+				"id": "001"
+			}
+		}, {
+			"id": "8",
+			"name": "其它",
+			"list": "",
+			"def": {
+				"name": "value8",
+				"id": "001"
+			}
+		}, {
+			"id": "9",
+			"name": "配件",
+			"list": "",
+			"def": {
+				"name": "value9",
+				"id": "001"
+			}
+		}
+	]
+}

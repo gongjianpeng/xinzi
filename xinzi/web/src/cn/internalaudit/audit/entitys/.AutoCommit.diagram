@@ -1,0 +1,364 @@
+package com.sap.saap.audit.entitys;
+
+import javax.persistence.*;
+
+/** 
+ * @generated 
+ * 自动提交设置
+ */
+@Table(name = "AutoCommit")
+@SuppressWarnings("serial")
+@Entity
+public class AutoCommit implements java.io.Serializable {
+	/** 
+	 * @generated  
+	 */
+	@Column
+	@Id
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * 
+	 * @describe 每天自动提交时间分钟
+	 * @display 每天自动提交时间分钟
+	 */
+	@Column
+	@Temporal(TemporalType.TIMESTAMP)
+	private java.util.Date everyDayMinute;
+	/** 
+	 * @generated
+	 * 
+	 * @describe 每天自动提交时间小时
+	 * @display 每天自动提交时间小时
+	 */
+	@Column
+	private java.lang.Integer everyDayHour;
+	/** 
+	 * @generated
+	 * 
+	 * @describe 是否每天
+	 * @display 是否每天
+	 */
+	@Column
+	private java.lang.Boolean isEveryDay;
+	/** 
+	 * @generated
+	 * 
+	 * @describe 是否每周
+	 * @display 是否每周
+	 */
+	@Column
+	private java.lang.Boolean isEveryWeek;
+	/** 
+	 * @generated
+	 * 
+	 * @describe 每天自动提交秒
+	 * @display 每天自动提交秒
+	 */
+	@Column
+	private java.lang.String everyDaySecond;
+	/** 
+	 * @generated
+	 * 
+	 * @describe 是否每小时
+	 * @display 是否每小时
+	 */
+	@Column
+	private java.lang.Boolean isEveryHour;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.Boolean isDelete;
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.util.Date getEveryDayMinute() {
+		return this.everyDayMinute;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setEveryDayMinute(java.util.Date value) {
+		this.everyDayMinute = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Integer getEveryDayHour() {
+		return this.everyDayHour;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setEveryDayHour(java.lang.Integer value) {
+		this.everyDayHour = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsEveryDay() {
+		return this.isEveryDay;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsEveryDay(java.lang.Boolean value) {
+		this.isEveryDay = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsEveryWeek() {
+		return this.isEveryWeek;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsEveryWeek(java.lang.Boolean value) {
+		this.isEveryWeek = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.String getEveryDaySecond() {
+		return this.everyDaySecond;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setEveryDaySecond(java.lang.String value) {
+		this.everyDaySecond = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsEveryHour() {
+		return this.isEveryHour;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsEveryHour(java.lang.Boolean value) {
+		this.isEveryHour = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+}

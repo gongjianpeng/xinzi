@@ -1,0 +1,287 @@
+package com.sap.saap.audit.entitys;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated 
+ * 公司专用
+ */
+@Table(name = "CompanyExpert")
+@SuppressWarnings("serial")
+@Entity
+public class CompanyExpert implements java.io.Serializable, IEntity {
+	/** 
+	 * @generated  
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe 是否需要考察
+	 * @display 是否需要考察
+	 */
+	@Column
+	private java.lang.Boolean isAutoptical;
+	/** 
+	 * @generated
+	 * @describe 是否已考察
+	 * @display 是否已考察
+	 */
+	@Column
+	private java.lang.Boolean isAutoPticaled;
+	/** 
+	 * @generated
+	 * @describe 建议金额
+	 * @display 建议金额
+	 */
+	@Column
+	private java.lang.Double adviceMoney;
+	/** 
+	 * @generated
+	 * @describe 建议期数
+	 * @display 建议期数
+	 */
+	@Column
+	private java.lang.Integer adivceLimitTime;
+	/** 
+	 * @generated
+	 */
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "companyExpert")
+	private java.util.List<com.sap.saap.audit.entitys.AutopticalList> autopticalLists = new java.util.ArrayList<com.sap.saap.audit.entitys.AutopticalList>();
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.Boolean isDelete;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsAutoptical() {
+		return this.isAutoptical;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsAutoptical(java.lang.Boolean value) {
+		this.isAutoptical = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsAutoPticaled() {
+		return this.isAutoPticaled;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsAutoPticaled(java.lang.Boolean value) {
+		this.isAutoPticaled = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getAdviceMoney() {
+		return this.adviceMoney;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAdviceMoney(java.lang.Double value) {
+		this.adviceMoney = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getAdivceLimitTime() {
+		return this.adivceLimitTime;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAdivceLimitTime(java.lang.Integer value) {
+		this.adivceLimitTime = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.AutopticalList> getAutopticalLists() {
+		return this.autopticalLists;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAutopticalLists(
+			java.util.List<com.sap.saap.audit.entitys.AutopticalList> value) {
+		this.autopticalLists = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+}

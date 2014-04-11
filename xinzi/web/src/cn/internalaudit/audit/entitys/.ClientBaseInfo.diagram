@@ -1,0 +1,315 @@
+package com.sap.saap.audit.entitys;
+
+import javax.persistence.*;
+import com.sap.saap.audit.base.IEntity;
+
+/** 
+ * @generated 
+ * 客户基本信息
+ */
+@Table(name = "ClientBaseInfo")
+@SuppressWarnings("serial")
+@Entity
+public class ClientBaseInfo implements java.io.Serializable, IEntity {
+	/** 
+	 * @generated  
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe    身份证号码
+	 */
+	@Column
+	private java.lang.String cardId;
+	/** 
+	 * @generated
+	 * @describe    性别
+	 */
+	@Column
+	private java.lang.String sex;
+	/** 
+	 * @generated
+	 * @describe    出生日期
+	 */
+	@Column
+	@Temporal(TemporalType.TIMESTAMP)
+	private java.util.Date birthday;
+	/** 
+	 * @generated
+	 * @describe    身份证过期日期
+	 */
+	@Column
+	@Temporal(TemporalType.TIMESTAMP)
+	private java.util.Date cardAbateDate;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 */
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "clientBaseInfo")
+	private java.util.List<com.sap.saap.audit.entitys.ClientData> clientDatas = new java.util.ArrayList<com.sap.saap.audit.entitys.ClientData>();
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Boolean isDelete = false;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Boolean isFlag;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "clientBaseInfo")
+	private java.util.List<com.sap.saap.audit.entitys.ClientNotepad> clientNotepads = new java.util.ArrayList<com.sap.saap.audit.entitys.ClientNotepad>();
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCardId() {
+		return this.cardId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCardId(java.lang.String value) {
+		this.cardId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getSex() {
+		return this.sex;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setSex(java.lang.String value) {
+		this.sex = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getBirthday() {
+		return this.birthday;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setBirthday(java.util.Date value) {
+		this.birthday = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCardAbateDate() {
+		return this.cardAbateDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCardAbateDate(java.util.Date value) {
+		this.cardAbateDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.ClientData> getClientDatas() {
+		return this.clientDatas;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setClientDatas(
+			java.util.List<com.sap.saap.audit.entitys.ClientData> value) {
+		this.clientDatas = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsFlag() {
+		return this.isFlag;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsFlag(java.lang.Boolean value) {
+		this.isFlag = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.ClientNotepad> getClientNotepads() {
+		return this.clientNotepads;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setClientNotepads(
+			java.util.List<com.sap.saap.audit.entitys.ClientNotepad> value) {
+		this.clientNotepads = value;
+	}
+}

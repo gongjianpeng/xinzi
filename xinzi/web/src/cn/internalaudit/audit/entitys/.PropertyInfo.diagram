@@ -1,0 +1,439 @@
+package com.sap.saap.audit.entitys;
+
+import java.io.Serializable;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated物业信息
+ */
+@Table(name = "PropertyInfo")
+@SuppressWarnings("serial")
+@Entity
+public class PropertyInfo implements Serializable, IEntity {
+	/** 
+	 * @generated
+	 * @describe   物业信息
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe   已付分期数
+	 * @display  已付分期数
+	 */
+	@Column(length = 255)
+	private java.lang.Integer installmentPaid;
+	/** 
+	 * @generated
+	 * @describe   总分期分数
+	 * @display  总分期分数
+	 */
+	@Column(length = 255)
+	private java.lang.Integer totalInstallment;
+	/** 
+	 * @generated
+	 * @describe   居住时间
+	 * @display  居住时间
+	 */
+	@Column(length = 255)
+	@Temporal(TemporalType.TIMESTAMP)
+	private java.util.Date residenceTime;
+	/** 
+	 * @generated
+	 * @describe  受供养人数
+	 * @display  受供养人数
+	 */
+	@Column(length = 255)
+	private java.lang.Integer numberOfDependents;
+	/** 
+	 * @generated
+	 * @describe   与谁居住
+	 * @display  与谁居住
+	 */
+	@Column(length = 255)
+	private java.lang.String cohabitant;
+	/** 
+	 * @generated
+	 * @describe  物业类别
+	 * @display  物业类别
+	 */
+	@Column(length = 255)
+	private java.lang.String propertyType;
+	/** 
+	 * @generated
+	 * @describe  物业状态
+	 * @display  物业状态
+	 */
+	@Column(length = 255)
+	private java.lang.String propertyStatus;
+	/** 
+	 * @generated
+	 * @describe  拥用/租赁
+	 * @display  拥用/租赁
+	 */
+	@Column(length = 255)
+	private java.lang.String ownsOrLeases;
+	/** 
+	 * @generated
+	 * @describe  每月支出
+	 * @display  每月支出
+	 */
+	@Column(length = 255)
+	private java.lang.Double monthlyExpenses;
+	/** 
+	 * @generated
+	 * @describe  负担比率
+	 * @display  负担比率
+	 */
+	@Column(length = 255)
+	private java.lang.Double burdenRatio;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "clientdata")
+	private com.sap.saap.audit.entitys.ClientData clientData;
+	/** 
+	 * @generated
+	 * @describe 是否是临时保存
+	 * @display 是否是临时保存
+	 */
+	@Column
+	private java.lang.Boolean isFlag;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.Boolean isDelete;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getInstallmentPaid() {
+		return this.installmentPaid;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setInstallmentPaid(java.lang.Integer value) {
+		this.installmentPaid = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getTotalInstallment() {
+		return this.totalInstallment;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setTotalInstallment(java.lang.Integer value) {
+		this.totalInstallment = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getResidenceTime() {
+		return this.residenceTime;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setResidenceTime(java.util.Date value) {
+		this.residenceTime = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Integer getNumberOfDependents() {
+		return this.numberOfDependents;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setNumberOfDependents(java.lang.Integer value) {
+		this.numberOfDependents = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCohabitant() {
+		return this.cohabitant;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCohabitant(java.lang.String value) {
+		this.cohabitant = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getPropertyType() {
+		return this.propertyType;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPropertyType(java.lang.String value) {
+		this.propertyType = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getPropertyStatus() {
+		return this.propertyStatus;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPropertyStatus(java.lang.String value) {
+		this.propertyStatus = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getOwnsOrLeases() {
+		return this.ownsOrLeases;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOwnsOrLeases(java.lang.String value) {
+		this.ownsOrLeases = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getMonthlyExpenses() {
+		return this.monthlyExpenses;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setMonthlyExpenses(java.lang.Double value) {
+		this.monthlyExpenses = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getBurdenRatio() {
+		return this.burdenRatio;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setBurdenRatio(java.lang.Double value) {
+		this.burdenRatio = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.ClientData getClientData() {
+		return this.clientData;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setClientData(com.sap.saap.audit.entitys.ClientData value) {
+		this.clientData = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsFlag() {
+		return this.isFlag;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsFlag(java.lang.Boolean value) {
+		this.isFlag = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+}

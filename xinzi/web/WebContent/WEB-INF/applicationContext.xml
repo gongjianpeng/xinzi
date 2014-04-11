@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd 
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-lazy-init="true">
+
+	<bean class="org.operamasks.faces.spring30.ManagedBeanConfigurer" />
+    <context:annotation-config />
+	<context:component-scan base-package="cn.internalaudit.audit">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+<!--  
+	<jee:jndi-lookup id="dataSource" jndi-name="jdbc/auditDS"
+	resource-ref="true" />-->
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://localhost:3306/xinzi?characterEncoding=UTF-8
+			</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>root</value>
+		</property>
+	</bean>
+
+	<!-- Hibernate SessionFactoryBean-->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan">
+			<list>
+				<value>cn.internalaudit.audit.entitys</value>
+				<value>cn.internalaudit.audit.entitys.base</value>
+				<value>cn.internalaudit.audit.pojo</value>
+				
+			</list>
+		</property>
+
+		<property name="hibernateProperties">
+			<value>
+				hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+				<!--
+				hibernate.connection.autocommit=false
+					hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+				-->
+				<!-- hibernate.dialect=org.hibernate.dialect.SQLServerDialect -->
+				hibernate.show_sql=false
+				hibernate.format_sql=false
+				hibernate.hbm2ddl.auto=update
+				hibernate.cache.use_second_level_cache=false
+    			hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+				hibernate.query.substitutions=true 1,false 0
+				
+			</value>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<tx:annotation-driven proxy-target-class="true"/>
+	
+	<bean id="loginSuccessListener" class="cn.internalaudit.audit.security.LoginSuccessListener" />
+	<bean id="loginInfo" class="cn.internalaudit.audit.security.LoginInfo"
+		scope="session">
+		<property name="locale" value="zh_CN" />
+		<aop:scoped-proxy />
+	</bean>
+
+	<!--  文档管理存放服务器真实路径路配置-->
+	<bean id="DoccumentRootPathConfig"
+		class="cn.internalaudit.audit.beans.filemanager.DoccumentRootPathConfig">
+		<property name="realRootPath" value="D:\DocRoot"></property>
+	</bean>
+	<bean id="configBean"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:appInfo.properties</value>
+		</property>
+	</bean>
+	<bean id="appInfo" class="cn.internalaudit.audit.security.AppInfo">
+		<property name="appName">
+			<value>${name}</value>
+		</property>
+		<property name="iconUrl">
+			<value>${logoUrl}</value>
+		</property>
+	</bean>
+	
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+	   </bean> 
+</beans>

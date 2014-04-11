@@ -1,0 +1,314 @@
+package com.sap.saap.audit.entitys;
+
+import javax.persistence.*;
+import com.sap.saap.audit.base.IEntity;
+
+/** 
+ * @generated 
+ * 文档审核清单
+ */
+@Table(name = "DocumentAuditing")
+@SuppressWarnings("serial")
+@Entity
+public class DocumentAuditing implements java.io.Serializable, IEntity {
+	/** 
+	 * @generated  
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe 客户姓名，主贷人姓名、次贷人姓名
+	 * @display 客户姓名，主贷人姓名、次贷人姓名
+	 */
+	@Column
+	private java.lang.String clientName;
+	/** 
+	 * @generated
+	 * @describe 文件名称
+	 * @display 文件名称
+	 */
+	@Column
+	private java.lang.String fileName;
+	/** 
+	 * @generated
+	 * @describe 是否验证，是否已审核
+	 * @display 是否验证，是否已审核
+	 */
+	@Column
+	private java.lang.Boolean isCheck;
+	/** 
+	 * @generated
+	 * @describe 收件人
+	 * @display 收件人
+	 */
+	@Column
+	private java.lang.String inceptPersonName;
+	/** 
+	 * @generated
+	 * @describe 收件日期
+	 * @display 收件日期
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date inceptDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String remark;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Boolean isDelete;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "loanorder")
+	private com.sap.saap.audit.entitys.LoanOrder loanOrder;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getClientName() {
+		return this.clientName;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setClientName(java.lang.String value) {
+		this.clientName = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getFileName() {
+		return this.fileName;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setFileName(java.lang.String value) {
+		this.fileName = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsCheck() {
+		return this.isCheck;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsCheck(java.lang.Boolean value) {
+		this.isCheck = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getInceptPersonName() {
+		return this.inceptPersonName;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setInceptPersonName(java.lang.String value) {
+		this.inceptPersonName = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getInceptDate() {
+		return this.inceptDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setInceptDate(java.util.Date value) {
+		this.inceptDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getRemark() {
+		return this.remark;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRemark(java.lang.String value) {
+		this.remark = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.LoanOrder getLoanOrder() {
+		return this.loanOrder;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLoanOrder(com.sap.saap.audit.entitys.LoanOrder value) {
+		this.loanOrder = value;
+	}
+}

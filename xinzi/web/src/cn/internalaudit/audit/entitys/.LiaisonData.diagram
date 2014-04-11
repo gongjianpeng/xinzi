@@ -1,0 +1,436 @@
+package com.sap.saap.audit.entitys;
+
+import java.io.Serializable;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated电话联络资料
+ */
+@Table(name = "LiaisonData")
+@SuppressWarnings("serial")
+@Entity
+public class LiaisonData implements Serializable, IEntity {
+	/** 
+	 * @generated
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe  电话类别
+	 * @display  电话类别
+	 */
+	@Column(length = 255)
+	private java.lang.String phoneType;
+	/** 
+	 * @generated
+	 * @describe  区号
+	 * @display  区号
+	 */
+	@Column(length = 255)
+	private java.lang.String areaCode;
+	/** 
+	 * @generated
+	 * @describe  电话号码
+	 * @display  电话号码
+	 */
+	@Column(length = 255)
+	private java.lang.String telphone;
+	/** 
+	 * @generated
+	 * @describe  是否查核
+	 * @display  是否查核
+	 */
+	@Column(length = 255)
+	private java.lang.Boolean isVerify;
+	/** 
+	 * @generated
+	 * @describe  核查人姓名
+	 * @display  核查人姓名
+	 */
+	@Column(length = 255)
+	private java.lang.String verifyPerson;
+	/** 
+	 * @generated
+	 * @describe   核查时间
+	 * @display  核查时间
+	 */
+	@Column(length = 255)
+	@Temporal(TemporalType.TIMESTAMP)
+	private java.util.Date verifyDate;
+	/** 
+	 * @generated
+	 * @describe  备注
+	 * @display  备注
+	 */
+	@Column(length = 255)
+	private java.lang.String remark;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "clientdata")
+	private com.sap.saap.audit.entitys.ClientData clientData;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "addres")
+	private com.sap.saap.audit.entitys.Addres addres;
+	/** 
+	 * @generated
+	 * @describe 分机号码
+	 * @display 分机号码
+	 */
+	@Column
+	private java.lang.String extension;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "contactperson")
+	private com.sap.saap.audit.entitys.ContactPerson contactPerson;
+	/** 
+	 * @generated
+	 * @describe 是否是临时保存
+	 * @display 是否是临时保存
+	 */
+	@Column
+	private java.lang.Boolean isFlag;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.Boolean isDelete;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getPhoneType() {
+		return this.phoneType;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPhoneType(java.lang.String value) {
+		this.phoneType = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getAreaCode() {
+		return this.areaCode;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAreaCode(java.lang.String value) {
+		this.areaCode = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getTelphone() {
+		return this.telphone;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setTelphone(java.lang.String value) {
+		this.telphone = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsVerify() {
+		return this.isVerify;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsVerify(java.lang.Boolean value) {
+		this.isVerify = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getVerifyPerson() {
+		return this.verifyPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setVerifyPerson(java.lang.String value) {
+		this.verifyPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getVerifyDate() {
+		return this.verifyDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setVerifyDate(java.util.Date value) {
+		this.verifyDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getRemark() {
+		return this.remark;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRemark(java.lang.String value) {
+		this.remark = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.ClientData getClientData() {
+		return this.clientData;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setClientData(com.sap.saap.audit.entitys.ClientData value) {
+		this.clientData = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.Addres getAddres() {
+		return this.addres;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setAddres(com.sap.saap.audit.entitys.Addres value) {
+		this.addres = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getExtension() {
+		return this.extension;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setExtension(java.lang.String value) {
+		this.extension = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.ContactPerson getContactPerson() {
+		return this.contactPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setContactPerson(com.sap.saap.audit.entitys.ContactPerson value) {
+		this.contactPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsFlag() {
+		return this.isFlag;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsFlag(java.lang.Boolean value) {
+		this.isFlag = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+}

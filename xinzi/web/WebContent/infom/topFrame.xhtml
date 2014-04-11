@@ -1,0 +1,131 @@
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:w="http://www.apusic.com/jsf/widget" xmlns:layout="http://www.apusic.com/jsf/layout"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:ajax="http://www.apusic.com/jsf/ajax"
+	renderKitId="AJAX" xmlns:om="http://www.apusic.com/jsf/misc" locale="#{indexBean.locale}">
+	<w:head>
+		<f:loadBundle basename="messages.messages_infom" var="msgs" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>topFrame</title>
+		<link href="../css/css.css" rel="stylesheet" type="text/css" />
+		<style type="text/css">
+<!--
+.out {
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+#header-icons {
+	border:medium none;
+	border-width:0;
+	padding:0 0 0 0;	
+}
+-->
+</style>
+		<script src="../js/home.js" />
+		<script src="../jquery/js/jquery.min.js"></script>
+		<script type="text/javascript">
+		//<![CDATA[
+			function exit(){
+				window.parent.location='../j_spring_security_logout';
+				}			
+			
+           function test(str){
+			/*	if(window.parent.parent.center.cols=="185,8,*")
+					{					  
+					   window.parent.parent.middle1.menuICON.src="../images/CollapseBtn_2.jpg";
+					   window.parent.parent.middle1.menuICON.alt="Show Menu";
+				       window.parent.parent.center.cols="0,8,*";
+					}
+				else
+				{
+					 window.parent.parent.middle1.menuICON.src="../images/CollapseBtn_1.jpg";
+					 window.parent.parent.middle1.menuICON.alt="Hidden Menu";				
+					 window.parent.parent.center.cols="185,8,*";
+				}      
+				*/
+				window.parent.middle.location='../main.xhtml';
+			} 
+			function setLocale(l){
+				if($('#localeLanguage').val()!=l){
+					$.post('setLocale.do',{locale:l},function(){
+						parent.location.reload();
+					});
+				}
+			    return false;
+			}
+			$(document).ready(function(){
+				$("option[id=enUs][value="+$('#localeLanguage').val()+"]").attr("selected",'selected');
+				$("option[id=zhCn][value="+$('#localeLanguage').val()+"]").attr("selected",'selected');
+			});
+			 //------------------时间
+ function tickDateTime() {  
+	  var hours, minutes, seconds;  
+	  var intHours, intMinutes, intSeconds;  
+	  var today;  
+	  today = new Date();  
+	  intYear = today.getFullYear();  
+	  intMonth = today.getMonth() + 1;  
+	  intDay = today.getDate();  
+	  intHours = today.getHours();  
+	  intMinutes = today.getMinutes();  
+	  intSeconds = today.getSeconds();
+	  
+	  if (intHours == 0) {  
+		  hours = "00:";  
+	  }else if(intHours < 10) {   
+			hours = "0" + intHours+":";  
+	  }else{  
+			hours = intHours + ":";  
+	  }  
+	  
+	  if(intMinutes < 10) {  
+			minutes = "0"+intMinutes+":";  
+	  }else{  
+			minutes = intMinutes+":";  
+	  }  
+	  
+	  if(intSeconds < 10) {  
+			seconds = "0"+intSeconds+" ";  
+	  }else{  
+			seconds = intSeconds+" ";  
+	  }   
+			timeString = intYear + "-" + intMonth +"-"+ intDay  + " " + hours+minutes+seconds;  
+			Clock.innerHTML = timeString;  
+			window.setTimeout("tickDateTime();", 1000);  //设置一秒
+	 }  
+	 window.onload = tickDateTime;  
+	   //]]>
+	</script>
+</w:head>
+	<f:loadBundle basename="messages.messages_infom" var="msgs" />
+	<w:page title="Insert title here" id="body_top">
+		<om:useBean value="indexBean"></om:useBean>
+		<table width="100%" height="60" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td scope="row" class="" background="../images/header_c.gif"><font size="6" color="white"><b></b></font>
+				</td>
+				<td width="80" background="../images/header_c.gif" align="right" style="margin-right: 10px;">
+				<input  type="hidden" id="localeLanguage" value="#{msgs['top.localeLanguage']}"/>
+				<select id="locale" onchange="setLocale(this.value);" class="out" 
+					style="background-color: skyblue; width:73px; color:white; display:none">
+					<option id="enUs" value="en_us">#{msgs['top.english']}</option>
+					<option id="zhCn" value="zh_cn">#{msgs['top.chinese']}</option>
+				</select></td>
+				<td width="80" align="center" background="../images/header_c.gif" class="out" scope="row">
+				<img src="../images/icons/users.png" align="top" /><b><h:outputLabel value="#{indexBean.loginName}" style="color:white" ></h:outputLabel></b>
+				</td>
+				<td width="101" align="center" background="../images/header_c.gif" class="text" scope="row" style="width: 142px; height: 60px">
+					<div ><b><span id="Clock" style="color:white"></span></b></div> 
+				</td>
+				<td width="120" background="../images/header_c.gif"><a href="javascript:void(0);" style="color:white" onclick="javascript:parent.middle.addTab('#{msgs['top.modifyPassword']}','pages/updatePassword/updatePassword.xhtml','SM');"
+					class="out"><img src="../images/icons/password.gif" align="top" id="header-icons"/>修改密码</a>
+				</td>
+				
+				<td width="50" background="../images/header_c.gif"><a href="#" id="exit" class="out" style="color:white" 
+					onclick="exit()"><img src="../images/icons/logout.png" align="top" id="header-icons"/>退出</a>
+				</td>
+			</tr>
+		</table>
+	</w:page>
+</f:view>

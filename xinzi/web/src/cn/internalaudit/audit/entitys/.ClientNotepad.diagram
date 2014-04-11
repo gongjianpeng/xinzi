@@ -1,0 +1,292 @@
+package com.sap.saap.audit.entitys;
+
+import javax.persistence.*;
+import com.sap.saap.audit.base.IEntity;
+
+/** 
+ * @generated 
+ * 客户记事本
+ */
+@Table(name = "ClientNotepad")
+@SuppressWarnings("serial")
+@Entity
+public class ClientNotepad implements java.io.Serializable, IEntity {
+	/** 
+	 * @generated  
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe 建档日期
+	 * @display 建档日期
+	 */
+	@Column
+	@Temporal(TemporalType.TIMESTAMP)
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 * @describe 建档者
+	 * @display 建档者
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 * @describe  信息类别
+	 * @display  信息类别
+	 */
+	@Column
+	private java.lang.String type;
+	/** 
+	 * @generated
+	 * @describe 信息代码
+	 * @display 信息代码
+	 */
+	@Column
+	private java.lang.String code;
+	/** 
+	 * @generated
+	 * @describe 信息内容
+	 * @display 信息内容
+	 */
+	@Column
+	private java.lang.String context;
+	/** 
+	 * @generated
+	 * @describe 创建人Id
+	 * @display 创建人Id
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 * @describe 最后修改日期
+	 * @display 最后修改日期
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 * @describe 最后修改人
+	 * @display 最后修改人
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 * @describe 最后修改人Id
+	 * @display 最后修改人Id
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 * @describe 是否标记删除
+	 * @display 是否标记删除
+	 */
+	@Column
+	private java.lang.Boolean isDelete;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "clientbaseinfo")
+	private com.sap.saap.audit.entitys.ClientBaseInfo clientBaseInfo;
+	/** 
+	 * @generated
+	 * 
+	 * @describe 申请编号
+	 * @display 申请编号
+	 */
+	@Column
+	private java.lang.String requisitionNumber;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setId(java.lang.Long value) {
+		this.id = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getType() {
+		return this.type;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setType(java.lang.String value) {
+		this.type = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCode() {
+		return this.code;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCode(java.lang.String value) {
+		this.code = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getContext() {
+		return this.context;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setContext(java.lang.String value) {
+		this.context = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.ClientBaseInfo getClientBaseInfo() {
+		return this.clientBaseInfo;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setClientBaseInfo(com.sap.saap.audit.entitys.ClientBaseInfo value) {
+		this.clientBaseInfo = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.String getRequisitionNumber() {
+		return this.requisitionNumber;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setRequisitionNumber(java.lang.String value) {
+		this.requisitionNumber = value;
+	}
+}

@@ -1,0 +1,511 @@
+package com.sap.saap.audit.entitys;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import com.sap.saap.audit.base.IEntity;
+import javax.persistence.*;
+
+/** 
+ * @generated 
+ */
+@Table(name = "Product")
+@SuppressWarnings("serial")
+@Entity
+public class Product implements java.io.Serializable, IEntity {
+	/** 
+	 * @generated
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private java.lang.Long id;
+	/** 
+	 * @generated
+	 * @describe     产品代码
+	 * @display  产品代码
+	 */
+	@Column(length = 255)
+	private java.lang.String code;
+	/** 
+	 * @generated
+	 * @describe     贷款月利率
+	 * @display  贷款月利率
+	 */
+	@Column(length = 255)
+	private java.lang.Double lendingRate;
+	/** 
+	 * @generated
+	 * @describe     一次性手续费
+	 * @display  一次性手续费
+	 */
+	@Column(length = 255)
+	private java.lang.Double poundage;
+	/** 
+	 * @generated
+	 * @describe     管理费利率
+	 * @display  管理费利率
+	 */
+	@Column(length = 255)
+	private java.lang.Double managerFeeRate;
+	/** 
+	 * @generated
+	 * @describe      月延期费
+	 * @display  月延期费
+	 */
+	@Column(length = 255)
+	private java.lang.String deferFee;
+	/** 
+	 * @generated
+	 * @describe      提前还清违约金
+	 * @display  提前还清违约金
+	 */
+	@Column(length = 255)
+	private java.lang.String fellBack;
+	/** 
+	 * @generated
+	 * @describe     贷款额度最大值
+	 * @display  贷款额度最大值
+	 */
+	@Column(length = 255)
+	private java.lang.Double creditQuotaMax;
+	/** 
+	 * @generated
+	 * @describe     贷款额度最小值
+	 * @display  贷款额度最小值
+	 */
+	@Column(length = 255)
+	private java.lang.Double creditQuotaMin;
+	/** 
+	 * @generated
+	 * @describe     约束条件
+	 * @display  约束条件
+	 */
+	@Column(length = 255)
+	private java.lang.String leashQualification;
+	/** 
+	 * @generated
+	 * @describe     备注
+	 * @display  备注
+	 */
+	@Column(length = 255)
+	private java.lang.String remark;
+	/** 
+	 * @generated
+	 * @describe  外包佣金
+	 * @display  外包佣金
+	 */
+	@Column(length = 255)
+	private java.lang.Double epibolyFee;
+	/** 
+	 * @generated
+	 * @describe  扣款失败手续费
+	 * @display  扣款失败手续费
+	 */
+	@Column(length = 255)
+	private java.lang.Double recoupLostFee;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "loantype")
+	private com.sap.saap.audit.entitys.LoanType loanType;
+	/** 
+	 * @generated
+	 */
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@JoinColumn(name = "productname")
+	private com.sap.saap.audit.entitys.ProductName productName;
+	/** 
+	 * @generated
+	 * @describe 逾期利息
+	 * @display 逾期利息
+	 */
+	@Column
+	private java.lang.Double overdueAccrual;
+	/** 
+	 * @generated
+	 */
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "product")
+	private java.util.List<com.sap.saap.audit.entitys.LoanOrder> loanOrders = new java.util.ArrayList<com.sap.saap.audit.entitys.LoanOrder>();
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date createDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String createPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long createPersonId;
+	/** 
+	 * @generated
+	 */
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private java.util.Date lastEditDate;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.String lastEditPerson;
+	/** 
+	 * @generated
+	 */
+	@Column
+	private java.lang.Long lastEditPersonId;
+	/** 
+	 * @generated
+	 * 
+	 */
+	@Column
+	private java.lang.Boolean isDelete;
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCode() {
+		return this.code;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCode(java.lang.String value) {
+		this.code = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getLendingRate() {
+		return this.lendingRate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLendingRate(java.lang.Double value) {
+		this.lendingRate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getPoundage() {
+		return this.poundage;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setPoundage(java.lang.Double value) {
+		this.poundage = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getManagerFeeRate() {
+		return this.managerFeeRate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setManagerFeeRate(java.lang.Double value) {
+		this.managerFeeRate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getDeferFee() {
+		return this.deferFee;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setDeferFee(java.lang.String value) {
+		this.deferFee = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getFellBack() {
+		return this.fellBack;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setFellBack(java.lang.String value) {
+		this.fellBack = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getCreditQuotaMax() {
+		return this.creditQuotaMax;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreditQuotaMax(java.lang.Double value) {
+		this.creditQuotaMax = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getCreditQuotaMin() {
+		return this.creditQuotaMin;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreditQuotaMin(java.lang.Double value) {
+		this.creditQuotaMin = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLeashQualification() {
+		return this.leashQualification;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLeashQualification(java.lang.String value) {
+		this.leashQualification = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getRemark() {
+		return this.remark;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRemark(java.lang.String value) {
+		this.remark = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getEpibolyFee() {
+		return this.epibolyFee;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setEpibolyFee(java.lang.Double value) {
+		this.epibolyFee = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getRecoupLostFee() {
+		return this.recoupLostFee;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setRecoupLostFee(java.lang.Double value) {
+		this.recoupLostFee = value;
+	}
+
+	public java.lang.Long getId() {
+		return id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.LoanType getLoanType() {
+		return this.loanType;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLoanType(com.sap.saap.audit.entitys.LoanType value) {
+		this.loanType = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public com.sap.saap.audit.entitys.ProductName getProductName() {
+		return this.productName;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setProductName(com.sap.saap.audit.entitys.ProductName value) {
+		this.productName = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Double getOverdueAccrual() {
+		return this.overdueAccrual;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setOverdueAccrual(java.lang.Double value) {
+		this.overdueAccrual = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.List<com.sap.saap.audit.entitys.LoanOrder> getLoanOrders() {
+		return this.loanOrders;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLoanOrders(
+			java.util.List<com.sap.saap.audit.entitys.LoanOrder> value) {
+		this.loanOrders = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getCreateDate() {
+		return this.createDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreateDate(java.util.Date value) {
+		this.createDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getCreatePerson() {
+		return this.createPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePerson(java.lang.String value) {
+		this.createPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getCreatePersonId() {
+		return this.createPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setCreatePersonId(java.lang.Long value) {
+		this.createPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.util.Date getLastEditDate() {
+		return this.lastEditDate;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditDate(java.util.Date value) {
+		this.lastEditDate = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.String getLastEditPerson() {
+		return this.lastEditPerson;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPerson(java.lang.String value) {
+		this.lastEditPerson = value;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public java.lang.Long getLastEditPersonId() {
+		return this.lastEditPersonId;
+	}
+
+	/** 
+	 * @generated
+	 */
+	public void setLastEditPersonId(java.lang.Long value) {
+		this.lastEditPersonId = value;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public java.lang.Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	/** 
+	 * @generated
+	 * 
+	 * 
+	 */
+	public void setIsDelete(java.lang.Boolean value) {
+		this.isDelete = value;
+	}
+}

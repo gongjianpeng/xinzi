@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.0.xsd" default-lazy-init="true">
+	<!-- set authoize -->
+      <http auto-config="true" create-session="ifRequired">
+	    <intercept-url pattern="/**.xhtml" access="ROLE_USER" />
+	    <intercept-url pattern="/**.faces" access="ROLE_USER" />
+		<intercept-url pattern="/**.html" access="ROLE_USER" />
+		<intercept-url pattern="/**.htm" access="ROLE_USER" />
+		<!-- 	 	<intercept-url pattern="/index.jsp" access="ROLE_USER" />
+	 	<intercept-url pattern="/home/index.jsp" access="ROLE_USER" />
+	 	<intercept-url pattern="/diy/diy.jsp" access="ROLE_USER" />
+	 	
+	 	
+		<intercept-url pattern="/**.do" access="ROLE_USER" />
+		 -->
+		<intercept-url pattern="/login.*" filters="none" /> 
+	 
+		<!-- difine login page  -->
+		<form-login login-page="/login.do"
+			authentication-failure-url="/login.do?error=1" default-target-url="/index.html"
+			always-use-default-target="true" />
+		<logout logout-success-url="/login.do" logout-url="/j_spring_security_logout" />
+		<remember-me use-secure-cookie="true" user-service-ref="userDetailsService" />
+		<http-basic />
+		<!-- Https port set -->
+		<port-mappings>
+			<port-mapping http="8080" https="9443" />
+		</port-mappings>
+		<session-management session-fixation-protection="none"
+			invalid-session-url="/login.do?error=2" session-authentication-error-url="/login.do?error=3">
+			<concurrency-control max-sessions="1"
+				error-if-maximum-exceeded="false" />
+		</session-management>
+	</http>
+	<!--  -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="userDetailsService">
+			<!-- <password-encoder hash="md5">-->
+			<!-- <salt-source user-property="username"></salt-source>-->
+			<!-- </password-encoder> -->
+			<password-encoder hash="sha">
+				<salt-source user-property="username"></salt-source>
+			</password-encoder>
+		</authentication-provider>
+	</authentication-manager>
+	<beans:bean id="userDetailsService" class="cn.internalaudit.audit.security.JdbcDaoImpl">
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+		<beans:property name="usersByUsernameQuery">
+			<beans:value>
+				SELECT person.loginName,person.password,person.enable
+				FROM
+				Person person
+				WHERE person.loginName =? and person.enddate>sysdate();
+			</beans:value>
+		</beans:property>
+		<beans:property name="authoritiesByUsernameQuery">
+			<beans:value>
+				select p.loginName,ak.value from Person p ,Authorities pa,AuthoritiesKey ak
+				where p.id=pa.person and pa.authoritieskey=ak.id
+				and p.loginName=?
+				union
+				select p.loginName,ak.value from Person p,Person_Roles ps,RolesAuthorities ph,AuthoritiesKey ak
+				where
+				p.id=ps.persons and
+				ps.roless=ph.roles and
+				ph.authoritieskey=ak.id and
+				p.loginName=?			
+			</beans:value>
+		</beans:property>
+	</beans:bean>	
+	<!-- @Secured("ROLE_TELLER")
+	<global-method-security secured-annotations="enabled"
+		pre-post-annotations="enabled" access-decision-manager-ref="aclAccessDecisionManager">
+		<after-invocation-provider ref="afterAclCollectionRead" />		
+	</global-method-security>
+     -->
+     <!--
+		<global-method-security secured-annotations="enabled"
+		jsr250-annotations="enabled" /> 
+		<beans:bean id="springSecurityFilterChain"
+		class="org.springframework.security.web.FilterChainProxy">
+		<filter-chain-map path-type="ant"> <filter-chain pattern="/**"
+		filters="securityContextPersistentceFilterWithASCFalse,
+		basicAuthenticationFilter, exceptionTranslationFilter,
+		filterSecurityInterceptor" /> <filter-chain pattern="/**"
+		filters="securityContextPersistentceFilterWithASCFalse,
+		formLoginFilter, exceptionTranslationFilter,
+		filterSecurityInterceptor" /> </filter-chain-map> </beans:bean>
+	-->
+</beans:beans>

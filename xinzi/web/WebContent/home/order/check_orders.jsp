@@ -129,13 +129,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    var one = 0;
 	 
 	  function Mycheck(){
-      	//var one = 0;
+      	/****
 	   $("em[name='xiaojiPrice']").each(function () {
 		     var xiaojiPrice=$("em[name='xiaojiPrice']").html();
 		     one += parseFloat(xiaojiPrice);
 		     console.log(xiaojiPrice+"   "+one);  
 		  
-        });
+        });*****/
+          var count = 0;
+      var obj = $("em[class='xiaojiPrice']");
+     for(var i=0;i<obj.length;i++){
+     	
+     	one+=parseInt(obj.eq(i).html());
+     	  console.log(xiaojiPrice+"   "+one);
+     }
        
        //alert(one);
        var total=0;
@@ -264,8 +271,9 @@ String userId=request.getParameter("userId");
             <tr align="center">
             	<td width="1%">&nbsp;</td>
               <td width="45%" align="left">商品名称</td>
-              <td>价格</td>
+              <td>单价</td>
               <td>数量</td>
+              <td>小计</td>
             </tr>
         </thead>
         	<c:if test="${cartList!=null}">
@@ -296,8 +304,11 @@ String userId=request.getParameter("userId");
 		                    </span>
 		                </div>
               	</td>
-              <td class="jg" align="center" >￥<em id="xiaojiPrice"   name="xiaojiPrice">${cart.carttotalprice}</em></td>
-              <td class="te_c" align="center"><span><em class="num" id="xiaosizett44" name="xiaosizett44">${cart.cartsize}</span></td>
+              	<td class="jg" align="center"><em   id="xiaosizett55" name="xiaosizett55">${cart.cartunitprice}</td>
+              	 <td class="te_c" align="center"><span><em class="num" id="xiaosizett44" name="xiaosizett44">${cart.cartsize}</span></td>
+              <td class="jg" align="center" >￥<em  class="xiaojiPrice"  id="xiaojiPrice"   name="xiaojiPrice">${cart.carttotalprice}</em></td>
+             
+              
             </tr>
            </c:forEach>
           </c:if>

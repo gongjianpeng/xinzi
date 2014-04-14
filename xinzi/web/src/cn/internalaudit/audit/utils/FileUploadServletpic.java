@@ -66,10 +66,17 @@ public class FileUploadServletpic extends HttpServlet {
 		// 名称 界面编码 必须 和request 保存一致..否则乱码
 		String name = request.getParameter("name");
 		String ID=request.getParameter("ID");
-		System.out.println("前台传过来的"+ID);
+		String ID2=request.getParameter("ID2");
+		String pinpainame=new String(ID.getBytes( "iso-8859-1"),"UTF-8");
+		System.out.println("前台传过来的"+pinpainame+""+ID2);
 	//	Department2Dao cc=new Department2Dao();
-		Plicalbum  poam= plialbumDao.findDataplirById(Long.valueOf(ID));
+		Plicalbum  poam=null;
+//		if(ID!=null||!"".equals(ID)){
+//		// poam= plialbumDao.findDataplirById(Long.valueOf(ID));
+//		}else{
+			poam=new Plicalbum();
 		
+	//	}
      //  System.out.println("-----------------------------------------------------------"+dealer.getDename());
 		String firstFileName = "";
 		// 获得容器中上传文件夹所在的物理路径
@@ -129,6 +136,7 @@ public class FileUploadServletpic extends HttpServlet {
 									updateUrl = endurl;
 								}
 								poam.setFilurl(endurl);
+								poam.setName(pinpainame);
 								poam = plialbumDao.save(poam);
 		
 						}}

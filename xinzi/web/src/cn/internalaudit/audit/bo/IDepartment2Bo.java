@@ -44,4 +44,7 @@ public interface IDepartment2Bo extends IBo<Department2> {
 	
 	public List<Department2> findByParms(Map map);
 
+	List<Department2> findByNoparentOrganizationIDBychs(long did3,
+			String inputname3);
+
 }

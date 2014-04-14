@@ -2970,30 +2970,7 @@ public class DiyCalPriceController {
 			tp = sp * Mtangshu;
 		}
 		resultleft3.add(buildjsonnumber(id, sp, Mtangshu, tp));
-		String imgStr = o41;
-		System.out.println(""+imgStr+"......."+o41);
-		String imgid = CreateGUID.createGuId();
-		// session.getServletContext().
-
-		String filePath = request.getServletPath();
-		String filePath2 = request.getSession().getServletContext()
-				.getRealPath(request.getRequestURI());
-
-		String filePath3 = request.getSession().getServletContext()
-				.getRealPath("//");
-		System.out.println(filePath + filePath2 + filePath3);
-		String photoName=CreateGUID.createGuId() + ".png";
-		String imgFile = filePath3+"\\home\\resource\\imageforcart\\" + photoName;
 		
-		// 转换图片
-		ImageUtil.generateImage(imgStr, imgFile);
-		resultleft3.add(buildjsonimg(imgid, imgFile));
-		PrintWriter writer = response.getWriter();
-
-		String pathone = request.getServletPath();
-		String pathone2 = request.getContextPath();
-		System.out.println("。。。。。。。。。。" + pathone + pathone2);
-
 		System.out.println("加入购物车后 o13" + o13);
 		// entity.setCartor("y");
 		if ("".equals(o13) || o13 == null) {
@@ -3005,7 +2982,7 @@ public class DiyCalPriceController {
 		Person loginPerson = loginInfo.getLoginPerson();
 		String org = loginPerson.getOrganizationId();
 		entity.setCartunitprice(String.valueOf(sp)); // 单价
-		entity.setPhoto(photoName);
+		//entity.setPhoto(photoName);
 		entity.setCartsize(o13); // 数量
 	
 		entity.setTcount(o13);
@@ -3013,23 +2990,90 @@ public class DiyCalPriceController {
 		System.out.println("----输出的数量为" + 013);
 		entity.setCarttotalprice(String.valueOf(tp)); // 总价
 		
-		
+		JSONObject rest=new JSONObject();
 
 		// if(entity.getPanelname()!=null||!entity.getPanelname().equals("")){
 		if (entity.getPanelname() == null) {
 			entity.setCartor("N");
+			rest.put("result", "0");
+			model.addAttribute("userInfo", loginPerson);
+			response.reset();
+			response.setCharacterEncoding("utf-8");
+			response.setContentType("text/json; charset=UTF-8");
+			PrintWriter writer = response.getWriter();
+		//	ret.put("data", result.toString());
+			writer.write(rest.toString());
+			writer.flush();
 		} else {
 			entity.setCartor("y");
 			entity.setOrg(org);
 			commodityUserBo.save(entity);
+			rest.put("result", "0");
+			model.addAttribute("userInfo", loginPerson);
+			response.reset();
+			response.setCharacterEncoding("utf-8");
+			response.setContentType("text/json; charset=UTF-8");
+			PrintWriter writer = response.getWriter();
+		//	ret.put("data", result.toString());
+			writer.write(rest.toString());
+		//	writer.flush();
+		//	response.getWriter().write(rest.toString());
 		}
+		
+		
+		
+		String result=request.getParameter("result");
+	  if(result=="1"){
+		  
+		  String imgStr = o41;
+			System.out.println(""+imgStr+"......."+o41);
+			String imgid = CreateGUID.createGuId();
+			// session.getServletContext().
 
-		model.addAttribute("userInfo", loginPerson);
+			String filePath = request.getServletPath();
+			String filePath2 = request.getSession().getServletContext()
+					.getRealPath(request.getRequestURI());
 
-		return "/home/cart/cart_common";
-		// return null;
+			String filePath3 = request.getSession().getServletContext()
+					.getRealPath("//");
+			System.out.println(filePath + filePath2 + filePath3);
+			String photoName=CreateGUID.createGuId() + ".png";
+			String imgFile = filePath3+"\\home\\resource\\imageforcart\\" + photoName;
+			
+			// 转换图片
+			ImageUtil.generateImage(imgStr, imgFile);
+			resultleft3.add(buildjsonimg(imgid, imgFile));
+			PrintWriter writer = response.getWriter();
+
+			String pathone = request.getServletPath();
+			String pathone2 = request.getContextPath();
+			System.out.println("。。。。。。。。。。" + pathone + pathone2);
+
+		  
+			rest.put("result", "1");
+			try {
+				response.getWriter().write(rest.toString());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+			return "/home/diy/diy";
+		// return null;  gjp  不让其跳转，而是返回这个 html 或者 jsp 一个   
+//	return result;
+		
+	
 
 	}
+	
+	private JSONObject buildzidt(String id, String name) {
+		JSONObject result = new JSONObject();
+		result.put("id", id);
+		result.put("name", name);
+	
+		return result;
+	}
+	
+	
 
 	public String addCart(Model model, HttpServletRequest request,
 			HttpServletResponse response, Long goodId,HttpSession session) {
@@ -3097,7 +3141,8 @@ System.out.println("这是。。。。。one");
 
 			e.printStackTrace();
 		}
-
+	
+		
 		// 5、响应
 		return "/home/cart/buyer_cart";
 

@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 
-<p>返回首页：<a href="<%=basePath%>/login.jsp" target="_blank">登录</a>　
+<p>返回首页：<a href="<%=basePath%>login.jsp" target="_blank">登录</a>　
 　</p>
 
 <p></p>
@@ -49,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          if (bar<99){
          setTimeout("count()",90);}
          else{
-         window.location = "<%=basePath%>/login.jsp";}
+         window.location = "<%=basePath%>login.jsp";}
          }
          </script>
          </p>

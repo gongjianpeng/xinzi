@@ -24,4 +24,6 @@ public interface IDepartment2Dao extends IBaseDao<Department2> {
 	public List<Department2> findBykuanRemark(Map map);
 	public Department2 findDataDepartment2ById(Long id);
 	public List<Department2> findByParms(Map map);
+
+	List<Department2> findByOrganizationIdBychc(long id, String inputname3);
 }

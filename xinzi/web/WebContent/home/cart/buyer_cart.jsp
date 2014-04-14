@@ -28,6 +28,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		function checkAll(){
 		  	$("input[type='checkbox']").each(function() { 
 				$(this).prop("checked", true); 
+				var ddid=$("#delIds").val();
+				
+			//	location.href="<%=basePath%>home/cart/delCartGoods.do?goodsId="+ddid;
 			}); 
 		}
 		/***********反选***********/
@@ -42,6 +45,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}
 		}
 		
+		function checkdeleAll(){
+		
+			$("input[type='checkbox']").each(function() { 
+				$(this).prop("checked", true); 
+				var goodsId=$("#delIds").val();
+				$.post("<%=basePath%>home/cart/delCartGoods.do",{goodsId:goodsId},function(responseText){
+					var result=responseText.result;
+					if(result=="1"){
+						window.location.reload();//自动刷新本页面
+					}else{
+						window.location.href="<%=basePath%>home/cart/clear_cart.jsp";
+					}
+				},"JSON");
+			
+			});
+		
+				
+		
+			
+		
+		}
+		
 		/*****删除购物车的一个商品**/
 		function delCartGoods(val){
 			if(confirm("数据不可恢复!请确定是否删除!")){
@@ -53,7 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		/*****删除选中购物车的一个商品**/
 		function delCartSelectGoods(val){
 			var cflag=$("input[type='checkbox']").is(':checked')
-			
+			alert(cflag);
 			console.log("cflag=="+cflag);
 			return ;
 			if(cflag){
@@ -220,6 +245,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <td>数量</td>
                 <td>小计</td>
                 <td width="15%">操作</td>
+              
               </tr>
           </thead>
           	<c:if test="${cartList!=null}">
@@ -262,7 +288,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		                </td>
 		               
 		                <td align="center"> <a id="deleteButton" href ="javascript:deletecart(${cart.id})" title="删除" >删除</a>
-		                <input type="hidden" name="delIds" value="${cart.id}"/></td>
+		                <input type="hidden" name="delIds" value="${cart.id}" id="delIds"/></td>
 		              </tr>
          		</c:forEach>
           	</c:if>
@@ -273,6 +299,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	<input type="text" size="3"  name="total" id="total"  readonly="true"  >
             	</em>
             </span>
+            <a href="javascript:checkAll();">全选</a>
+            <a href="javascript:NocheckAll();">反选</a>
+            <a href="javascript:checkdeleAll();">选择批量删除</a>
             <input type="submit" name="Submit" value="商品总价 " id="Pro_Total" onClick="Mycheck()">
         </div>
         <div class="first_pay fr">

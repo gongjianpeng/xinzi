@@ -89,6 +89,14 @@ public class Department2Bo extends Bo<Department2, IDepartment2Dao> implements I
 		// TODO Auto-generated method stub
 		return department2Dao.findByOrganizationId(did3);
 	}
+	
+
+	@Override
+	public List<Department2> findByNoparentOrganizationIDBychs(long did3,String inputname3) {
+		// TODO Auto-generated method stub
+		return department2Dao.findByOrganizationIdBychc(did3, inputname3);
+	}
+
 
 
 	@Override

@@ -141,6 +141,7 @@ html,body {
 		        autoFit : true,
 		        height:'fit',
 		        colModel : [
+		                    {header :"企业编号", name : 'org', align : 'center'},
 		                    {header :"企业名称", name : 'dename', align : 'center'},
 		                    {header : "电话", name : 'tel', align : 'center'},
 							{header : "地址", name : 'address', align : 'center'}, 

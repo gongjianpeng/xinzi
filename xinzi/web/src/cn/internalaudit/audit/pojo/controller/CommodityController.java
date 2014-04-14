@@ -78,8 +78,9 @@ public class CommodityController {
 	
 //	@Resource(name = "DiyModelSebanBo")
 //	public IDiyModelSebanBo diyModelsebanBo;
-
+    
 	
+
 	
 	@Resource(name = "Organization2Bo")
 	Organization2Bo organization2Bo;
@@ -180,6 +181,7 @@ public class CommodityController {
 		// 接收 点击确定之后接收过来的参数
 		String dLength = request.getParameter("dLength");
 		String dWidth = request.getParameter("dWidth");
+		
 		if (dLength == null || dLength.equals("") || dWidth == null || dWidth.equals("")
 				//	|| DieWidth == null || DieWidth.equals("")	|| DieLength == null || DieLength.equals("")		
 		) {
@@ -188,6 +190,14 @@ public class CommodityController {
 		} else {
 		int dLengthone = Integer.parseInt(dLength);
 		int dWidthone = Integer.parseInt(dWidth);
+		 if(dWidthone>2780&&dWidthone<2905||dWidthone==2905){
+	        	dWidthone=2779;
+	        	System.out.println("查询到的数据为空1111");
+	        }
+	        if(dWidthone>2905&&dWidthone<3120){
+	        	dWidthone=3121;
+	        	System.out.println("查询到的数据为空2222");
+	        }
 		System.out.println("..+"+dLengthone+dWidthone);
 		List<Parameterqiye> list2 = null;
 		String name="门尺寸"; 
@@ -261,7 +271,8 @@ public class CommodityController {
        if(dWidthone<180||dWidth==null||dWidth.equals("")||dLength==null||dLength.equals("")){
     	System.out.println("查询到的数据为空");   
        }else{ 	
-      
+       
+        
         		if((dWidthone>180&&dWidthone<960)||(dWidthone<1200&&dWidthone>1080)||(dWidthone<1920&&dWidthone>1500)||(dWidthone<2400&&dWidthone>2160)||(dWidthone<3840&&dWidthone>2780)){
         		int onewidthall=dWidthone+ee;  //+Collections.min(listintss);
                 System.out.println("得到和系统中最接近的值为i:"+onewidthall);
@@ -295,6 +306,10 @@ public class CommodityController {
         			
         		}
         		System.out.println("3门类型的数量为"+listkuan.size());
+        		if(listkuan.size()==0){
+        			
+        		  System.out.println("次尺寸列有 ");	
+        		}
         		
         		//获取这个门的 name 这里的问题， 如果获取 参数为空  list 
         		/******************* 门型   宽度      获得**********************/ 
@@ -338,6 +353,7 @@ public class CommodityController {
         		
         	System.out.println("获取到门名："+EndOneNamemen+" 宽"+"/"+EndOneWidthmen+" 高"+EndOneheightmen+"/");
         	System.out.println("门的普通或气窗"+EndOneXingmen);
+        		
 	
         		/********************这个 门 的 宽高 获 得**********************/ 
     		/************第三部分  判断这个门是带气窗还是普通，结束，判断拉手，根据不同的门有1个，或2个*********************************************/
@@ -2580,7 +2596,17 @@ public class CommodityController {
 		response.setHeader("Pragma", "no-cache");
 		response.setDateHeader("Expires", 0);
 		
+		/*************** 查询部门的过滤条件******************************/
+		Person loginPerson = loginInfo.getLoginPerson();
+		String  orgid= loginPerson.getOrganizationId();
+		String orgname = loginPerson.getOrganizationName();
 
+		String inputname3=orgid;
+		if(inputname3==null||inputname3.equals("")){
+			System.out.println("查询到这个 inputname3  为空");
+		}
+		/*********************** 查询部门的过滤条件**********************/
+		
 		String chstyle = request.getParameter("chstyle");
 	
 		String chsnumber= request.getParameter("typename");
@@ -2661,7 +2687,8 @@ public class CommodityController {
 								  
 							if(PDataname==nameyyz||PDataname.equals(nameyyz)){
 										System.out.println("子类款式中 也有这个  普通的");
-										List<Department2> listDPaert=department2Bo.findByNoparentOrganizationID(DPid); // 查询到  9个节点下的数据
+										List<Department2> listDPaert=department2Bo.findByNoparentOrganizationIDBychs(DPid, inputname3);
+										//findByNoparentOrganizationID(DPid); // 查询到  9个节点下的数据
 										  String Ddapt = null;
 											 Long	Didpt = null;
 											 String Addresspt = null;
@@ -2723,8 +2750,10 @@ public class CommodityController {
 						
 						String typenameziyz = listDmen3cziya.get(k).getRemark();
 					
-						System.out.println("得到这个父结构的ID为"+Did3ziyz+Ddata3ziyz);
-						List<Department2> listDmenqianziya=department2Bo.findByNoparentOrganizationID(Did3ziyz); // 查询到  9个节点下的数据
+						//System.out.println("得到这个父结构的ID为"+Did3ziyz+Ddata3ziyz);
+						List<Department2> listDmenqianziya=department2Bo.findByNoparentOrganizationIDBychs(Did3ziyz, inputname3);
+							
+							//department2Bo.findByNoparentOrganizationID(Did3ziyz); // 查询到  9个节点下的数据
 						List  lzya=new ArrayList();
 						  String Ddataq3z = null;
 							 Long	Didq3z = null;
@@ -2735,7 +2764,7 @@ public class CommodityController {
 							 Didq3z=listDmenqianziya.get(z).getId();
 							 Addressz=listDmenqianziya.get(z).getAddress();
 							 typenamezyz=listDmenqianziya.get(z).getRemark();
-							 System.out.println(">>>>>ziyahua"+Didq3z+""+Ddataq3z+""+""+Addressz+""+""+typenamezyz+""+"");
+							// System.out.println(">>>>>ziyahua"+Didq3z+""+Ddataq3z+""+""+Addressz+""+""+typenamezyz+""+"");
 							 lzya.add(buildjsonDiakaix(Didq3z,Ddataq3z,Addressz,typenamezyz));
 						 }
 						arrayqichuang.add(buildjsonDiarray(Did3ziyz,Ddata3ziyz,lzya,typenameziyz));	
@@ -2760,7 +2789,8 @@ public class CommodityController {
 						Long Did3zipinjie = listDmen3zipinjie.get(k).getId();
 						String typenamezipin = listDmen3zipinjie.get(k).getRemark();
 						System.out.println("得到这个父结构的ID为"+Did3zipinjie+Ddata3zipinjie);
-						List<Department2> listDmenqianzipin=department2Bo.findByNoparentOrganizationID(Did3zipinjie); // 查询到  9个节点下的数据
+						List<Department2> listDmenqianzipin=department2Bo.findByNoparentOrganizationIDBychs(Did3zipinjie, inputname3);
+							department2Bo.findByNoparentOrganizationID(Did3zipinjie); // 查询到  9个节点下的数据
 						List  lzya=new ArrayList();
 						  String Ddataq3zpin = null;
 							 Long	Didq3zpin = null;
@@ -2800,7 +2830,7 @@ public class CommodityController {
 							for(int j=0;j<listDmen2.size();j++){ 
 								Ddata2=listDmen2.get(j).getName();
 								Did2=listDmen2.get(j).getId();
-								System.out.println("门面款式2查询到"+Did2+"名字为:"+Ddata2);
+								//System.out.println("门面款式2查询到"+Did2+"名字为:"+Ddata2);
 								// 以上是固定的结构：
 								//map.put(Did2, Ddata2);
 							}
@@ -2827,8 +2857,9 @@ public class CommodityController {
 					Ddata3=listDmen3c.get(k).getName();
 					Did3=listDmen3c.get(k).getId();
 					typename=listDmen3c.get(k).getRemark();
-					System.out.println("得到这个父结构的ID为"+Did3+Ddata3);
-					List<Department2> listDmenqian=department2Bo.findByNoparentOrganizationID(Did3); // 查询到  9个节点下的数据
+					//System.out.println("得到这个父结构的ID为"+Did3+Ddata3);
+					List<Department2> listDmenqian=department2Bo.findByNoparentOrganizationIDBychs(Did3, inputname3);
+						//department2Bo.findByNoparentOrganizationID(Did3); // 查询到  9个节点下的数据
 					List  l=new ArrayList();
 					  String Ddataq3 = null;
 						 Long	Didq3 = null;
@@ -2860,7 +2891,7 @@ public class CommodityController {
 				   for(int k=0;k<listDmen3c2.size();k++){ 
 						Ddata32=listDmen3c2.get(k).getName();
 						Did32=listDmen3c2.get(k).getId();
-						System.out.println(Ddata32+Did32);
+						//System.out.println(Ddata32+Did32);
 						  List<Organization2> listDpp=organization2Bo.findByNoparentOrganizationID(Did32);//查询到 花枝下的 子节点
 						  
 						  //循环 子节点 ，把其中的数据组装
@@ -2871,8 +2902,9 @@ public class CommodityController {
 											Ddata3=listDpp.get(w).getName();
 											Did3=listDpp.get(w).getId();
 											typename=listDpp.get(w).getRemark();
-									System.out.println("得到这个父结构的ID为"+Did3+Ddata3);
-									List<Department2> listDmenqian=department2Bo.findByNoparentOrganizationID(Did3); // 查询到  9个节点下的数据
+									//System.out.println("得到这个父结构的ID为"+Did3+Ddata3);
+									List<Department2> listDmenqian=department2Bo.findByNoparentOrganizationIDBychs(Did3, inputname3);
+										//department2Bo.findByNoparentOrganizationID(Did3); // 查询到  9个节点下的数据
 									
 									List  l=new ArrayList();
 									  String Ddataq3 = null;
@@ -2943,7 +2975,7 @@ public class CommodityController {
 		  /**************************3  气窗***************************************/
 		
 		  
-		 
+	
 		  if (chstyle.equals("qichuang")) {
 		  long Didqc = 0;
 			String Ddataqc = null;
@@ -2957,7 +2989,7 @@ public class CommodityController {
 						   Didqc=listDmen3c.get(k).getId();
 						   typename=listDmen3c.get(k).getRemark();
 							System.out.println("得到这个父结构的ID为"+Didqc+Ddataqc); 
-							List<Department2> listDmenqian=department2Bo.findByNoparentOrganizationID(Didqc); // 查询到  9个节点下的数据
+							List<Department2> listDmenqian=department2Bo.findByNoparentOrganizationIDBychs(Didqc,inputname3); // 查询到  9个节点下的数据
 							List  l=new ArrayList();
 							  String Ddataqc3 = null;
 								 Long	Didqc3 = null;
@@ -2995,7 +3027,7 @@ public class CommodityController {
 						   typename=listDmqita.get(k).getRemark();
 							System.out.println("得到这个父结构的ID为"+Didqitac+Ddataqitac); 
 							
-							   List<Department2> listDmqitatwo=department2Bo.findByNoparentOrganizationID(Didqitac); // 查询到  9个节点下的数据
+							   List<Department2> listDmqitatwo=department2Bo.findByNoparentOrganizationIDBychs(Didqitac,inputname3);  // 查询到  9个节点下的数据
 							List  l=new ArrayList();
 							  String Ddataqtc3 = null;
 								 Long	Didqtc3 = null;
@@ -3035,7 +3067,7 @@ public class CommodityController {
 					   Diseban=listDsebanc.get(k).getId();
 					   typename=listDsebanc.get(k).getRemark();
 						System.out.println("得到这个父结构的ID为"+Diseban+Ddaseban); 
-						List<Department2> listDmseban=department2Bo.findByNoparentOrganizationID(Diseban); // 查询到  9个节点下的数据
+						List<Department2> listDmseban=department2Bo.findByNoparentOrganizationIDBychs(Diseban,inputname3);  // 查询到  9个节点下的数据
 						List  lseban=new ArrayList();
 						  String Dsebannei3 = null;
 							 Long	Didseban3 = null;
@@ -3206,7 +3238,7 @@ public class CommodityController {
 													System.out.println("111");
 													// System.out.println("门头 "+Ddatabiantwo+Didbiantwo+Addressbtwo);
 													 // 查询到  边框款式 >门头款式>(门头款式，门柱款式)， 查询这2个下面的数据
-														List<Department2> listorgbk=department2Bo.findByNoparentOrganizationID(Didbiantwo); // 查询到  9个节点下的数据
+														List<Department2> listorgbk=department2Bo.findByNoparentOrganizationIDBychs(Didbiantwo,inputname3);  // 查询到  9个节点下的数据
 														  String Ddatab3 = null;
 															 Long	Didbia3 = null;
 															 String Addre3 = null;
@@ -3224,7 +3256,7 @@ public class CommodityController {
 							System.out.println("222");	
 							// System.out.println("门头 "+Ddatabiantwo+Didbiantwo+Addressbtwo);
 							 // 查询到  边框款式 >门头款式>(门头款式，门柱款式)， 查询这2个下面的数据
-								List<Department2> listorgbk=department2Bo.findByNoparentOrganizationID(Didbiantwo); // 查询到  9个节点下的数据
+								List<Department2> listorgbk=department2Bo.findByNoparentOrganizationIDBychs(Didbiantwo,inputname3);  // 查询到  9个节点下的数据
 								  String Ddatab3 = null;
 									 Long	Didbia3 = null;
 									 String Addre3 = null;
@@ -3244,7 +3276,7 @@ public class CommodityController {
 							System.out.println("333");	
 							// System.out.println("门头 "+Ddatabiantwo+Didbiantwo+Addressbtwo);
 							 // 查询到  边框款式 >门头款式>(门头款式，门柱款式)， 查询这2个下面的数据
-								List<Department2> listorgbk=department2Bo.findByNoparentOrganizationID(Didbiantwo); // 查询到  9个节点下的数据
+								List<Department2> listorgbk=department2Bo.findByNoparentOrganizationIDBychs(Didbiantwo,inputname3); // 查询到  9个节点下的数据
 								  String Ddatab3 = null;
 									 Long	Didbia3 = null;
 									 String Addre3 = null;
@@ -3262,7 +3294,7 @@ public class CommodityController {
 							System.out.println("444");		
 							// System.out.println("门头 "+Ddatabiantwo+Didbiantwo+Addressbtwo);
 							 // 查询到  边框款式 >门头款式>(门头款式，门柱款式)， 查询这2个下面的数据
-								List<Department2> listorgbk=department2Bo.findByNoparentOrganizationID(Didbiantwo); // 查询到  9个节点下的数据
+								List<Department2> listorgbk=department2Bo.findByNoparentOrganizationIDBychs(Didbiantwo,inputname3);  // 查询到  9个节点下的数据
 								  String Ddatab3 = null;
 									 Long	Didbia3 = null;
 									 String Addre3 = null;
@@ -3280,7 +3312,7 @@ public class CommodityController {
 					         		System.out.println("555");	
 					         	// System.out.println("门头 "+Ddatabiantwo+Didbiantwo+Addressbtwo);
 									 // 查询到  边框款式 >门头款式>(门头款式，门柱款式)， 查询这2个下面的数据
-										List<Department2> listorgbk=department2Bo.findByNoparentOrganizationID(Didbiantwo); // 查询到  9个节点下的数据
+										List<Department2> listorgbk=department2Bo.findByNoparentOrganizationIDBychs(Didbiantwo,inputname3); // 查询到  9个节点下的数据
 										  String Ddatab3 = null;
 											 Long	Didbia3 = null;
 											 String Addre3 = null;
@@ -3328,7 +3360,7 @@ public class CommodityController {
 											//单门门头
 			      // 	if(tyremark.equals("danmenmenkuang")||tyremark=="danmenmenkuang"){
 													System.out.println("111");
-													List<Department2> listDmenbinak1=department2Bo.findByNoparentOrganizationID(Didbiamen2); // 查询到  9个节点下的数据
+													List<Department2> listDmenbinak1=department2Bo.findByNoparentOrganizationIDBychs(Didbiamen2,inputname3); // 查询到  9个节点下的数据
 													
 													List  lbinantwo2=new ArrayList();
 													  String Ddatabiantwo2 = null;
@@ -3348,7 +3380,7 @@ public class CommodityController {
 											//字母门头
 					//	if(tyremark.equals("zimumenkuang")||tyremark=="zimumenkuang"){
 							System.out.println("222");	
-							List<Department2> listDmenbinak1=department2Bo.findByNoparentOrganizationID(Didbiamen2); // 查询到  9个节点下的数据
+							List<Department2> listDmenbinak1=department2Bo.findByNoparentOrganizationIDBychs(Didbiamen2,inputname3);
 							
 							List  lbinantwo2=new ArrayList();
 							  String Ddatabiantwo2 = null;
@@ -3368,7 +3400,7 @@ public class CommodityController {
 											//双开门+
 					//	if(tyremark.equals("shuangkaimenkuang")||tyremark=="shuangkaimenkuang"){
 							System.out.println("333");
-							List<Department2> listDmenbinak1=department2Bo.findByNoparentOrganizationID(Didbiamen2); // 查询到  9个节点下的数据
+							List<Department2> listDmenbinak1=department2Bo.findByNoparentOrganizationIDBychs(Didbiamen2,inputname3);// 查询到  9个节点下的数据
 							
 							List  lbinantwo2=new ArrayList();
 							  String Ddatabiantwo2 = null;
@@ -3388,7 +3420,7 @@ public class CommodityController {
 											//四开门+门
 					//	if(tyremark.equals("sikaimenkuang")||tyremark=="sikaimenkuang"){
 							System.out.println("444");		
-							List<Department2> listDmenbinak1=department2Bo.findByNoparentOrganizationID(Didbiamen2); // 查询到  9个节点下的数据
+							List<Department2> listDmenbinak1=department2Bo.findByNoparentOrganizationIDBychs(Didbiamen2,inputname3); // 查询到  9个节点下的数据
 							
 							List  lbinantwo2=new ArrayList();
 							  String Ddatabiantwo2 = null;
@@ -3409,7 +3441,7 @@ public class CommodityController {
 										if(modeldibuId=="404"||modeldibuId=="405"||modeldibuId.equals("404")||modeldibuId.equals("405")){
 					       //  	if(tyremark.equals("sikaizimumenkuang")||tyremark=="sikaizimumenkuang"){
 					         		System.out.println("555");	
-                             List<Department2> listDmenbinak1=department2Bo.findByNoparentOrganizationID(Didbiamen2); // 查询到  9个节点下的数据
+                             List<Department2> listDmenbinak1=department2Bo.findByNoparentOrganizationIDBychs(Didbiamen2,inputname3); // 查询到  9个节点下的数据
 									
 									List  lbinantwo2=new ArrayList();
 									  String Ddatabiantwo2 = null;
@@ -3483,7 +3515,8 @@ public class CommodityController {
 							   Long Dipeijain2 = listDpeijian.get(k).getId();
 							   typename = listDpeijian.get(k).getRemark();
 								System.out.println("得到这个父结构的ID为"+Dipeijain2+Dipeijain2); 
-								List<Department2> listDpeijian2=department2Bo.findByNoparentOrganizationID(Dipeijain2); // 查询到  9个节点下的数据
+								List<Department2> listDpeijian2=department2Bo.findByNoparentOrganizationIDBychs(Dipeijain2,inputname3);
+									
 								List  lsebpeijian=new ArrayList();
 								  String Dpeijiannei3 = null;
 									 Long	Dipeij3 = null;
@@ -3520,7 +3553,8 @@ public class CommodityController {
 								   Disebanbcai=listDsebanck.get(k).getId();
 								   typenamebc=listDsebanck.get(k).getRemark();
 									System.out.println("得到这个父结构的ID为"+Disebanbcai+Ddasebanbcai); 
-									List<Department2> listDmsebanbck=department2Bo.findByNoparentOrganizationID(Disebanbcai); // 查询到  9个节点下的数据
+									List<Department2> listDmsebanbck=department2Bo.findByNoparentOrganizationIDBychs(Disebanbcai,inputname3);
+										//department2Bo.findByNoparentOrganizationID(Disebanbcai); // 查询到  9个节点下的数据
 									
 									List  lsebanbc=new ArrayList();
 									  String Dsebancai12 = null;

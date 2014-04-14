@@ -494,6 +494,7 @@ $(document).ready(function() {
         $("input[name='address']",deptdialog).val(rowData.address);
         $("input[name='remark']",deptdialog).val(rowData.remark);
          $("input[name='inputname2']",deptdialog).val(rowData.inputname2);
+           $("input[name='inputname3']",deptdialog).val(rowData.inputname3);
         deptdialog.omDialog("option", "title", title);
         deptdialog.omDialog("open");
     };
@@ -573,6 +574,12 @@ function initDeptGrid(){
 		},{
 			header :"核对字段",
 			name : 'inputname2',
+			align : 'center',
+			width : 150
+		},
+		{
+			header :"所属厂商编号",
+			name : 'inputnam3',
 			align : 'center',
 			width : 150
 		}
@@ -703,6 +710,10 @@ function initDeptGrid(){
 	<tr>
 		<td>核对字段</td>
 		<td><input id="inputname2" name="inputname2" /></td>
+	</tr>
+	<tr>
+		<td>所属厂商 编号</td>
+		<td><input id="inputname3" name="inputname3"  maxlength="8"/></td>
 	</tr>
 	
 </table>

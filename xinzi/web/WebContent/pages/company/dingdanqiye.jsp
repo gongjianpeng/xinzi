@@ -129,15 +129,16 @@ html,body {
                 colModel : [ 
                               {header : "订单编号", name : 'orderNo', align : 'left', width : 100}, 
                               {header : "订单名称", name : 'name', align : 'left', width : 100},
+                               {header : "品牌", name : 'brand', align : 'left', width : 100},
                               {header : "订单状态", name : 'orderState', align : 'left', width : 100},
                               {header : "创建人", name : 'createPerson', align : 'left', width : 100},
                              
                             
                               {header : "详情->", name : '', align : 'left', width : 100},
-                               {header : "品牌", name : 'brand', align : 'left', width : 100},
-                                 {header : "单价", name : 'unitPrice', align : 'left', width : 100},  
-                                 {header : "数量", name : '', align : 'left', width : 100}, 
-                                {header : "总价", name : 'totalprice', align : 'left', width : 100}, 
+                              
+                               {header : "单价", name : 'unitPrice', align : 'left', width : 100},  
+                             {header : "数量", name : '', align : 'left', width : 100}, 
+                             {header : "总价", name : 'totalprice', align : 'left', width : 100}, 
                                   
                                {header : "开向", name : 'opento', align : 'left', width : 100},
                               {header : "色板", name : 'panelname', align : 'left', width : 100},
@@ -476,9 +477,17 @@ html,body {
 		开始时间： <input id="starttime" name="starttime" > 
 		结束时间： <input id="endtime" name="endtime">
 		
+		
+		</td>
+		<td text-align:center align="right"> 
+		品牌： <input id="*" name="qCode"/>
+		类型： <input id="*" name="qName" />
+		客户： <input id="*" name="starttime" > 
+		状态： <input id="*" name="endtime">
+		
 		 <input id="query" type="button" value="<fmt:message key='datadictionary.search'/>" class="button09" />
 		</td>
-			<td></td>
+			
 	</tr>
 	<tr  text-align:center align="left">
 	

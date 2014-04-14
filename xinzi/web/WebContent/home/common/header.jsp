@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	      	<a href="javascript:search()"><input type="button" class="submit diy-search-input" /></a>
 	    </div>
 	    
-	    <div class="buy_car"><a href="<%=basePath%>home/cart/buyer_cart.jsp">购物车</a></div>
+	    <div class="buy_car"><a href="<%=basePath%>pages/company/getdiyProductaddCat.do">购物车</a></div>
 	    <div class="clearfix"></div>
 	    <div class="nav">
 	       <a href="<%=basePath%>index.jsp" target="_blank">订单管理</a>

@@ -137,7 +137,7 @@ html,body {
 		        
 		            '</div>',
 	           	dataSource :'getDataPlicalbums.do',
-	           	limit : 100,
+	           	limit : 20,
 	            height : 'fit',
                 width : '100%',
                 showIndex : false,
@@ -301,17 +301,24 @@ html,body {
          /******************************************/
          	$('#uploadButton').die().live('click', function(e) {
 			 	var selections=$('#dataDictionaryTable').omGrid('getSelections',true);
-				if (selections.length == 0) {
-				 $.omMessageBox.alert({title:'提示',content:'请选择数据行！'});
-					return false;
-				}
-		       
-		      var toDeleteRecordID=selections[0].id;
-		   //    alert(toDeleteRecordID);
+			//	if (selections.length == 0) {
+			//	 $.omMessageBox.alert({title:'提示',content:'请选择数据行！'});
+			//		return false;
+			//	}
+		       var tt=$("#filename").val().trim();
+		      // alert(tt);
+		       if(tt==""){
+		       alert("请填写品牌名称");
+		     //  return false;
+		       }else{
+		       var tt=$("#filename").val().trim();
+		      
+		       alert(tt);
+		       }
 		    $('#file_upload').uploadify( {
 			'debug':'false',
 			'swf' : '../../js/jupload/uploadify.swf',//上传按钮的图片，默认是这个flash文件
-		    'uploader' : '<%=basePath%>FileUploadServletpic?ID='+toDeleteRecordID,  //上传所处理的服务器
+		    'uploader' : '<%=basePath%>FileUploadServletpic?ID='+tt,  //上传所处理的服务器
 		 //   'uploader' : 'getdep.do?ID='+toDeleteRecordID,  //上传所处理的服务器
 			'cancelImg' : '../../js/jupload/uploadify-cancel.png',//取消图片
 			'method':'post',
@@ -368,7 +375,7 @@ $(document).ready(function() {
 <div id="panel">
 <form id="queryForm">
 <table style="width: 100%;">
-	
+	请输入上传品牌名称：	<input id="filename" name="filename" />
 </table>
 </form>
 </div>
@@ -412,6 +419,7 @@ $(document).ready(function() {
 	 <div id="fileQueue"></div>
 		<div >
 			<input id="file_upload" name="file_upload" type="file" multiple="true"/>
+		
 		</div>
 		
 	 	<div style="float: left;margin-left: 20px;margin-top: 40px;margin-right: 50px;">

@@ -93,10 +93,12 @@
 		<div id="n9" class="menu om-corner-top" url="main.do" style="width:80px" text="系统管理" expanded=false />
 		<!-- 
 		      <div id= "n91" pid ="n9" width="100%" url="pages/system/organization.do" text="组织机构" /> />
-		      --> 
+		      
 		      <sec:authorize ifAnyGranted="ROLE_DIYSET">
+		       </sec:authorize>
+		      --> 
 			 <div id= "n99" pid ="n9" width="100%" url="pages/system/organization2.do" text="DIY菜单设置" /> />
-			 </sec:authorize>
+			
 		    <sec:authorize ifAnyGranted="ROLE_USERSET">
 		      <div id="n92" pid="n9" url="pages/system/person.do" text="用户管理"/> />
 			</sec:authorize>
@@ -107,11 +109,11 @@
 			<sec:authorize ifAnyGranted="ROLE_ROLESET">
 			<div id="n93" pid="n9" url="pages/system/rolesManager.do" text="角色管理" /> />
 			</sec:authorize>
-		<!-- 
+		 
 			<sec:authorize ifAnyGranted="ROLE_AUTHORSET">
 			 <div id="n94" pid="n9" url="pages/system/authorisieskey.do" text="管理" /> />
 			</sec:authorize>
-			  --> 
+			
 			<sec:authorize ifAnyGranted="ROLE_AUTHOIZE">
 			<div id="n95" pid="n9" url="pages/system/authoize.do" text="授权管理" /> />
 			</sec:authorize>

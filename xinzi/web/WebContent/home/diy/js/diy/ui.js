@@ -51,9 +51,9 @@ ui.init = function() {
 		
 		
 		var d = ui.getDataset();
-		var str = canvas.saveImg();
+		//var str = canvas.saveImg();
 		//var d={};
-		d.img = str;
+		//d.img = str;
 	    // {img:str};
 		//console.log('order: ',d.pp,d.img);
 		data.postOrder(d);
@@ -62,9 +62,9 @@ ui.init = function() {
 	$('#addcartBtn').click(function(){
 	
 		var d = ui.getDataset();
-		var str = canvas.saveImg();
+	    //svar str = canvas.saveImg();
 	
-		d.img = str;
+		//d.img = str;
 		//console.log(str);
 		data.postAddcart(d);
 	});

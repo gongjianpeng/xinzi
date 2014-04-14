@@ -126,11 +126,19 @@ input[type='text'] {
 		    		'<a id="SendEmailSuccess"   href="javascript:void(0)"><img src="<%=basePath%>home/resource/images/icons/file_obj.gif" title="发送激活邮件"/>&nbsp;发送激活邮件&nbsp;</a>'+
 		    	
 		    			'</sec:authorize>'+
+		    				'<sec:authorize ifAnyGranted="ROLE_USERSET_ADD">'+
 		    		'<a id="addButton"   href="javascript:void(0)"><img src="<%=basePath%>home/resource/images/icons/add.gif" title="新增" />&nbsp;新增&nbsp;</a>'+
+		           '</sec:authorize>'+
+		           '<sec:authorize ifAnyGranted="ROLE_USERSET_XIUGAI">'+
 		            '<a id="updateButton" href="javascript:void(0)"><img src="<%=basePath%>home/resource/images/icons/edit.gif" title="修改" />&nbsp;修改&nbsp;</a>'+
+		           '</sec:authorize>'+
+		           '<sec:authorize ifAnyGranted="ROLE_USERSET_DELETE">'+
 		            '<a id="deleteButton" href="javascript:void(0)"><img src="<%=basePath%>home/resource/images/icons/delete.gif" title="删除" />&nbsp;删除&nbsp;</a>'+
+		            '</sec:authorize>'+
+		           '<sec:authorize ifAnyGranted="ROLE_USERSET_TIME">'+
 		             '<a id="setTestDate" href="javascript:void(0)"><img src="../../images/calendar.gif" title="设置授权时间" /img>&nbsp;设置授权时间&nbsp;</a>'+
-		
+		           '</sec:authorize>'+
+		          
 		            '</div>',
 		        dataSource : 'getPerson.do' ,
 		        limit : 10,

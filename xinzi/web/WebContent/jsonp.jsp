@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              
         $.ajax({
         //pages/company/DoorJudge.do?dLength=2150&&dWidth=1000
-           url:"http://localhost:8080/xinzi/pages/company/getdiyProductOrder.do" ,
+           url:"http://localhost:8080/xinzi/pages/company/getdiyProductaddCat.do" ,
            //
            //sdoorCombo.do?chstyle=qichuang
            type: 'GET',

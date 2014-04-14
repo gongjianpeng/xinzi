@@ -61,7 +61,25 @@ public class Department2Dao extends BaseDao<Department2> implements
 		List<Department2> alllist = new ArrayList<Department2>();
 		System.out.println("--------------执行了  部门查询------------");
 		StringBuffer hql = new StringBuffer();
-		hql.append("select d from Department2 d where d.organization.id = ?");
+		hql.append("select d from Department2 d where d.organization.id = ?  ");
+		List<Department2> list = this.getJpaTemplate().find(hql.toString(), id);
+		for (Department2 dept : list) {
+			alllist.add(dept);
+			getChildrenDept(dept, alllist);
+		}
+		// if (list == null) {
+		// list = Collections.EMPTY_LIST;
+		// }
+		return alllist;
+	}
+	
+	@Override
+	public List<Department2> findByOrganizationIdBychc(long id,String inputname3) {
+		List<Department2> alllist = new ArrayList<Department2>();
+		System.out.println("--------------执行了  部门查询------------");
+		StringBuffer hql = new StringBuffer();
+		hql.append("select d from Department2 d where d.organization.id = ?  and d.inputname3 = "+"'"+inputname3+"'");
+		System.out.println(hql+" de2 check dibu ");
 		List<Department2> list = this.getJpaTemplate().find(hql.toString(), id);
 		for (Department2 dept : list) {
 			alllist.add(dept);
